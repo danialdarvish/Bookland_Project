@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using _01_Framework.Application;
 
 namespace ShopManagement.Application.Contracts.Category
@@ -19,5 +20,8 @@ namespace ShopManagement.Application.Contracts.Category
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Slug { get; set; }
+
+        public long ParentId { get; set; }
+        public List<CategoryViewModel> Categories { get; set; }
     }
 }

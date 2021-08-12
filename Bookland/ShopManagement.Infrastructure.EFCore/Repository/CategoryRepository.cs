@@ -2,6 +2,7 @@
 using System.Linq;
 using _01_Framework.Application;
 using _01_Framework.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.Category;
 using ShopManagement.Domain.CategoryAgg;
 
@@ -26,7 +27,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Description = x.Description,
                 MetaDescription = x.MetaDescription,
                 Keywords = x.Keywords,
-                Slug = x.Slug
+                Slug = x.Slug,
+                ParentId = x.ParentId
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -44,6 +46,47 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 query = query.Where(x => x.Name.Contains(searchModel.Name));
 
             return query.OrderByDescending(x => x.Id).ToList();
+        }
+
+        public List<CategoryViewModel> GetCategories()
+        {
+            return _context.Categories.Select(x => new CategoryViewModel
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToList();
+        }
+
+        public List<CategoryViewModel> GetSubCategories()
+        {
+            return _context.Categories.Where(x => x.ParentId != 0)
+                .Select(x => new CategoryViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                }).ToList();
+        }
+
+        public List<CategoryViewModel> GetMainCategories()
+        {
+            return _context.Categories.Where(x => x.ParentId == 0)
+                .Select(x => new CategoryViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                }).ToList();
+        }
+
+        public List<CategoryViewModel> GetBookCategoriesBy(long id)
+        {
+            return _context.BookCategories
+                .Include(x => x.Category)
+                .Where(x => x.CategoryId == id)
+                .Select(x => new CategoryViewModel
+                {
+                    Id = x.Category.Id,
+                    Name = x.Category.Name
+                }).ToList();
         }
     }
 }

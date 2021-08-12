@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Collections.Generic;
 using _01_Framework.Application;
 using ShopManagement.Application.Contracts.Category;
 using ShopManagement.Domain.CategoryAgg;
@@ -24,7 +22,7 @@ namespace ShopManagement.Application
 
             var slug = command.Slug.Slugify();
             var category = new Category(command.Name, command.Description, command.Keywords,
-                command.MetaDescription, slug);
+                command.MetaDescription, slug, command.ParentId);
 
             _categoryRepository.Create(category);
             _categoryRepository.SaveChanges();
@@ -46,7 +44,7 @@ namespace ShopManagement.Application
 
             var slug = command.Slug.Slugify();
             category.Edit(command.Name, command.Description, command.Keywords, command.MetaDescription,
-                slug);
+                slug, command.ParentId);
 
             _categoryRepository.SaveChanges();
             return operation.Succeed();
@@ -60,6 +58,26 @@ namespace ShopManagement.Application
         public List<CategoryViewModel> Search(CategorySearchModel searchModel)
         {
             return _categoryRepository.Search(searchModel);
+        }
+
+        public List<CategoryViewModel> GetCategories()
+        {
+            return _categoryRepository.GetCategories();
+        }
+
+        public List<CategoryViewModel> GetSubCategories()
+        {
+            return _categoryRepository.GetSubCategories();
+        }
+
+        public List<CategoryViewModel> GetMainCategories()
+        {
+            return _categoryRepository.GetMainCategories();
+        }
+
+        public List<CategoryViewModel> GetBookCategoriesBy(long bookId)
+        {
+            return _categoryRepository.GetBookCategoriesBy(bookId);
         }
     }
 }

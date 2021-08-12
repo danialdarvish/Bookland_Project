@@ -31,6 +31,17 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="ParentId" class="control-label">دسته بندی مادر</label>
+                    <select type="text" class="form-control" asp-for="ParentId" asp-items='new SelectList(Model.Categories, "Id", "Name")'>
+                        <option value="0">هیچ کدام</option>
+                    </select>
+                    <span asp-validation-for="ParentId" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="form-group no-margin">
                     <label asp-for="Description" class="control-label">توضیحات کوتاه</label>
                     <textarea class="form-control autogrow" asp-for="Description" onchange="fillField('Description', 'MetaDescription')"

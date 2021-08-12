@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BookCategoryAgg\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\01_Framework\01_Framework.csproj" />
     <ProjectReference Include="..\ShopManagement.Application.Contracts\ShopManagement.Application.Contracts.csproj" />
   </ItemGroup>
