@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using _01_Framework.Application;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Domain.BookAgg;
+using ShopManagement.Domain.CategoryAgg;
 
 namespace ShopManagement.Application
 {
     public class BookApplication : IBookApplication
     {
+        private readonly IFileUploader _fileUploader;
         private readonly IBookRepository _bookRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public BookApplication(IBookRepository bookRepository)
+        public BookApplication(IBookRepository bookRepository, IFileUploader fileUploader, ICategoryRepository categoryRepository)
         {
+            _fileUploader = fileUploader;
+            _categoryRepository = categoryRepository;
             _bookRepository = bookRepository;
         }
 
@@ -22,10 +27,11 @@ namespace ShopManagement.Application
             if (_bookRepository.Exists(x => x.Isbn == command.Isbn))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
+            var pictureName = _fileUploader.Upload(command.Picture, "Books");
             var slug = command.Slug.Slugify();
             var book = new Book(command.Name, command.Format, command.PageCount, DateTime.Now, 
-                command.Publisher, command.Language, command.Isbn, command.Picture, command.PictureAlt,
-                command.PictureTitle, command.Slug, command.Keywords, command.MetaDescription,
+                command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
+                command.PictureTitle, slug, command.Keywords, command.MetaDescription,
                 command.Description, 1);
             
             _bookRepository.Create(book);
@@ -46,10 +52,11 @@ namespace ShopManagement.Application
             if (_bookRepository.Exists(x => x.Isbn == command.Isbn && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
+            var pictureName = _fileUploader.Upload(command.Picture, "Books");
             var slug = command.Slug.Slugify();
 
             book.Edit(command.Name, command.Format, command.PageCount, DateTime.Now,
-                command.Publisher, command.Language, command.Isbn, command.Picture, command.PictureAlt,
+                command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
                 command.Description, command.AuthorId);
 

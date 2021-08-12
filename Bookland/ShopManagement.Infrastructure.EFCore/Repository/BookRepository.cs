@@ -25,7 +25,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Name = x.Name,
                 Description = x.Description,
                 MetaDescription = x.MetaDescription,
-                Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 Format = x.Format,

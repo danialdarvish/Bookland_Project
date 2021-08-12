@@ -1,3 +1,4 @@
+using _01_Framework.Application;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,8 @@ namespace ServiceHost
         {
             var connectionString = Configuration.GetConnectionString("BooklandDb");
             ShopManagementBootstrapper.Configure(services, connectionString);
+
+            services.AddTransient<IFileUploader, FileUploader>();
 
             services.AddRazorPages();
         }

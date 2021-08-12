@@ -5,10 +5,12 @@ using ShopManagement.Application.Contracts.Author;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Application.Contracts.BookCategory;
 using ShopManagement.Application.Contracts.Category;
+using ShopManagement.Application.Contracts.Slide;
 using ShopManagement.Domain.AuthorAgg;
 using ShopManagement.Domain.BookAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 using ShopManagement.Domain.CategoryAgg;
+using ShopManagement.Domain.SlideAgg;
 using ShopManagement.Infrastructure.EFCore;
 using ShopManagement.Infrastructure.EFCore.Repository;
 
@@ -29,6 +31,9 @@ namespace ShopManagement.Configuration
 
             services.AddTransient<IBookCategoryApplication, BookCategoryApplication>();
             services.AddTransient<IBookCategoryRepository, BookCategoryRepository>();
+
+            services.AddTransient<ISlideApplication, SlideApplication>();
+            services.AddTransient<ISlideRepository, SlideRepository>();
 
             services.AddDbContext<ShopContext>(x =>
                 x.UseSqlServer(connectionString));
