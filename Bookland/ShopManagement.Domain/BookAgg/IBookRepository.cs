@@ -8,6 +8,7 @@ namespace ShopManagement.Domain.BookAgg
     {
         EditBook GetDetails(long id);
         List<BookViewModel> Search(BookSearchModel searchModel);
+        List<BookViewModel> GetBooks();
         long GetLastBookId();
     }
 }

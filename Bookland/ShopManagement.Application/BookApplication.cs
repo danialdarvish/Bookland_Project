@@ -11,12 +11,10 @@ namespace ShopManagement.Application
     {
         private readonly IFileUploader _fileUploader;
         private readonly IBookRepository _bookRepository;
-        private readonly ICategoryRepository _categoryRepository;
 
         public BookApplication(IBookRepository bookRepository, IFileUploader fileUploader, ICategoryRepository categoryRepository)
         {
             _fileUploader = fileUploader;
-            _categoryRepository = categoryRepository;
             _bookRepository = bookRepository;
         }
 
@@ -73,6 +71,11 @@ namespace ShopManagement.Application
         public List<BookViewModel> Search(BookSearchModel searchModel)
         {
             return _bookRepository.Search(searchModel);
+        }
+
+        public List<BookViewModel> GetBooks()
+        {
+            return _bookRepository.GetBooks();
         }
 
         public long GetLastBookId()

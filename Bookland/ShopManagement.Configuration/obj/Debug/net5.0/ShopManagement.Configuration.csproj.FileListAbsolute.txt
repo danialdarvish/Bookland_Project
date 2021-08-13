@@ -2,11 +2,13 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configu
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ref\ShopManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Configuration.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\01_BooklandQuery.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Application.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\01_BooklandQuery.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Application.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\01_Framework.pdb

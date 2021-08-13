@@ -9,6 +9,7 @@ namespace ShopManagement.Application.Contracts.Book
         OperationResult Edit(EditBook command);
         EditBook GetDetails(long id);
         List<BookViewModel> Search(BookSearchModel searchModel);
+        List<BookViewModel> GetBooks();
         long GetLastBookId();
     }
 }

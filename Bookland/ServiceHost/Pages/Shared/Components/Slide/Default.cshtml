@@ -1,0 +1,26 @@
+﻿@model List<_01_BooklandQuery.Contract.Slide.SlideQueryModel>
+
+<div id="tg-homeslider" class="tg-homeslider tg-haslayout owl-carousel">
+    @foreach (var slide in Model)
+    {
+        <div class="item" data-vide-bg="poster: /Pictures/@slide.Picture" data-vide-options="position: 0% 50%">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
+                        <div class="tg-slidercontent">
+                            @*<figure class="tg-authorimg"><a href="javascript:void(0);"><img src="~/Pictures/@slide.Picture" alt="@slide.PictureAlt" title="@slide.PictureTitle"></a></figure>*@
+                            <h1>@slide.Heading</h1>
+                            <h2>@slide.Title</h2>
+                            <div class="tg-description">
+                                <p>@slide.Text</p>
+                            </div>
+                            <div class="tg-btns">
+                                <a class="tg-btn" href="javascript:void(0);">@slide.BtnText</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

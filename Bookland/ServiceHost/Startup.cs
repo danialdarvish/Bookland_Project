@@ -1,4 +1,7 @@
+using _01_BooklandQuery.Contract.Status;
+using _01_BooklandQuery.Query;
 using _01_Framework.Application;
+using DiscountManagement.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +24,9 @@ namespace ServiceHost
         {
             var connectionString = Configuration.GetConnectionString("BooklandDb");
             ShopManagementBootstrapper.Configure(services, connectionString);
+            DiscountManagementBootstrapper.Configure(services, connectionString);
 
+            services.AddTransient<IStatusQuery, StatusQuery>();
             services.AddTransient<IFileUploader, FileUploader>();
 
             services.AddRazorPages();

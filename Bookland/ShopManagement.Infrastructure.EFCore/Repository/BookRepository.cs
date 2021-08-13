@@ -77,6 +77,15 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             return query.OrderByDescending(x => x.Id).ToList();
         }
 
+        public List<BookViewModel> GetBooks()
+        {
+            return _context.Books.Select(x => new BookViewModel
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToList();
+        }
+
         private static List<string> MapCategoryNames(List<BookCategory> bookCategories)
         {
             return bookCategories.Select(x => x.Category.Name).ToList();

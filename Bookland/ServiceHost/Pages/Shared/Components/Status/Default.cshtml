@@ -1,0 +1,40 @@
+﻿@model _01_BooklandQuery.Contract.Status.StatusQueryModel
+
+<section class="tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="tg-allstatus">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="tg-parallax tg-bgbookwehave" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-01.jpg">
+                        <div class="tg-status">
+                            <div class="tg-statuscontent">
+                                <span class="tg-statusicon"><i class="icon-book"></i></span>
+                                <h2>تعداد کتاب‌ها<span>@Model.AllBooksCount</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="tg-parallax tg-bgtotalmembers" data-z-index="2" data-appear-bottom-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-02.jpg">
+                        <div class="tg-status">
+                            <div class="tg-statuscontent">
+                                <span class="tg-statusicon"><i class="icon-user"></i></span>
+                                <h2>تعداد کاربران<span>@Model.AllUsersCount</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="tg-parallax tg-bghappyusers" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-03.jpg">
+                        <div class="tg-status">
+                            <div class="tg-statuscontent">
+                                <span class="tg-statusicon"><i class="icon-heart"></i></span>
+                                <h2>تعداد خریداران خوشحال<span>@Model.HappyUsersCount</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

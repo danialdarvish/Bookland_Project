@@ -41,7 +41,7 @@
                                     <tr>
                                         <td>@item.Id</td>
                                         <td>
-                                            <img src="~/ProductPictures/@item.Picture" style="width: 70px; height: 70px" alt="" />
+                                            <img src="~/Pictures/@item.Picture" style="width: 70px; height: 70px" alt="" />
                                         </td>
                                         <td>@item.Heading</td>
                                         <td>@item.Title</td>
@@ -67,8 +67,8 @@
                                             }
                                             else
                                             {
-                                        <a asp-page="" asp-page-handler="Restore" asp-route-id="@item.Id"
-                                           class="btn btn-success waves-effect waves-light m-b-5">فعال سازی</a>
+                                                <a asp-page="" asp-page-handler="Restore" asp-route-id="@item.Id"
+                                                   class="btn btn-success waves-effect waves-light m-b-5">فعال سازی</a>
                                             }
                                         </td>
                                     </tr>
