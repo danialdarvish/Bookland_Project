@@ -1,8 +1,3 @@
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfoInputs.cache
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfo.cs
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.runtimeconfig.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.runtimeconfig.dev.json
@@ -21,6 +16,11 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Inf
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Application.Contract.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.CopyComplete
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\DiscountManagement.Infrastructure.EFCore.dll

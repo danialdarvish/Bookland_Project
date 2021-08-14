@@ -1,0 +1,15 @@
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\BlogManagement.Application.Contracts.deps.json
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\ref\BlogManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\BlogManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\01_Framework.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\01_Framework.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.csproj.CopyComplete
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\ref\BlogManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.pdb
