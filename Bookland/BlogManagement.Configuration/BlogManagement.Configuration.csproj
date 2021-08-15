@@ -9,6 +9,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\01_BooklandQuery\01_BooklandQuery.csproj" />
 	  <ProjectReference Include="..\BlogManagement.Application\BlogManagement.Application.csproj" />
 	  <ProjectReference Include="..\BlogManagement.Infrastructure.EFCore\BlogManagement.Infrastructure.EFCore.csproj" />
 	</ItemGroup>

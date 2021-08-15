@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "BlogManagement.Configuration/1.0.0": {
         "dependencies": {
+          "01_BooklandQuery": "1.0.0",
           "BlogManagement.Application": "1.0.0",
           "BlogManagement.Infrastructure.EFCore": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
@@ -1344,6 +1345,15 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "01_BooklandQuery/1.0.0": {
+        "dependencies": {
+          "BlogManagement.Infrastructure.EFCore": "1.0.0",
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "runtime": {
+          "01_BooklandQuery.dll": {}
+        }
+      },
       "01_Framework/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -1388,6 +1398,33 @@
         },
         "runtime": {
           "BlogManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
+      "ShopManagement.Application.Contracts/1.0.0": {
+        "dependencies": {
+          "01_Framework": "1.0.0"
+        },
+        "runtime": {
+          "ShopManagement.Application.Contracts.dll": {}
+        }
+      },
+      "ShopManagement.Domain/1.0.0": {
+        "dependencies": {
+          "01_Framework": "1.0.0",
+          "ShopManagement.Application.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "ShopManagement.Domain.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.EFCore/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ShopManagement.Infrastructure.EFCore.dll": {}
         }
       }
     }
@@ -2238,6 +2275,11 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "01_BooklandQuery/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "01_Framework/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -2259,6 +2301,21 @@
       "sha512": ""
     },
     "BlogManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Application.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Infrastructure.EFCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

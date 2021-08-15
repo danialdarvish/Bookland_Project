@@ -32,6 +32,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
+              },
               "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
                 "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
               }
@@ -293,6 +296,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\01_BooklandQuery\\01_BooklandQuery.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\01_BooklandQuery\\01_BooklandQuery.csproj"
+              },
               "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BlogManagement.Application\\BlogManagement.Application.csproj": {
                 "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BlogManagement.Application\\BlogManagement.Application.csproj"
               },

@@ -12,12 +12,12 @@
       data-callback=""
       data-action="Refresh"
       enctype="multipart/form-data">
-    <div class="modal-body">
+    <div class="modal-body" id="myModal" role="dialog" aria-hidden="true">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="BookId" class="control-label">انتخاب کتاب</label>
-                    <select type="text" class="form-control" asp-for="BookId" asp-items='new SelectList(Model.Books, "Id", "Name")'>
+                    <select type="text" class="select2" id="mySelect2" asp-for="BookId" asp-items='new SelectList(Model.Books, "Id", "Name")'>
                         <option value="0">محصول</option>
                     </select>
                     <span asp-validation-for="BookId" class="error"></span>
@@ -41,25 +41,39 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                <label asp-for="EndDate" class="control-label">تاریخ پایان</label>
-                <input type="text" class="form-control persianDateInput" asp-for="EndDate">
-                <span asp-validation-for="EndDate" class="error"></span>
+                    <label asp-for="EndDate" class="control-label">تاریخ پایان</label>
+                    <input type="text" class="form-control persianDateInput" asp-for="EndDate">
+                    <span asp-validation-for="EndDate" class="error"></span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group no-margin">
-                <label asp-for="Reason" class="control-label">علت تخفیف</label>
-                <textarea class="form-control autogrow" asp-for="Reason"
-                          style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
-                <span asp-validation-for="Reason" class="error"></span>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group no-margin">
+                    <label asp-for="Reason" class="control-label">علت تخفیف</label>
+                    <textarea class="form-control autogrow" asp-for="Reason"
+                              style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                    <span asp-validation-for="Reason" class="error"></span>
+                </div>
             </div>
         </div>
-    </div>
-    <input type="hidden" asp-for="Id" value="@Model.Id"/>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
-        <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+        <input type="hidden" asp-for="Id" value="@Model.Id" />
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+            <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+        </div>
     </div>
 </form>
+
+<link href="~/AdminTheme/assets/select2/select2.css" rel="stylesheet" type="text/css" />
+
+<script src="~/AdminTheme/assets/select2/select2.min.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function () {
+
+        jQuery("#mySelect2").select2({
+            width: '100%',
+            dropdownParent: $("#myModal")
+        });
+    });
+</script>

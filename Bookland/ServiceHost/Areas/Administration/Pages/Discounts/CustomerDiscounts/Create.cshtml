@@ -12,12 +12,12 @@
       data-callback=""
       data-action="Refresh"
       enctype="multipart/form-data">
-    <div class="modal-body">
+    <div class="modal-body" id="myModal" role="dialog" aria-hidden="true">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="BookId" class="control-label">انتخاب کتاب</label>
-                    <select type="text" class="select2" asp-for="BookId" asp-items='new SelectList(Model.Books, "Id", "Name")'>
+                    <select type="text" class="select2" id="mySelect2" asp-for="BookId" asp-items='new SelectList(Model.Books, "Id", "Name")'>
                         <option value="0">محصول</option>
                     </select>
                     <span asp-validation-for="BookId" class="error"></span>
@@ -26,7 +26,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="DiscountRate" class="control-label">درصد تخفیف</label>
-                    <input type="text" class="form-control" asp-for="DiscountRate">
+                    <input type="text" class="form-control" id="test1" asp-for="DiscountRate">
                     <span asp-validation-for="DiscountRate" class="error"></span>
                 </div>
             </div>
@@ -64,21 +64,16 @@
     </div>
 </form>
 
-@*@section Css
-{
-    <link href="~/AdminTheme/assets/select2/select2.css" rel="stylesheet" type="text/css" />
-}
 
-@section Scripts
-{
-    <script src="~/AdminTheme/assets/select2/select2.min.js" type="text/javascript"></script>
-    <script>
-        jQuery(document).ready(function () {
+<link href="~/AdminTheme/assets/select2/select2.css" rel="stylesheet" type="text/css" />
 
-            jQuery(".select2").select2({
-                width: '100%'
-            });
+<script src="~/AdminTheme/assets/select2/select2.min.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function () {
+
+        jQuery("#mySelect2").select2({
+            width: '100%',
+            dropdownParent: $("#myModal")
         });
-    </script>
-
-}*@
+    });
+</script>

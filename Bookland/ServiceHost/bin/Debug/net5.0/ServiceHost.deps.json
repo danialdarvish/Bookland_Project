@@ -1511,6 +1511,7 @@
       },
       "01_BooklandQuery/1.0.0": {
         "dependencies": {
+          "BlogManagement.Infrastructure.EFCore": "1.0.0",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
         "runtime": {
@@ -1558,6 +1559,7 @@
       },
       "BlogManagement.Configuration/1.0.0": {
         "dependencies": {
+          "01_BooklandQuery": "1.0.0",
           "BlogManagement.Application": "1.0.0",
           "BlogManagement.Infrastructure.EFCore": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
