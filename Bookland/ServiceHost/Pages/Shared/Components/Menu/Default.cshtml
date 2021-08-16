@@ -1,0 +1,108 @@
+﻿@model _01_BooklandQuery.MenuModel
+
+<div class="tg-navigationarea">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <nav id="tg-nav" class="tg-nav">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
+                        <ul>
+                            <li class="menu-item-has-children menu-item-has-mega-menu">
+                                <a href="javascript:void(0);">دسته‌بندی‌ها</a>
+                                <div class="mega-menu">
+                                    <ul class="tg-themetabnav" role="tablist">
+                                        @foreach (var parent in Model.BookCategories)
+                                        {
+                                            <li role="presentation">
+                                                <a href="#@parent.Slug" aria-controls="artandphotography" role="tab" data-toggle="tab">@parent.Name</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                    <div class="tab-content tg-themetabcontent">
+                                        @foreach (var item in Model.BookCategories)
+                                        {
+                                            <div role="tabpanel" class="tab-pane active" id="@item.Slug">
+                                                <ul>
+                                                    <li>
+                                                        @foreach (var children in item.Children)
+                                                        {
+                                                            <ul>
+                                                                <li><a href="products.html">@children.Name</a></li>
+                                                            </ul>
+                                                        }
+                                                        <a class="tg-btnviewall" href="products.html">مشاهده همه</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>
+                                                        <figure><img src="~/Theme/assets/images/img-01.png" alt="image description"></figure>
+                                                        <div class="tg-textbox">
+                                                            <h3>بیشتر از<span>12,0657,53</span>کالکشن کتاب</h3>
+                                                            <div class="tg-description">
+                                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                                                            </div>
+                                                            <a class="tg-btn" href="products.html">مشاهده همه</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="menu-item-has-children current-menu-item">
+                                <a href="javascript:void(0);">خانه</a>
+                                <ul class="sub-menu">
+                                    <li class="current-menu-item"><a href="index-2.html">خانه ورژن یک</a></li>
+                                    <li><a href="indexv2.html">خانه ورژن دو</a></li>
+                                    <li><a href="indexv3.html">خانه ورژن سه</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);">نویسندگان</a>
+                                <ul class="sub-menu">
+                                    <li><a href="authors.html">نویسندگان</a></li>
+                                    <li><a href="authordetail.html">جزییات نویسندگان</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="products.html">پرفروش ترین</a></li>
+                            <li><a href="products.html">تخفیف هفته</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);">آخرین اخبار</a>
+                                <ul class="sub-menu">
+                                    <li><a href="newslist.html">لیست اخبار</a></li>
+                                    <li><a href="newsgrid.html">گرید اخبار</a></li>
+                                    <li><a href="newsdetail.html">جزییات خبر </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contactus.html">ارتباط با ما</a></li>
+                            <li class="menu-item-has-children current-menu-item">
+                                <a href="javascript:void(0);"><i class="icon-menu"></i></a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="aboutus.html">محصولات</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="products.html">محصولات</a></li>
+                                            <li><a href="productdetail.html">جزییات محصولات</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="aboutus.html">درباره ما</a></li>
+                                    <li><a href="404error.html">خطا 404</a></li>
+                                    <li><a href="comingsoon.html">به زودی</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

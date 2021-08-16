@@ -1,0 +1,407 @@
+﻿@page "{id}"    
+@model ServiceHost.Pages.ArticleModel
+@{
+}
+
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/parallax/bgparallax-07.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-innerbannercontent">
+                    <h1>اخبار و مقالات</h1>
+                    <ol class="tg-breadcrumb">
+                        <li><a href="javascript:void(0);">خانه</a></li>
+                        <li><a href="javascript:void(0);">مقالات</a></li>
+                        <li class="tg-active">@Model.Article.Title</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<main id="tg-main" class="tg-main tg-haslayout">
+    <!--************************************
+            News Grid Start
+    *************************************-->
+    <div class="tg-sectionspace tg-haslayout">
+        <div class="container">
+            <div class="row">
+                <div id="tg-twocolumns" class="tg-twocolumns">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <figure class="tg-newsdetailimg">
+                            <img src="~/Pictures/@Model.Article.Picture" alt="@Model.Article.PictureAlt" title="@Model.Article.Picture">
+                            <figcaption class="tg-author">
+                                <div class="tg-authorinfo">
+                                    @*<span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>*@
+                                    <ul class="tg-postmetadata">
+                                        <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 نظر</i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i><i>@Model.Article.PublishDate</i></a></li>
+                                    </ul>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
+                        <div id="tg-content" class="tg-content">
+                            <div class="tg-newsdetail">
+                                <ul class="tg-bookscategories">
+                                    <li><a href="javascript:void(0);">@Model.Article.CategoryName</a></li>
+                                </ul>
+                                <div class="tg-themetagbox"><span class="tg-themetag">جدیدترین‌ها</span></div>
+                                <div class="tg-posttitle">
+                                    <h3><a href="javascript:void(0);">@Model.Article.Title</a></h3>
+                                </div>
+                                <div class="tg-description">
+                                    @Html.Raw(Model.Article.Description)
+                                </div>
+                                <div class="tg-tagsshare">
+                                    <div class="tg-tags">
+                                        <span>برچسب:</span>
+                                        <div class="tg-tagholder">
+                                            @foreach (var tag in Model.Article.KeywordList)
+                                            {
+                                                <a class="tg-tag" href="javascript:void(0);">@tag</a>
+
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="tg-socialshare">
+                                        <span>اشتراک:</span>
+                                        <ul class="tg-socialicons">
+                                            <li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
+                                            <li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
+                                            <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
+                                            <li class="tg-googleplus"><a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a></li>
+                                            <li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
+                                            <li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
+                                            <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                @*<div class="tg-authorbox">
+                                    <figure class="tg-authorimg">
+                                        <img src="images/author/imag-24.jpg" alt="image description">
+                                    </figure>
+                                    <div class="tg-authorinfo">
+                                        <div class="tg-authorhead">
+                                            <div class="tg-leftarea">
+                                                <div class="tg-authorname">
+                                                    <h2>کاترین کالبوستون</h2>
+                                                    <span>نویسندگی از سال 1350</span>
+                                                </div>
+                                            </div>
+                                            <div class="tg-rightarea">
+                                                <ul class="tg-socialicons">
+                                                    <li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
+                                                    <li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
+                                                    <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
+                                                    <li class="tg-googleplus"><a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a></li>
+                                                    <li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tg-description">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                        </div>
+                                        <a class="tg-btn tg-active" href="javascript:void(0);">دیدن همه کتاب ها</a>
+                                    </div>
+                                </div>*@
+                                @*<div class="tg-nextprevpost">
+                                    <div class="tg-prevpost">
+                                        <a href="javascript:void(0);">
+                                            <figure>
+                                                <img src="images/img-04.jpg" alt="image description">
+                                            </figure>
+                                            <div class="tg-posttitle">
+                                                <h3>وحشی ها کجا رفتند؟</h3>
+                                                <span>پشت قبل</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="tg-nextpost">
+                                        <a href="javascript:void(0);">
+                                            <figure>
+                                                <img src="images/img-05.jpg" alt="image description">
+                                            </figure>
+                                            <div class="tg-posttitle">
+                                                <h3>او تنها میخواست برقصد</h3>
+                                                <span>پشت قبل</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>*@
+                                <div class="tg-commentsarea">
+                                    <div class="tg-sectionhead">
+                                        <h2>03 نظر</h2>
+                                    </div>
+                                    <ul id="tg-comments" class="tg-comments">
+                                        <li>
+                                            <div class="tg-authorbox">
+                                                <figure class="tg-authorimg">
+                                                    <img src="~/Theme/assets/images/author/imag-24.jpg" alt="image description">
+                                                </figure>
+                                                <div class="tg-authorinfo">
+                                                    <div class="tg-authorhead">
+                                                        <div class="tg-leftarea">
+                                                            <div class="tg-authorname">
+                                                                <h2>کاترین کالبوستون</h2>
+                                                                <span>نویسندگی از سال 1350</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tg-rightarea">
+                                                            <a class="tg-btnreply" href="javascript:void(0);">پاسخ<i class="fa fa-mail-reply"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tg-description">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="tg-bottomarrow"></div>
+                                            </div>
+                                            <ul class="tg-childcomment">
+                                                <li>
+                                                    <div class="tg-authorbox">
+                                                        <figure class="tg-authorimg">
+                                                            <img src="images/author/imag-24.jpg" alt="image description">
+                                                        </figure>
+                                                        <div class="tg-authorinfo">
+                                                            <div class="tg-authorhead">
+                                                                <div class="tg-leftarea">
+                                                                    <div class="tg-authorname">
+                                                                        <h2>کاترین کالبوستون</h2>
+                                                                        <span>نویسندگی از سال 1350</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tg-rightarea">
+                                                                    <a class="tg-btnreply" href="javascript:void(0);">پاسخ<i class="fa fa-mail-reply"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tg-description">
+                                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tg-bottomarrow"></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="tg-authorbox">
+                                                <figure class="tg-authorimg">
+                                                    <img src="images/author/imag-24.jpg" alt="image description">
+                                                </figure>
+                                                <div class="tg-authorinfo">
+                                                    <div class="tg-authorhead">
+                                                        <div class="tg-leftarea">
+                                                            <div class="tg-authorname">
+                                                                <h2>کاترین کالبوستون</h2>
+                                                                <span>نویسندگی از سال 1350</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tg-rightarea">
+                                                            <a class="tg-btnreply" href="javascript:void(0);">پاسخ<i class="fa fa-mail-reply"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tg-description">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="tg-bottomarrow"></div>
+                                            </div>
+                                        </li>
+                                        <li class="tg-loadmore"><a class="tg-btn tg-active" href="javascript:void(0);">مشاهده همه</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tg-leaveyourcomment">
+                                    <div class="tg-sectionhead">
+                                        <h2>ارسال نظر</h2>
+                                    </div>
+                                    <form class="tg-formtheme tg-formleavecomment">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <input type="text" name="full name" class="form-control" placeholder="نام * ">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="last name" class="form-control" placeholder=" نام خانوادگی * ">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email address" class="form-control" placeholder="ایمیل *">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="subject" class="form-control" placeholder=" موضوع * ">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea placeholder="نظر"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <a class="tg-btn tg-active" href="javascript:void(0);">ارسال</a>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
+                        <aside id="tg-sidebar" class="tg-sidebar">
+                            <div class="tg-widget tg-widgetsearch">
+                                <form class="tg-formtheme tg-formsearch">
+                                    <div class="form-group">
+                                        <button type="submit"><i class="icon-magnifier"></i></button>
+                                        <input type="search" name="search" class="form-group" placeholder="جستجو">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tg-widget tg-catagories">
+                                <div class="tg-widgettitle">
+                                    <h3>دسته‌بندی‌ها</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        @foreach (var category in Model.ArticleCategories)
+                                        {
+                                            <li><a href="javascript:void(0);"><span>@category.Name</span><em>@category.ArticlesCount</em></a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgettrending">
+                                <div class="tg-widgettitle">
+                                    <h3>پست های ترند</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        @foreach (var article in Model.LatestArticles)
+                                        {
+                                            <li>
+                                                <article class="tg-post">
+                                                    <figure><a href="javascript:void(0);"><img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle" height="80" width="80"></a></figure>
+                                                    <div class="tg-postcontent">
+                                                        <div class="tg-posttitle">
+                                                            <h3><a href="javascript:void(0);">@article.Title</a></h3>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgetinstagram">
+                                <div class="tg-widgettitle">
+                                    <h3>اینستاگرام</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-01.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-02.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-03.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-04.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-05.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-06.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-07.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-08.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/instagram/img-09.jpg" alt="image description">
+                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+                                            </figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgetblogers">
+                                <div class="tg-widgettitle">
+                                    <h3>برترین بلاگرها</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        <li>
+                                            <div class="tg-author">
+                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-03.jpg" alt="image description"></a></figure>
+                                                <div class="tg-authorcontent">
+                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
+                                                    <span>21,658 کتاب منتشرشده</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-author">
+                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-03.jpg" alt="image description"></a></figure>
+                                                <div class="tg-authorcontent">
+                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
+                                                    <span>21,658 کتاب منتشرشده</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-author">
+                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-03.jpg" alt="image description"></a></figure>
+                                                <div class="tg-authorcontent">
+                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
+                                                    <span>21,658 کتاب منتشرشده</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-author">
+                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-03.jpg" alt="image description"></a></figure>
+                                                <div class="tg-authorcontent">
+                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
+                                                    <span>21,658 کتاب منتشرشده</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--************************************
+            News Grid End
+    *************************************-->
+</main>

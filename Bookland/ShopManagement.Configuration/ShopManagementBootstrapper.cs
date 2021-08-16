@@ -1,4 +1,5 @@
-﻿using _01_BooklandQuery.Contract.Slide;
+﻿using _01_BooklandQuery.Contract.BookCategory;
+using _01_BooklandQuery.Contract.Slide;
 using _01_BooklandQuery.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,6 +39,8 @@ namespace ShopManagement.Configuration
             services.AddTransient<ISlideRepository, SlideRepository>();
 
             services.AddTransient<ISlideQuery, SlideQuery>();
+
+            services.AddTransient<IBookCategoryQuery, BookCategoryQuery>();
 
             services.AddDbContext<ShopContext>(x =>
                 x.UseSqlServer(connectionString));

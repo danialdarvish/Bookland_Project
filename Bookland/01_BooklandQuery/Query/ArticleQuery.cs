@@ -44,7 +44,7 @@ namespace _01_BooklandQuery.Query
                 }).FirstOrDefault(x => x.Slug == slug);
 
             if (!string.IsNullOrWhiteSpace(article.Keywords))
-                article.KeywordList = article.Keywords.Split(",").ToList();
+                article.KeywordList = article.Keywords.Split("،").ToList();
 
             //var comments = _commentContext.Comments
             //    .Where(x => x.Type == CommentType.Article)
