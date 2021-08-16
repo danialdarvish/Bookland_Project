@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using _01_BooklandQuery.Contract.Article;
+using _01_BooklandQuery.Contract.Comment;
 using _01_Framework.Application;
 using BlogManagement.Infrastructure.EFCore;
+using CommentManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace _01_BooklandQuery.Query
@@ -11,12 +13,12 @@ namespace _01_BooklandQuery.Query
     public class ArticleQuery : IArticleQuery
     {
         private readonly BlogContext _context;
-        //private readonly CommentContext _commentContext;
+        private readonly CommentContext _commentContext;
 
-        public ArticleQuery(BlogContext context/*, /*CommentContext commentContext*/)
+        public ArticleQuery(BlogContext context, CommentContext commentContext)
         {
             _context = context;
-            //_commentContext = commentContext;
+            _commentContext = commentContext;
         }
 
 
@@ -46,33 +48,27 @@ namespace _01_BooklandQuery.Query
             if (!string.IsNullOrWhiteSpace(article.Keywords))
                 article.KeywordList = article.Keywords.Split("،").ToList();
 
-            //var comments = _commentContext.Comments
-            //    .Where(x => x.Type == CommentType.Article)
-            //    .Where(x => x.OwnerRecordId == article.Id)
-            //    .Where(x => !x.IsCanceled)
-            //    .Where(x => x.IsConfirmed)
-            //    .Select(x => new CommentQueryModel
-            //    {
-            //        Id = x.Id,
-            //        Name = x.Name,
-            //        Message = x.Message,
-            //        ParentId = x.ParentId,
-            //        CreationDate = x.CreationDate.ToFarsi()
-            //    }).OrderByDescending(x => x.Id).ToList();
+            var comments = _commentContext.Comments
+                .Where(x => x.Type == CommentType.Article)
+                .Where(x => x.OwnerRecordId == article.Id)
+                .Where(x => !x.IsCanceled)
+                .Where(x => x.IsConfirmed)
+                .Select(x => new CommentQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Message = x.Message,
+                    ParentId = x.ParentId,
+                    CreationDate = x.CreationDate.ToFarsi()
+                }).OrderByDescending(x => x.Id).ToList();
 
-            //foreach (var comment in comments)
-            //{
-            //    //if (comment.ParentId > 0)
-            //    //    comment.ParentName = comments.FirstOrDefault(x => x.Id == comment.ParentId)?.Name;
-            //    if (comment.ParentId > 0)
-            //    {
-            //        //comment.Children = comments.Where(x => x.Id == comment.ParentId).ToList();
-            //         comments.FirstOrDefault(x => x.Id == comment.ParentId)?.Children.Add(comment);
+            foreach (var comment in comments.Where(comment => comment.ParentId > 0))
+            {
+                comments.FirstOrDefault(x =>
+                    x.Id == comment.ParentId)?.Children.Add(comment);
+            }
 
-            //    }
-            //}
-
-            //article.Comments = comments;
+            article.Comments = comments;
 
             return article;
         }

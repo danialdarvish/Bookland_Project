@@ -37,3 +37,9 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\D
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\DiscountManagement.Domain.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\InventoryManagement.Application.Contracts.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\InventoryManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\CommentManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\CommentManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\CommentManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\CommentManagement.Domain.pdb
