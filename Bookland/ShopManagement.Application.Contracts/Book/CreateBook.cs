@@ -46,6 +46,9 @@ namespace ShopManagement.Application.Contracts.Book
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = ValidationMessages.IsRequired)]
+        public string ShortDescription { get; set; }
+
         [Required(ErrorMessage = ValidationMessages.IsRequired), MinLength(1)]
         public List<long> CategoryId { get; set; }
         public List<CategoryViewModel> Categories { get; set; }

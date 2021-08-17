@@ -36,6 +36,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 PageCount = x.PageCount,
                 Keywords = x.Keywords, // Bug (include)
                 AuthorId = x.AuthorId,
+                ShortDescription = x.ShortDescription,
                 CategoryId = MapCategories(x.BookCategories, x.Id)
             }).FirstOrDefault(x => x.Id == id);
         }

@@ -198,20 +198,21 @@
                                     <div class="tg-sectionhead">
                                         <h2>ارسال نظر</h2>
                                     </div>
-                                    <form class="tg-formtheme tg-formleavecomment" method="post" name="commentForm" onsubmit="required()">
+                                    <form class="tg-formtheme tg-formleavecomment" method="post" name="commentForm">
                                         <fieldset>
                                             <div class="form-group">
-                                                <input type="text" name="name" class="form-control" placeholder="نام و نام خانوادگی * ">
+                                                <input type="text" name="name" class="form-control" placeholder="نام و نام خانوادگی * " required="">
+
                                             </div>
                                             <div class="form-group">
                                                 <input type="email" name="email" class="form-control" placeholder="ایمیل *">
                                             </div>
-                                            <div class="form-group">
-                                                <textarea name="message" id="message" placeholder="نظر"></textarea>
+                                            <div class="form-group" style="width: 100%">
+                                                <textarea name="message" id="message" placeholder="نظر" required=""></textarea>
                                             </div>
                                             <input type="hidden" name="ownerRecordId" value="@Model.Article.Id" />
                                             <input type="hidden" name="articleSlug" value="@Model.Article.Slug" />
-                                            <input type="hidden" name="parentId" id="commentParentId" value="" />
+                                            <input type="hidden" name="parentId" id="commentParentId" value="0" />
                                             <div class="form-group">
                                                 <button class="tg-btn tg-active" href="javascript:void(0);" type="submit" name="submit">ارسال</button>
                                             </div>

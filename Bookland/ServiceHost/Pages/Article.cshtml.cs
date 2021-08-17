@@ -4,6 +4,7 @@ using _01_BooklandQuery.Contract.ArticleCategory;
 using CommentManagement.Application.Contracts.Comment;
 using CommentManagement.Infrastructure.EFCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Pages
@@ -35,13 +36,12 @@ namespace ServiceHost.Pages
 
         public IActionResult OnPost(AddComment command, string articleSlug)
         {
+            command.Type = CommentType.Article;
             if (ModelState.IsValid)
             {
-                command.Type = CommentType.Article;
                 _commentApplication.Add(command);
             }
-
-            return RedirectToPage("/Article", new {Id = articleSlug});
+            return RedirectToPage("/Article", new { Id = articleSlug });
         }
     }
 }

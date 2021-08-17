@@ -30,7 +30,7 @@ namespace ShopManagement.Application
             var book = new Book(command.Name, command.Format, command.PageCount, DateTime.Now, 
                 command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
-                command.Description, 1);
+                command.Description, command.AuthorId, command.ShortDescription);
             
             _bookRepository.Create(book);
             _bookRepository.SaveChanges();
@@ -56,7 +56,7 @@ namespace ShopManagement.Application
             book.Edit(command.Name, command.Format, command.PageCount, DateTime.Now,
                 command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
-                command.Description, command.AuthorId);
+                command.Description, command.AuthorId, command.ShortDescription);
 
             _bookRepository.SaveChanges();
 

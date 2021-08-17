@@ -21,6 +21,7 @@ namespace ShopManagement.Domain.BookAgg
         public string Slug { get; private set; }
         public string Keywords { get; private set; }
         public string MetaDescription { get; private set; }
+        public string ShortDescription { get; private set; }
         public string Description { get; private set; }
 
         public List<BookCategory> BookCategories { get; private set; }
@@ -32,7 +33,7 @@ namespace ShopManagement.Domain.BookAgg
         public Book(string name, string format, int pageCount, DateTime publishDate, string publisher,
             string language, string isbn, string picture, string pictureAlt, string pictureTitle,
             string slug, string keywords, string metaDescription, string description,
-            long authorId)
+            long authorId, string shortDescription)
         {
             Name = name;
             Format = format;
@@ -49,11 +50,12 @@ namespace ShopManagement.Domain.BookAgg
             MetaDescription = metaDescription;
             Description = description;
             AuthorId = authorId;
+            ShortDescription = shortDescription;
         }
 
         public void Edit(string name, string format, int pageCount, DateTime publishDate, string publisher,
             string language, string isbn, string picture, string pictureAlt, string pictureTitle,
-            string slug, string keywords, string metaDescription, string description, long authorId)
+            string slug, string keywords, string metaDescription, string description, long authorId, string shortDescription)
         {
             Name = name;
             Format = format;
@@ -70,6 +72,7 @@ namespace ShopManagement.Domain.BookAgg
             MetaDescription = metaDescription;
             Description = description;
             AuthorId = authorId;
+            ShortDescription = shortDescription;
         }
     }
 }

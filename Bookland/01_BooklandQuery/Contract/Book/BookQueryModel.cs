@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _01_BooklandQuery.Contract.Comment;
 
 namespace _01_BooklandQuery.Contract.Book
 {
@@ -13,7 +14,15 @@ namespace _01_BooklandQuery.Contract.Book
         public double DoublePrice { get; set; }
         public string PriceWithDiscount { get; set; }
         public int DiscountRate { get; set; }
-        public string Category { get; set; }
+        public string DiscountPrice { get; set; }
+        public List<long> CategoryId { get; set; }
+        public List<string> CategoryNames { get; set; }
+        public int PageCount { get; set; }
+        public string Format { get; set; }
+        public string Publisher { get; set; }
+        public string Language { get; set; }
+        public string PublishDate { get; set; }
+        public string Isbn { get; set; }
         public string CategorySlug { get; set; }
         public bool HasDiscount { get; set; }
         public string DiscountExpireDate { get; set; }
@@ -23,6 +32,8 @@ namespace _01_BooklandQuery.Contract.Book
         public string Keywords { get; set; }
         public string MetaDescription { get; set; }
         public bool IsInStock { get; set; }
-        //public List<CommentQueryModel> Comments { get; set; }
+
+        public string AuthorName { get; set; }
+        public List<CommentQueryModel> Comments { get; set; }
     }
 }

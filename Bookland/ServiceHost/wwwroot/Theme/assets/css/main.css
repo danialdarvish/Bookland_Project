@@ -5534,3 +5534,15 @@ body.tg-comingsoonpage .tg-footerbar {
 .owl-carousel{
 	direction: ltr;
 }
+
+.redText {
+    color: Red !important;
+}
+
+.greenText {
+	color: forestgreen !important;
+}
+
+.rightAlign {
+	float: right !important;
+}

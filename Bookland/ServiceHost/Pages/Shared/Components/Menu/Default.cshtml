@@ -22,7 +22,9 @@
                                         @foreach (var parent in Model.BookCategories)
                                         {
                                             <li role="presentation">
-                                                <a href="#@parent.Slug" aria-controls="artandphotography" role="tab" data-toggle="tab">@parent.Name</a>
+                                                <a href="#@parent.Slug" aria-controls="artandphotography" role="tab" data-toggle="tab">
+                                                    @parent.Name
+                                                </a>
                                             </li>
                                         }
                                     </ul>
@@ -35,7 +37,7 @@
                                                         @foreach (var children in item.Children)
                                                         {
                                                             <ul>
-                                                                <li><a href="products.html">@children.Name</a></li>
+                                                                <li><a asp-page="./BookCategory" asp-route-id="@children.Id">@children.Name</a></li>
                                                             </ul>
                                                         }
                                                         <a class="tg-btnviewall" href="products.html">مشاهده همه</a>
