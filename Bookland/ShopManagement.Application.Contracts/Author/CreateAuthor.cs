@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using _01_Framework.Application;
+using Microsoft.AspNetCore.Http;
 
 namespace ShopManagement.Application.Contracts.Author
 {
@@ -10,7 +11,8 @@ namespace ShopManagement.Application.Contracts.Author
 
         public string Biography { get; set; }
 
-        public string Picture { get; set; }
+        [MaxFileSize(1 * 1024 * 1024, ErrorMessage = ValidationMessages.MaxFileSize)]
+        public IFormFile Picture { get; set; }
 
         public string PictureAlt { get; set; }
 

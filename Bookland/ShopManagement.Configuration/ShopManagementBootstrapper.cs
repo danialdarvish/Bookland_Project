@@ -1,4 +1,5 @@
-﻿using _01_BooklandQuery.Contract.Book;
+﻿using _01_BooklandQuery.Contract.Author;
+using _01_BooklandQuery.Contract.Book;
 using _01_BooklandQuery.Contract.BookCategory;
 using _01_BooklandQuery.Contract.Slide;
 using _01_BooklandQuery.Query;
@@ -43,6 +44,7 @@ namespace ShopManagement.Configuration
 
             services.AddTransient<IBookCategoryQuery, BookCategoryQuery>();
             services.AddTransient<IBookQuery, BookQuery>();
+            services.AddTransient<IAuthorQuery, AuthorQuery>();
 
             services.AddDbContext<ShopContext>(x =>
                 x.UseSqlServer(connectionString));

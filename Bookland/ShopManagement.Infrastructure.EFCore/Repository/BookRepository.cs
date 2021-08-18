@@ -37,6 +37,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Keywords = x.Keywords, // Bug (include)
                 AuthorId = x.AuthorId,
                 ShortDescription = x.ShortDescription,
+                IsEditorsChoice = x.IsEditorsChoice,
                 CategoryId = MapCategories(x.BookCategories, x.Id)
             }).FirstOrDefault(x => x.Id == id);
         }
@@ -65,8 +66,9 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                     Language = x.Language,
                     PageCount = x.PageCount,
                     Picture = x.Picture,
-                    PublishDate = x.PublishDate.ToFarsi(),
                     Publisher = x.Publisher,
+                    IsEditorsChoice = x.IsEditorsChoice,
+                    PublishDate = x.PublishDate.ToFarsi(),
                     CreationDate = x.CreationDate.ToFarsi()
                 });
 

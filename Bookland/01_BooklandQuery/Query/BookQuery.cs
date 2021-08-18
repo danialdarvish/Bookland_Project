@@ -118,15 +118,72 @@ namespace _01_BooklandQuery.Query
             return book;
         }
 
-        private static List<string> MapCategoryNames(long id, List<BookCategory> bookCategories)
+        public List<BookQueryModel> GetBestBooks()
         {
-            return bookCategories.Where(x => x.BookId == id)
+            var inventory = _inventoryContext.Inventory
+                .Select(x => new { x.BookId, x.UnitPrice, x.InStock }).ToList();
+
+            var discounts = _discountContext.CustomerDiscounts
+                .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
+                .Select(x => new { x.BookId, x.DiscountRate, x.EndDate });
+
+            var bestBooks = _context.Books
+                .Include(x => x.Author)
+                .Include(x => x.BookCategories)
+                .ThenInclude(x => x.Category)
+                .Select(x => new BookQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Slug = x.Slug,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    PageCount = x.PageCount,
+                    CategoryId = MapCategoryId(x.Id, x.BookCategories),
+                    CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
+                    AuthorName = x.Author.FullName,
+                    ShortDescription = x.ShortDescription
+                }).AsNoTracking().OrderByDescending(x => x.Id).Take(6).ToList();
+
+            foreach (var book in bestBooks)
+            {
+                var bookInventory = inventory
+                    .FirstOrDefault(x => x.BookId == book.Id);
+                if (bookInventory != null)
+                {
+                    var price = bookInventory.UnitPrice;
+                    book.Price = price.ToMoney();
+                    book.IsInStock = bookInventory.InStock;
+
+                    var discount = discounts
+                        .FirstOrDefault(x => x.BookId == book.Id);
+
+                    if (discount != null)
+                    {
+                        var discountRate = discount.DiscountRate;
+                        book.DiscountRate = discountRate;
+                        book.HasDiscount = discountRate > 0;
+
+                        var discountAmount = Math.Round(price * discountRate / 100);
+                        book.PriceWithDiscount = (price - discountAmount).ToMoney();
+                    }
+                }
+            }
+
+            return bestBooks;
+        }
+
+
+        private static List<string> MapCategoryNames(long bookId, List<BookCategory> bookCategories)
+        {
+            return bookCategories.Where(x => x.BookId == bookId)
                 .Select(x => x.Category.Name).ToList();
         }
 
-        private static List<long> MapCategoryId(long id, List<BookCategory> bookCategories)
+        private static List<long> MapCategoryId(long bookId, List<BookCategory> bookCategories)
         {
-            return bookCategories.Where(x => x.BookId == id)
+            return bookCategories.Where(x => x.BookId == bookId)
                 .Select(x => x.Category.Id).ToList();
         }
 

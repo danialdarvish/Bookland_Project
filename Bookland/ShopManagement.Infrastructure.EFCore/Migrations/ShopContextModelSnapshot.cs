@@ -78,6 +78,9 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<bool>("IsEditorsChoice")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Isbn")
                         .IsRequired()
                         .HasMaxLength(13)

@@ -23,6 +23,7 @@ namespace ShopManagement.Domain.BookAgg
         public string MetaDescription { get; private set; }
         public string ShortDescription { get; private set; }
         public string Description { get; private set; }
+        public bool IsEditorsChoice { get; private set; }
 
         public List<BookCategory> BookCategories { get; private set; }
 
@@ -33,7 +34,7 @@ namespace ShopManagement.Domain.BookAgg
         public Book(string name, string format, int pageCount, DateTime publishDate, string publisher,
             string language, string isbn, string picture, string pictureAlt, string pictureTitle,
             string slug, string keywords, string metaDescription, string description,
-            long authorId, string shortDescription)
+            long authorId, string shortDescription, bool isEditorsChoice)
         {
             Name = name;
             Format = format;
@@ -51,11 +52,13 @@ namespace ShopManagement.Domain.BookAgg
             Description = description;
             AuthorId = authorId;
             ShortDescription = shortDescription;
+            IsEditorsChoice = isEditorsChoice;
         }
 
         public void Edit(string name, string format, int pageCount, DateTime publishDate, string publisher,
             string language, string isbn, string picture, string pictureAlt, string pictureTitle,
-            string slug, string keywords, string metaDescription, string description, long authorId, string shortDescription)
+            string slug, string keywords, string metaDescription, string description, long authorId,
+            string shortDescription, bool isEditorsChoice)
         {
             Name = name;
             Format = format;
@@ -64,7 +67,10 @@ namespace ShopManagement.Domain.BookAgg
             Publisher = publisher;
             Language = language;
             Isbn = isbn;
-            Picture = picture;
+
+            if (!string.IsNullOrWhiteSpace(picture))
+                Picture = picture;
+
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
             Slug = slug;
@@ -73,6 +79,7 @@ namespace ShopManagement.Domain.BookAgg
             Description = description;
             AuthorId = authorId;
             ShortDescription = shortDescription;
+            IsEditorsChoice = isEditorsChoice;
         }
     }
 }

@@ -7,6 +7,8 @@ namespace _01_BooklandQuery.Contract.Book
         BookQueryModel GetBookDetails(string slug);
         List<BookQueryModel> GetLatestArrivals();
         List<BookQueryModel> Search(string value);
+
+        List<BookQueryModel> GetBestBooks();
         //List<CartItem> CheckInventoryStatus(List<CartItem> cartItems);
     }
 }

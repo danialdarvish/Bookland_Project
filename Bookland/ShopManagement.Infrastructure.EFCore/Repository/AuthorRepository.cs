@@ -23,7 +23,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 FullName = x.FullName,
                 Biography = x.Biography,
-                Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 Slug = x.Slug,
@@ -37,7 +36,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 FullName = x.FullName,
-                Picture = x.FullName,
+                Picture = x.Picture,
                 CreationDate = x.CreationDate.ToFarsi()
             });
 

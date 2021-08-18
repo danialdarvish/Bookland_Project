@@ -39,7 +39,10 @@ namespace ShopManagement.Domain.AuthorAgg
         {
             FullName = fullName;
             Biography = biography;
-            Picture = picture;
+
+            if (!string.IsNullOrWhiteSpace(picture))
+                Picture = picture;
+
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
             Slug = slug;

@@ -1,0 +1,31 @@
+﻿@model List<_01_BooklandQuery.Contract.Author.AuthorQueryModel>
+
+<section class="tg-sectionspace tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-sectionhead">
+                    <h2><span>ذهن زیبا پنهان</span>نویسندگان برتر</h2>
+                    <a class="tg-btn" href="javascript:void(0);">مشاهده همه</a>
+                </div>
+            </div>
+            <div id="tg-authorsslider" class="tg-authors tg-authorsslider owl-carousel">
+                @foreach (var author in Model)
+                {
+                    <div class="item tg-author">
+                        <figure><a href="javascript:void(0);"><img src="~/Pictures/@author.Picture" alt="@author.PictureAlt" title="@author.PictureTitle"></a></figure>
+                        <div class="tg-authorcontent">
+                            <h2><a href="javascript:void(0);">@author.FullName</a></h2>
+                            <span>@author.BooksCount کتاب در سایت</span>
+                            <ul class="tg-socialicons">
+                                <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
+                                <li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

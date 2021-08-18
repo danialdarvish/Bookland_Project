@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+    using System.Collections.Generic;
 using _01_Framework.Application;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Domain.BookAgg;
@@ -30,7 +30,7 @@ namespace ShopManagement.Application
             var book = new Book(command.Name, command.Format, command.PageCount, DateTime.Now, 
                 command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
-                command.Description, command.AuthorId, command.ShortDescription);
+                command.Description, command.AuthorId, command.ShortDescription, command.IsEditorsChoice);
             
             _bookRepository.Create(book);
             _bookRepository.SaveChanges();
@@ -56,7 +56,7 @@ namespace ShopManagement.Application
             book.Edit(command.Name, command.Format, command.PageCount, DateTime.Now,
                 command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
-                command.Description, command.AuthorId, command.ShortDescription);
+                command.Description, command.AuthorId, command.ShortDescription, command.IsEditorsChoice);
 
             _bookRepository.SaveChanges();
 

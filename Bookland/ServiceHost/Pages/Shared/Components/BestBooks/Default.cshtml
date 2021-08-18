@@ -1,0 +1,64 @@
+﻿@model List<_01_BooklandQuery.Contract.Book.BookQueryModel>
+
+<section class="tg-sectionspace tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-sectionhead">
+                    <h2><span>بهترین کتاب ها</span>به انتخاب نویسندگان</h2>
+                    <a class="tg-btn" href="javascript:void(0);">مشاهده همه</a>
+                </div>
+            </div>
+            <div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">
+                @foreach (var book in Model)
+                {
+                    <div class="item">
+                        <div class="tg-postbook">
+                            <figure class="tg-featureimg">
+                                <div class="tg-bookimg">
+                                    <div class="tg-frontcover"><img src="~/Pictures/@book.Picture" alt="@book.PictureAlt" title="@book.PictureTitle"></div>
+                                </div>
+                                <div class="tg-hovercontent">
+                                    <div class="tg-description">
+                                        <p>@book.ShortDescription</p>
+                                    </div>
+                                    <strong class="tg-bookpage">تعداد صفحه: @book.PageCount</strong>
+                                    <strong class="tg-bookcategory">دسته بندی: @string.Join("، ", book.CategoryNames)</strong>
+                                    <strong class="tg-bookprice">
+                                        @if (book.IsInStock)
+                                        {
+                                            @if (book.HasDiscount)
+                                            {
+                                                <ins>قیمت: @book.PriceWithDiscount تومان</ins>
+                                                <del>قیمت: @book.Price تومان</del>
+                                            }
+                                            else
+                                            {
+                                                <ins class="blackText">قیمت: @book.Price تومان</ins>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <ins class="redText">نا موجود</ins>
+                                        }
+                                    </strong>
+                                    <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
+                                </div>
+                            </figure>
+                            <div class="tg-postbookcontent">
+                                <div class="tg-booktitle">
+                                    <h2 class="titleBig"><a href="javascript:void(0);">@book.Name</a></h2>
+                                </div>
+                                <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@book.AuthorName</a></span>
+                                <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                                    <i class="fa fa-shopping-basket"></i>
+                                    <em>افزودن به سبدخرید</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

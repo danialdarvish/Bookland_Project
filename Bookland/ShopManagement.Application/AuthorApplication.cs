@@ -8,11 +8,13 @@ namespace ShopManagement.Application
 {
     public class AuthorApplication : IAuthorApplication
     {
+        private readonly IFileUploader _fileUploader;
         private readonly IAuthorRepository _authorRepository;
 
-        public AuthorApplication(IAuthorRepository authorRepository)
+        public AuthorApplication(IAuthorRepository authorRepository, IFileUploader fileUploader)
         {
             _authorRepository = authorRepository;
+            _fileUploader = fileUploader;
         }
 
 
@@ -23,7 +25,8 @@ namespace ShopManagement.Application
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
-            var author = new Author(command.FullName, command.Biography, command.Picture,
+            var pictureName = _fileUploader.Upload(command.Picture, slug);
+            var author = new Author(command.FullName, command.Biography, pictureName,
                 command.PictureAlt, command.PictureTitle, slug, command.MetaDescription);
 
             _authorRepository.Create(author);
@@ -44,7 +47,8 @@ namespace ShopManagement.Application
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
-            author.Edit(command.FullName, command.Biography, command.Picture,
+            var pictureName = _fileUploader.Upload(command.Picture, slug);
+            author.Edit(command.FullName, command.Biography, pictureName,
                 command.PictureAlt, command.PictureTitle, slug, command.MetaDescription);
 
             _authorRepository.SaveChanges();

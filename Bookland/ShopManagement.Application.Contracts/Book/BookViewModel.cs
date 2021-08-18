@@ -16,5 +16,6 @@ namespace ShopManagement.Application.Contracts.Book
         public string Picture { get; set; }
         public long CategoryId { get; set; }
         public string CreationDate { get; set; }
+        public bool IsEditorsChoice { get; set; }
     }
 }

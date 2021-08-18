@@ -57,5 +57,7 @@ namespace ShopManagement.Application.Contracts.Book
         public long AuthorId { get; set; }
 
         public List<AuthorViewModel> Authors { get; set; }
+
+        public bool IsEditorsChoice { get; set; }
     }
 }
