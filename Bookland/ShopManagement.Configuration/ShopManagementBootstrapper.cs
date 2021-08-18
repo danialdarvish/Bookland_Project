@@ -10,11 +10,13 @@ using ShopManagement.Application.Contracts.Author;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Application.Contracts.BookCategory;
 using ShopManagement.Application.Contracts.Category;
+using ShopManagement.Application.Contracts.Quote;
 using ShopManagement.Application.Contracts.Slide;
 using ShopManagement.Domain.AuthorAgg;
 using ShopManagement.Domain.BookAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 using ShopManagement.Domain.CategoryAgg;
+using ShopManagement.Domain.QuoteAgg;
 using ShopManagement.Domain.SlideAgg;
 using ShopManagement.Infrastructure.EFCore;
 using ShopManagement.Infrastructure.EFCore.Repository;
@@ -40,8 +42,10 @@ namespace ShopManagement.Configuration
             services.AddTransient<ISlideApplication, SlideApplication>();
             services.AddTransient<ISlideRepository, SlideRepository>();
 
-            services.AddTransient<ISlideQuery, SlideQuery>();
+            services.AddTransient<IQuoteApplication, QuoteApplication>();
+            services.AddTransient<IQuoteRepository, QuoteRepository>();
 
+            services.AddTransient<ISlideQuery, SlideQuery>();
             services.AddTransient<IBookCategoryQuery, BookCategoryQuery>();
             services.AddTransient<IBookQuery, BookQuery>();
             services.AddTransient<IAuthorQuery, AuthorQuery>();

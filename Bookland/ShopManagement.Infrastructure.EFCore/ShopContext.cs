@@ -3,6 +3,7 @@ using ShopManagement.Domain.AuthorAgg;
 using ShopManagement.Domain.BookAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 using ShopManagement.Domain.CategoryAgg;
+using ShopManagement.Domain.QuoteAgg;
 using ShopManagement.Domain.SlideAgg;
 using ShopManagement.Infrastructure.EFCore.Mapping;
 
@@ -15,6 +16,7 @@ namespace ShopManagement.Infrastructure.EFCore
         public DbSet<BookCategory> BookCategories { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Slide> Slides { get; set; }
+        public DbSet<Quote> Quotes { get; set; }
 
         public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {

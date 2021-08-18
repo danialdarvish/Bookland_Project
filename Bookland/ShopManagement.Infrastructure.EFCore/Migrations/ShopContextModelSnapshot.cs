@@ -205,6 +205,42 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.QuoteAgg.Quote", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PersonName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PersonPicture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PersonPost")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureAlt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Quotes");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.SlideAgg.Slide", b =>
                 {
                     b.Property<long>("Id")
