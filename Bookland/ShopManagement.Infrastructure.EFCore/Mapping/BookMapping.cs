@@ -34,6 +34,10 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
                 .WithMany(x => x.Books)
                 .HasForeignKey(x => x.AuthorId);
 
+            builder.HasMany(x => x.Banners)
+                .WithOne(x => x.Book)
+                .HasForeignKey(x => x.BookId);
+
         }
     }
 }

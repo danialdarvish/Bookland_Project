@@ -274,42 +274,14 @@
             Best Selling End
     *************************************-->
     <!--************************************
-            Featured Item Start
+    Featured Item Start
     *************************************-->
-    <section class="tg-bglight tg-haslayout">
-        <div class="container">
-            <div class="row">
-                <div class="tg-featureditm">
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
-                        <figure><img src="~/Theme/assets/images/img-02.png" alt="image description"></figure>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                        <div class="tg-featureditmcontent">
-                            <div class="tg-themetagbox"><span class="tg-themetag">جدیدترین‌ها</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">چیزهایی که راجع به طراحی فلت باید دونست </a></h3>
-                            </div>
-                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">فرح شکوفا</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <div class="tg-priceandbtn">
-                                <span class="tg-bookprice">
-                                    <ins>230 تومان</ins>
-                                    <del>302 تومان</del>
-                                </span>
-                                <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
-                                    <i class="fa fa-shopping-basket"></i>
-                                    <em>افزودن به سبدخرید</em>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    @await Component.InvokeAsync("Banner")
+
     <!--************************************
-            Featured Item End
-    *************************************-->
+                Featured Item End
+        *************************************-->
     <!--************************************
             New Release Start
     *************************************-->

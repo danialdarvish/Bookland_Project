@@ -57,6 +57,45 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("Authors");
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.BannerAgg.Banner", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("BookId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Picture")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("PictureAlt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tag")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("Banners");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.BookAgg.Book", b =>
                 {
                     b.Property<long>("Id")
@@ -295,6 +334,17 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("Slides");
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.BannerAgg.Banner", b =>
+                {
+                    b.HasOne("ShopManagement.Domain.BookAgg.Book", "Book")
+                        .WithMany("Banners")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.BookAgg.Book", b =>
                 {
                     b.HasOne("ShopManagement.Domain.AuthorAgg.Author", "Author")
@@ -343,6 +393,8 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("ShopManagement.Domain.BookAgg.Book", b =>
                 {
+                    b.Navigation("Banners");
+
                     b.Navigation("BookCategories");
                 });
 

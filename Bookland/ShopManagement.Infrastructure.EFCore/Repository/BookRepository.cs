@@ -77,6 +77,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 query = query.Where(x => x.Name.Contains(searchModel.Name));
             if (searchModel.CategoryId > 0)
                 query = query.Where(x => x.CategoryId == searchModel.CategoryId);
+            if (searchModel.IsEditorsChoice)
+                query = query.Where(x => x.IsEditorsChoice);
 
             return query.OrderByDescending(x => x.Id).ToList();
         }

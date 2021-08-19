@@ -27,7 +27,8 @@ namespace ShopManagement.Application
 
             var pictureName = _fileUploader.Upload(command.Picture, "Books");
             var slug = command.Slug.Slugify();
-            var book = new Book(command.Name, command.Format, command.PageCount, DateTime.Now, 
+            var publishDate = command.PublishDate.ToGeorgianDateTime();
+            var book = new Book(command.Name, command.Format, command.PageCount, publishDate, 
                 command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
                 command.Description, command.AuthorId, command.ShortDescription, command.IsEditorsChoice);
@@ -52,8 +53,8 @@ namespace ShopManagement.Application
 
             var pictureName = _fileUploader.Upload(command.Picture, "Books");
             var slug = command.Slug.Slugify();
-
-            book.Edit(command.Name, command.Format, command.PageCount, DateTime.Now,
+            var publishDate = command.PublishDate.ToGeorgianDateTime();
+            book.Edit(command.Name, command.Format, command.PageCount, publishDate,
                 command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
                 command.Description, command.AuthorId, command.ShortDescription, command.IsEditorsChoice);

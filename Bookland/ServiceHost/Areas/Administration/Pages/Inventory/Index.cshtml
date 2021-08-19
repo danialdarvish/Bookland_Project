@@ -72,11 +72,11 @@
                                 {
                                     <tr>
                                         <td>@item.Id</td>
-                                        @if (item.Book.Length > 20)
+                                        @if (item.Book.Length > CharacterLimitation.BookLimitation)
                                         {
                                             <td>
                                                 <div class="myTooltip">
-                                                    @item.Book.LimitCharacters(20)
+                                                    @item.Book.LimitCharacters(CharacterLimitation.BookLimitation)
                                                     <span class="tooltiptext">@item.Book</span>
                                                 </div>
                                             </td>

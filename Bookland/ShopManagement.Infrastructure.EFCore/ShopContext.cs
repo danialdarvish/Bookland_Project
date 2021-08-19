@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopManagement.Domain.AuthorAgg;
+using ShopManagement.Domain.BannerAgg;
 using ShopManagement.Domain.BookAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 using ShopManagement.Domain.CategoryAgg;
@@ -17,6 +18,7 @@ namespace ShopManagement.Infrastructure.EFCore
         public DbSet<Author> Authors { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Quote> Quotes { get; set; }
+        public DbSet<Banner> Banners { get; set; }
 
         public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {

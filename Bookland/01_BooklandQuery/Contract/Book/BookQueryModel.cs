@@ -32,6 +32,7 @@ namespace _01_BooklandQuery.Contract.Book
         public string Keywords { get; set; }
         public string MetaDescription { get; set; }
         public bool IsInStock { get; set; }
+        public bool IsEditorsChoice { get; set; }
 
         public string AuthorName { get; set; }
         public List<CommentQueryModel> Comments { get; set; }

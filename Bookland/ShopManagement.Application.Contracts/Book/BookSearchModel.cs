@@ -8,5 +8,6 @@
         public string Publisher { get; set; }
         public string Language { get; set; }
         public long CategoryId { get; set; }
+        public bool IsEditorsChoice { get; set; }
     }
 }

@@ -177,3 +177,8 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Quotes\Edit.cshtml.g.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Quotes\Index.cshtml.g.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Quote\Default.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\RelatedBooks\Default.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Banners\Create.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Banners\Edit.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Banners\Index.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Banner\Default.cshtml.g.cs

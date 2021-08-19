@@ -67,11 +67,11 @@
                                         </td>
                                         <td>@item.PersonName</td>
                                         <td>@item.PersonPost</td>
-                                        @if (item.Text.Length > 50)
+                                        @if (item.Text.Length > CharacterLimitation.BookLimitation)
                                         {
                                             <td>
                                                 <div class="myTooltip">
-                                                    @item.Text.LimitCharacters(50)
+                                                    @item.Text.LimitCharacters(CharacterLimitation.BookLimitation)
                                                     <span class="tooltiptext">@item.Text</span>
                                                 </div>
                                             </td>

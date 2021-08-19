@@ -62,6 +62,7 @@ namespace _01_BooklandQuery.Query
                     MetaDescription = x.MetaDescription,
                     ShortDescription = x.ShortDescription,
                     Slug = x.Slug,
+                    IsEditorsChoice = x.IsEditorsChoice,
                     CategoryId = MapCategoryId(x.Id, x.BookCategories),
                     CategoryNames = MapCategoryNames(x.Id, x.BookCategories)
                 })
@@ -128,6 +129,7 @@ namespace _01_BooklandQuery.Query
                 .Select(x => new { x.BookId, x.DiscountRate, x.EndDate });
 
             var bestBooks = _context.Books
+                .Where(x => x.IsEditorsChoice)
                 .Include(x => x.Author)
                 .Include(x => x.BookCategories)
                 .ThenInclude(x => x.Category)
@@ -143,7 +145,8 @@ namespace _01_BooklandQuery.Query
                     CategoryId = MapCategoryId(x.Id, x.BookCategories),
                     CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
                     AuthorName = x.Author.FullName,
-                    ShortDescription = x.ShortDescription
+                    ShortDescription = x.ShortDescription,
+                    IsEditorsChoice = x.IsEditorsChoice
                 }).AsNoTracking()
                 .AsEnumerable()
                 .Shuffle()
@@ -178,6 +181,78 @@ namespace _01_BooklandQuery.Query
             }
 
             return bestBooks;
+        }
+
+        public List<BookQueryModel> GetRelatedBooks(List<long> categoryId, long bookId)
+        {
+            var inventory = _inventoryContext.Inventory
+                .Select(x => new { x.BookId, x.UnitPrice, x.InStock }).ToList();
+
+            var discounts = _discountContext.CustomerDiscounts
+                .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
+                .Select(x => new { x.BookId, x.DiscountRate, x.EndDate });
+
+            var books = _context.Books
+                .Include(x => x.Author)
+                .Include(x => x.BookCategories)
+                .ThenInclude(x => x.Category)
+                .AsNoTracking()
+                .ToList();
+
+            foreach (var book in books)
+            {
+                foreach (var category in categoryId)
+                {
+                    var relatedBookId = book.BookCategories
+                        .FirstOrDefault(x => x.CategoryId == category)?.BookId;
+                    if (relatedBookId > 0 && relatedBookId != bookId)
+                        books = books.Where(x => x.Id == relatedBookId).ToList();
+                }
+            }
+
+            var relatedBooks = books
+                .Select(x => new BookQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Slug = x.Slug,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    PageCount = x.PageCount,
+                    CategoryId = MapCategoryId(x.Id, x.BookCategories),
+                    CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
+                    AuthorName = x.Author.FullName,
+                    ShortDescription = x.ShortDescription,
+                    IsEditorsChoice = x.IsEditorsChoice
+                }).Shuffle().Take(6).ToList();
+
+            foreach (var book in relatedBooks)
+            {
+                var bookInventory = inventory
+                    .FirstOrDefault(x => x.BookId == book.Id);
+                if (bookInventory != null)
+                {
+                    var price = bookInventory.UnitPrice;
+                    book.Price = price.ToMoney();
+                    book.IsInStock = bookInventory.InStock;
+
+                    var discount = discounts
+                        .FirstOrDefault(x => x.BookId == book.Id);
+
+                    if (discount != null)
+                    {
+                        var discountRate = discount.DiscountRate;
+                        book.DiscountRate = discountRate;
+                        book.HasDiscount = discountRate > 0;
+
+                        var discountAmount = Math.Round(price * discountRate / 100);
+                        book.PriceWithDiscount = (price - discountAmount).ToMoney();
+                    }
+                }
+            }
+
+            return relatedBooks;
         }
 
         private static List<string> MapCategoryNames(long bookId, List<BookCategory> bookCategories)

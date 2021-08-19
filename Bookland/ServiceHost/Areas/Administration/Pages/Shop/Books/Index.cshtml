@@ -24,7 +24,15 @@
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.Name"></label>
-                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام دسته بندی">
+                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام کتاب">
+                    </div>
+                    <div class="form-group m-l-10">
+                        <div class="checkbox checkbox-primary">
+                            <input id="checkbox3" type="checkbox" asp-for="SearchModel.IsEditorsChoice">
+                            <label asp-for="SearchModel.IsEditorsChoice">
+                                جستجو در کتاب های پیشنهاد خاص
+                            </label>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
@@ -62,15 +70,20 @@
                                 @foreach (var item in Model.Books)
                                 {
                                     <tr>
-                                        <td>@item.Id</td>
+                                        <td>@item.Id
+                                        @if (item.IsEditorsChoice)
+                                        {
+                                            <i class="fa fa-star"></i>
+                                        }
+                                        </td>
                                         <td>
                                             <img src="~/Pictures/@item.Picture" style="width: 70px; height: 70px" alt="" />
                                         </td>
-                                        @if (item.Name.Length > 15)
+                                        @if (item.Name.Length > CharacterLimitation.BookLimitation)
                                         {
                                             <td>
                                                 <div class="myTooltip">
-                                                    @item.Name.LimitCharacters(15)
+                                                    @item.Name.LimitCharacters(CharacterLimitation.BookLimitation)
                                                     <span class="tooltiptext">@item.Name</span>
                                                 </div>
                                             </td>

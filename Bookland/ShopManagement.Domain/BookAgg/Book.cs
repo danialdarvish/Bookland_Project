@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _01_Framework.Domain;
 using ShopManagement.Domain.AuthorAgg;
+using ShopManagement.Domain.BannerAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 
 namespace ShopManagement.Domain.BookAgg
@@ -26,9 +27,12 @@ namespace ShopManagement.Domain.BookAgg
         public bool IsEditorsChoice { get; private set; }
 
         public List<BookCategory> BookCategories { get; private set; }
+        public List<Banner> Banners { get; private set; }
 
         public long AuthorId { get; private set; }
         public Author Author { get; private set; }
+
+
 
 
         public Book(string name, string format, int pageCount, DateTime publishDate, string publisher,

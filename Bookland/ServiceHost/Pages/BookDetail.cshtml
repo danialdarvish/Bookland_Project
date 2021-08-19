@@ -87,7 +87,7 @@
                                                                 <strong style="padding: 5px" class="greenText">
                                                                     سود شما @Model.Book.DiscountPrice تومان
                                                                 </strong>
-                                                            </span> 
+                                                            </span>
                                                         }
                                                         else
                                                         {
@@ -124,7 +124,10 @@
                                             <ul class="tg-bookscategories">
                                                 <li><a href="javascript:void(0);">@string.Join("، ", Model.Book.CategoryNames)</a></li>
                                             </ul>
-                                            <div class="tg-themetagbox"><span class="tg-themetag">فروش</span></div>
+                                            @if (Model.Book.IsEditorsChoice)
+                                            {
+                                                <div class="tg-themetagbox"><span class="tg-themetag">پیشنهاد خاص</span></div>
+                                            }
                                             <div class="tg-booktitle">
                                                 <h3>@Model.Book.Name</h3>
                                             </div>
@@ -236,7 +239,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                <div class="tg-leaveyourcomment" id="postComment">
+                                    <div class="tg-leaveyourcomment" id="postComment">
                                         <div class="tg-sectionhead">
                                             <h2>ارسال نظر</h2>
                                         </div>
@@ -260,256 +263,9 @@
                                             </fieldset>
                                         </form>
                                     </div>
-                                    <div class="tg-relatedproducts">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <div class="tg-sectionhead">
-                                                <h2><span>محصولات مرتبط</span>همچنین ببینید</h2>
-                                                <a class="tg-btn" href="javascript:void(0);">مشاهده همه</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <div id="tg-relatedproductslider" class="tg-relatedproductslider tg-relatedbooks owl-carousel">
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="images/books/img-01.jpg" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="images/books/img-01.jpg" alt="image description"></div>
-                                                            </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>افزودن به علاقه‌مندی‌ها</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">ماجراجویی</a></li>
-                                                                <li><a href="javascript:void(0);">سرگرم‌کننده</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"><span class="tg-themetag">فروش</span></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a href="javascript:void(0);">کمکم کن روحم را پیدا کنم</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>25000 تومان</ins>
-                                                                <del>23000 تومان</del>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>افزودن به سبدخرید</em>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="images/books/img-02.jpg" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="images/books/img-02.jpg" alt="image description"></div>
-                                                            </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>افزودن به علاقه‌مندی‌ها</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">ماجراجویی</a></li>
-                                                                <li><a href="javascript:void(0);">سرگرم‌کننده</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"><span class="tg-themetag">فروش</span></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a href="javascript:void(0);">رانندگی امن، بدون سرعت گیر</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>25000 تومان</ins>
-                                                                <del>23000 تومان</del>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>افزودن به سبدخرید</em>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="images/books/img-03.jpg" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="images/books/img-03.jpg" alt="image description"></div>
-                                                            </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>افزودن به علاقه‌مندی‌ها</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">ماجراجویی</a></li>
-                                                                <li><a href="javascript:void(0);">سرگرم‌کننده</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a href="javascript:void(0);">بذار وقت خوبی پیدا کنم</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>25000 تومان</ins>
-                                                                <del>23000 تومان</del>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>افزودن به سبدخرید</em>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="images/books/img-04.jpg" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="images/books/img-04.jpg" alt="image description"></div>
-                                                            </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>افزودن به علاقه‌مندی‌ها</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">ماجراجویی</a></li>
-                                                                <li><a href="javascript:void(0);">سرگرم‌کننده</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"><span class="tg-themetag">فروش</span></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a href="javascript:void(0);">هنر سخت عادل بودن</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>25000 تومان</ins>
-                                                                <del>23000 تومان</del>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>افزودن به سبدخرید</em>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="images/books/img-05.jpg" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="images/books/img-05.jpg" alt="image description"></div>
-                                                            </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>افزودن به علاقه‌مندی‌ها</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">ماجراجویی</a></li>
-                                                                <li><a href="javascript:void(0);">سرگرم‌کننده</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a href="javascript:void(0);">آتش زدن شاخه ها</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>25000 تومان</ins>
-                                                                <del>23000 تومان</del>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>افزودن به سبدخرید</em>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="images/books/img-06.jpg" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="images/books/img-06.jpg" alt="image description"></div>
-                                                            </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>افزودن به علاقه‌مندی‌ها</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">ماجراجویی</a></li>
-                                                                <li><a href="javascript:void(0);">سرگرم‌کننده</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"><span class="tg-themetag">فروش</span></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a href="javascript:void(0);">کمکم کن روحم را پیدا کنم</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>25000 تومان</ins>
-                                                                <del>23000 تومان</del>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>افزودن به سبدخرید</em>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="tg-postbook">
-                                                        <figure class="tg-featureimg">
-                                                            <div class="tg-bookimg">
-                                                                <div class="tg-frontcover"><img src="images/books/img-03.jpg" alt="image description"></div>
-                                                                <div class="tg-backcover"><img src="images/books/img-03.jpg" alt="image description"></div>
-                                                            </div>
-                                                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                                                <i class="icon-heart"></i>
-                                                                <span>افزودن به علاقه‌مندی‌ها</span>
-                                                            </a>
-                                                        </figure>
-                                                        <div class="tg-postbookcontent">
-                                                            <ul class="tg-bookscategories">
-                                                                <li><a href="javascript:void(0);">ماجراجویی</a></li>
-                                                                <li><a href="javascript:void(0);">سرگرم‌کننده</a></li>
-                                                            </ul>
-                                                            <div class="tg-themetagbox"></div>
-                                                            <div class="tg-booktitle">
-                                                                <h3><a href="javascript:void(0);">بذار وقت خوبی پیدا کنم</a></h3>
-                                                            </div>
-                                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">آنجلا گانینگ</a></span>
-                                                            <span class="tg-stars"><span></span></span>
-                                                            <span class="tg-bookprice">
-                                                                <ins>25000 تومان</ins>
-                                                                <del>23000 تومان</del>
-                                                            </span>
-                                                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                                                <i class="fa fa-shopping-basket"></i>
-                                                                <em>افزودن به سبدخرید</em>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                                    @await Component.InvokeAsync("RelatedBooks", new { Model.Book.CategoryId, Model.Book.Id});
+
                                 </div>
                             </div>
                         </div>
