@@ -144,7 +144,13 @@ namespace _01_BooklandQuery.Query
                     CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
                     AuthorName = x.Author.FullName,
                     ShortDescription = x.ShortDescription
-                }).AsNoTracking().OrderByDescending(x => x.Id).Take(6).ToList();
+                }).AsNoTracking()
+                .AsEnumerable()
+                .Shuffle()
+                .Take(6)
+                .OrderByDescending(x => x.Id)
+                .ToList();
+
 
             foreach (var book in bestBooks)
             {
@@ -173,7 +179,6 @@ namespace _01_BooklandQuery.Query
 
             return bestBooks;
         }
-
 
         private static List<string> MapCategoryNames(long bookId, List<BookCategory> bookCategories)
         {

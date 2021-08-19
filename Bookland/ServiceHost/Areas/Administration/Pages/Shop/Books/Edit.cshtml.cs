@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contracts.Author;
@@ -38,17 +39,21 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Books
 
         public IActionResult OnPost(EditBook command)
         {
-            _bookApplication.Edit(command);
-            _bookCategoryApplication.RemoveCategoryByBookId(command.Id);
-            foreach (var item in command.CategoryId)
+            if (ModelState.IsValid)
             {
-                var category = new BookCategoryDto
+                _bookApplication.Edit(command);
+                _bookCategoryApplication.RemoveCategoryByBookId(command.Id);
+                foreach (var item in command.CategoryId)
                 {
-                    BookId = command.Id,
-                    CategoryId = item
-                };
-                _bookCategoryApplication.Create(category);
+                    var category = new BookCategoryDto
+                    {
+                        BookId = command.Id,
+                        CategoryId = item
+                    };
+                    _bookCategoryApplication.Create(category);
+                }
             }
+           
             return RedirectToPage("./Index");
         }
     }

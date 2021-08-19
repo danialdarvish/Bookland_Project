@@ -1,0 +1,28 @@
+﻿@model List<_01_BooklandQuery.Contract.Quote.QuoteQueryModel>
+
+<section class="tg-parallax tg-bgtestimonials tg-haslayout" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-05.jpg">
+    <div class="tg-sectionspace tg-haslayout">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-lg-push-2">
+                    <div id="tg-testimonialsslider" class="tg-testimonialsslider tg-testimonials owl-carousel">
+                        @foreach (var quote in Model)
+                        {
+                            <div class="item tg-testimonial">
+                                <figure><img src="~/Pictures/@quote.PersonPicture" alt="@quote.PictureAlt" title="@quote.PictureTitle"></figure>
+                                <blockquote>
+                                    <q>@quote.Text</q>
+                                </blockquote>
+                                <div class="tg-testimonialauthor">
+                                    <h3>@quote.PersonName</h3>
+                                    <span>@quote.PersonPost</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,4 +1,5 @@
 ﻿@page
+@using _01_Framework.Application
 @model ServiceHost.Areas.Administration.Pages.Shop.Quotes.IndexModel
 @{
     Layout = "Shared/_AdminLayout";
@@ -66,7 +67,19 @@
                                         </td>
                                         <td>@item.PersonName</td>
                                         <td>@item.PersonPost</td>
-                                        <td>@item.Text</td>
+                                        @if (item.Text.Length > 50)
+                                        {
+                                            <td>
+                                                <div class="myTooltip">
+                                                    @item.Text.LimitCharacters(50)
+                                                    <span class="tooltiptext">@item.Text</span>
+                                                </div>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>@item.Text</td>
+                                        }
                                         <td>@item.CreationDate</td>
                                         <td class="text-center">
                                             @if (!item.IsRemoved)

@@ -20,6 +20,16 @@
                                 <input type="text" class="form-control" asp-for="Command.Name" onchange="makeSlug('Name', 'Slug')">
                                 <span asp-validation-for="Command.Name" class="error"></span>
                             </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="checkbox2" type="checkbox" asp-for="Command.IsEditorsChoice" style="margin-right: -11px">
+                                        <label asp-for="Command.IsEditorsChoice" style="margin-right: 7px">
+                                            پیشنهاد خاص
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -142,7 +152,15 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="form-group no-margin">
+                                <label asp-for="Command.ShortDescription" class="control-label">توضیحات کوتاه</label>
+                                <textarea class="form-control autogrow" asp-for="Command.ShortDescription"
+                                          style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                                <span asp-validation-for="Command.ShortDescription" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group no-margin">
                                 <label asp-for="Command.MetaDescription" class="control-label">توضیحات متا</label>
                                 <textarea class="form-control autogrow" asp-for="Command.MetaDescription"

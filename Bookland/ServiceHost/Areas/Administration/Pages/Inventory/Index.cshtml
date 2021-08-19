@@ -1,10 +1,12 @@
 ﻿@page
 @*@using InventoryManagement.Infrastructure.Configuration.Permissions*@
+@using _01_Framework.Application
 @model ServiceHost.Areas.Administration.Pages.Inventory.IndexModel
 @{
     Layout = "Shared/_AdminLayout";
     ViewData["title"] = "مدیریت انبار ";
 }
+
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
@@ -70,7 +72,19 @@
                                 {
                                     <tr>
                                         <td>@item.Id</td>
-                                        <td>@item.Book</td>
+                                        @if (item.Book.Length > 20)
+                                        {
+                                            <td>
+                                                <div class="myTooltip">
+                                                    @item.Book.LimitCharacters(20)
+                                                    <span class="tooltiptext">@item.Book</span>
+                                                </div>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>@item.Book</td>
+                                        }
                                         <td>@item.UnitPrice</td>
                                         <td>@item.CurrentCount</td>
                                         <td>@item.CreationDate</td>

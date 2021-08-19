@@ -37,17 +37,32 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Books
 
         public IActionResult OnPost(CreateBook command)
         {
-            _bookApplication.Create(command);
-            foreach (var item in command.CategoryId)
+            if (ModelState.IsValid)
             {
-                var category = new BookCategoryDto
+                _bookApplication.Create(command);
+                foreach (var item in command.CategoryId)
                 {
-                    CategoryId = item,
-                    BookId = _bookApplication.GetLastBookId()
-                };
-                _bookCategoryApplication.Create(category);
+                    var category = new BookCategoryDto
+                    {
+                        CategoryId = item,
+                        BookId = _bookApplication.GetLastBookId()
+                    };
+                    _bookCategoryApplication.Create(category);
+                }
             }
             return RedirectToPage("./Index");
         }
     }
 }
+
+#region Model state debugging
+
+//foreach (var modelState in ViewData.ModelState.Values)
+//{
+//    foreach (ModelError error in modelState.Errors)
+//    {
+//        error.ToString();
+//    }
+//}
+
+#endregion
