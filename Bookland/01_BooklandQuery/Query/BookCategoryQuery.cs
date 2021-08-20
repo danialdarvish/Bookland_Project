@@ -27,7 +27,7 @@ namespace _01_BooklandQuery.Query
         }
 
 
-        public BookCategoryQueryModel GetBookCategoryWithBookBy(long id)
+        public BookCategoryQueryModel GetBookCategoryWithBookBy(string slug)
         {
             var inventory = _inventoryContext.Inventory
                 .Select(x => new { x.BookId, x.UnitPrice, x.InStock }).ToList();
@@ -45,7 +45,7 @@ namespace _01_BooklandQuery.Query
                     MetaDescription = x.MetaDescription,
                     Keywords = x.Keywords,
                     Name = x.Name,
-                }).FirstOrDefault(x => x.Id == id);
+                }).FirstOrDefault(x => x.Slug == slug);
 
             var books = _context.Books
                 .Include(x => x.Author)
@@ -62,7 +62,7 @@ namespace _01_BooklandQuery.Query
                     Slug = x.Slug
                 }).ToList();
 
-            foreach (var book in books.Where(book => book.CategoryId.Contains(id)))
+            foreach (var book in books.Where(book => book.CategoryId.Contains(category.Id)))
             {
                 category?.Books.Add(book);
             }

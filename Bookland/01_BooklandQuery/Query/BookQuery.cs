@@ -185,6 +185,7 @@ namespace _01_BooklandQuery.Query
 
         public List<BookQueryModel> GetRelatedBooks(List<long> categoryId, long bookId)
         {
+            var relatedBooks = new List<BookQueryModel>();
             var inventory = _inventoryContext.Inventory
                 .Select(x => new { x.BookId, x.UnitPrice, x.InStock }).ToList();
 
@@ -196,7 +197,6 @@ namespace _01_BooklandQuery.Query
                 .Include(x => x.Author)
                 .Include(x => x.BookCategories)
                 .ThenInclude(x => x.Category)
-                .AsNoTracking()
                 .ToList();
 
             foreach (var book in books)
@@ -206,26 +206,28 @@ namespace _01_BooklandQuery.Query
                     var relatedBookId = book.BookCategories
                         .FirstOrDefault(x => x.CategoryId == category)?.BookId;
                     if (relatedBookId > 0 && relatedBookId != bookId)
-                        books = books.Where(x => x.Id == relatedBookId).ToList();
+                    {
+                        var relatedBook = books.Select(x => new BookQueryModel
+                        {
+                            Id = x.Id,
+                            Name = x.Name,
+                            Slug = x.Slug,
+                            Picture = x.Picture,
+                            PictureAlt = x.PictureAlt,
+                            PictureTitle = x.PictureTitle,
+                            PageCount = x.PageCount,
+                            CategoryId = MapCategoryId(x.Id, x.BookCategories),
+                            CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
+                            AuthorName = x.Author.FullName,
+                            ShortDescription = x.ShortDescription,
+                            IsEditorsChoice = x.IsEditorsChoice
+                        }).FirstOrDefault(x => x.Id == relatedBookId);
+                        relatedBooks.Add(relatedBook);
+                    }
                 }
             }
 
-            var relatedBooks = books
-                .Select(x => new BookQueryModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Slug = x.Slug,
-                    Picture = x.Picture,
-                    PictureAlt = x.PictureAlt,
-                    PictureTitle = x.PictureTitle,
-                    PageCount = x.PageCount,
-                    CategoryId = MapCategoryId(x.Id, x.BookCategories),
-                    CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
-                    AuthorName = x.Author.FullName,
-                    ShortDescription = x.ShortDescription,
-                    IsEditorsChoice = x.IsEditorsChoice
-                }).Shuffle().Take(6).ToList();
+            relatedBooks = relatedBooks.Shuffle().Take(6).ToList();
 
             foreach (var book in relatedBooks)
             {

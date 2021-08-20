@@ -37,7 +37,7 @@
                                                         @foreach (var children in item.Children)
                                                         {
                                                             <ul>
-                                                                <li><a asp-page="./BookCategory" asp-route-id="@children.Id">@children.Name</a></li>
+                                                                <li><a asp-page="./BookCategory" asp-route-id="@children.Slug">@children.Name</a></li>
                                                             </ul>
                                                         }
                                                         <a class="tg-btnviewall" href="products.html">مشاهده همه</a>

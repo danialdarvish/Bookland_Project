@@ -14,7 +14,7 @@ namespace ServiceHost.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            var bookCount = _bookCategoryCountQuery.GetCounts();
+            var bookCount = _bookCategoryCountQuery.GetMainCategoriesWithBookCount();
             return View(bookCount);
         }
     }

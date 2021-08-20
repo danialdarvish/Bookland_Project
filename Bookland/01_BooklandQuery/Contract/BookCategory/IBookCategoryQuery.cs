@@ -4,7 +4,7 @@ namespace _01_BooklandQuery.Contract.BookCategory
 {
     public interface IBookCategoryQuery
     {
-        BookCategoryQueryModel GetBookCategoryWithBookBy(long id);
+        BookCategoryQueryModel GetBookCategoryWithBookBy(string slug);
         List<BookCategoryQueryModel> GetBookCategories();
         List<BookCategoryQueryModel> GetBookCategoriesWithBooks();
     }

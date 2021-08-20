@@ -4,6 +4,7 @@ namespace _01_BooklandQuery.Contract.BookCategoryCount
 {
     public interface IBookCategoryCountQuery
     {
-        List<BookCategoryCountQueryModel> GetCounts();
+        List<BookCategoryCountQueryModel> GetMainCategoriesWithBookCount();
+        List<BookCategoryCountQueryModel> GetSubCategoriesWithBookCount();
     }
 }

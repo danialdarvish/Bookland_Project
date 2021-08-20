@@ -17,10 +17,10 @@ namespace _01_BooklandQuery.Query
         }
 
 
-        public List<BookCategoryCountQueryModel> GetCounts()
+        public List<BookCategoryCountQueryModel> GetMainCategoriesWithBookCount()
         {
             var categories = _shopContext.Categories
-                .Where(x=>x.ParentId == 0)
+                .Where(x => x.ParentId == 0)
                 .Select(x => new BookCategoryCountQueryModel
                 {
                     Id = x.Id,
@@ -30,7 +30,7 @@ namespace _01_BooklandQuery.Query
             foreach (var category in categories)
             {
                 var subCategories = _shopContext.Categories
-                    .Include(x=>x.BookCategories)
+                    .Include(x => x.BookCategories)
                     .Where(x => x.ParentId == category.Id).ToList();
 
                 foreach (var subCategory in subCategories)
@@ -40,8 +40,22 @@ namespace _01_BooklandQuery.Query
             }
 
 
-            return categories.OrderBy(x=>x.BooksCount)
+            return categories.OrderBy(x => x.BooksCount)
                 .Shuffle().Take(4).ToList();
+        }
+
+        public List<BookCategoryCountQueryModel> GetSubCategoriesWithBookCount()
+        {
+            var categories = _shopContext.Categories
+                .Where(x => x.ParentId != 0)
+                .Include(x => x.BookCategories)
+                .ToList();
+
+            return categories.Select(category => new BookCategoryCountQueryModel
+            {
+                BooksCount = category.BookCategories.Count,
+                CategoryName = category.Name
+            }).Shuffle().Take(10).OrderByDescending(x=>x.BooksCount).ToList();
         }
     }
 }

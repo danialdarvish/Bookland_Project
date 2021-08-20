@@ -14,7 +14,7 @@ namespace ServiceHost.Pages
             _bookCategoryQuery = bookCategoryQuery;
         }
 
-        public void OnGet(long id)
+        public void OnGet(string id)
         {
             BookCategory = _bookCategoryQuery.GetBookCategoryWithBookBy(id);
         }
