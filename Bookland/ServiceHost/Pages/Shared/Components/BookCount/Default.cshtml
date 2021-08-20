@@ -1,0 +1,24 @@
+﻿@model List<_01_BooklandQuery.Contract.BookCategoryCount.BookCategoryCountQueryModel>
+
+    <section class="tg-parallax tg-bgcollectioncount tg-haslayout" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-04.jpg">
+        <div class="tg-sectionspace tg-collectioncount tg-haslayout">
+            <div class="container">
+                <div class="row">
+                    <div id="tg-collectioncounters" class="tg-collectioncounters">
+                        @foreach (var item in Model)
+                        {
+                            <div class="tg-collectioncounter">
+                                @*<div class="tg-collectioncountericon">
+                                    <i class="@item.SetIcon().Icon"></i>
+                                </div>*@
+                                <div class="tg-titlepluscounter">
+                                    <h2>@item.CategoryName</h2>
+                                    <h3 data-from="0" data-to="@item.BooksCount" data-speed="10000" data-refresh-interval="50">@item.BooksCount</h3>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

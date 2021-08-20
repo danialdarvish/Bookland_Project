@@ -12,10 +12,10 @@ namespace ServiceHost.ViewComponents
             _bannerQuery = bannerQuery;
         }
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(bool isInIndex)
         {
             var banner = _bannerQuery.GetBanner();
-            return View(banner);
+            return View(isInIndex ? "Default" : "BookDetailsBanner", banner);
         }
     }
 }

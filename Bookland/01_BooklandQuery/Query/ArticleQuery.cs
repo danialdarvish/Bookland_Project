@@ -80,6 +80,7 @@ namespace _01_BooklandQuery.Query
                 .Include(x => x.Category)
                 .Select(x => new ArticleQueryModel
                 {
+                    Id = x.Id,
                     CategoryName = x.Category.Name,
                     Picture = x.Picture,
                     PictureAlt = x.PictureAlt,
@@ -88,7 +89,7 @@ namespace _01_BooklandQuery.Query
                     ShortDescription = x.ShortDescription,
                     Slug = x.Slug,
                     Title = x.Title
-                }).Take(6).ToList();
+                }).OrderByDescending(x=>x.Id).Take(6).ToList();
         }
     }
 }

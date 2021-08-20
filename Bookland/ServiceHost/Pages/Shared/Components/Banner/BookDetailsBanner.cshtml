@@ -1,0 +1,46 @@
+﻿@model _01_BooklandQuery.Contract.Banner.BannerQueryModel
+
+<div class="tg-featureditm">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
+            <figure><img src="~/Pictures/@Model.Picture" alt="@Model.PictureAlt" title="@Model.PictureTitle"></figure>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="tg-featureditmcontent">
+                <div class="tg-themetagbox"><span class="tg-themetag">@Model.Tag</span></div>
+                <div class="tg-booktitle">
+                    <h3><a href="javascript:void(0);">@Model.BookName </a></h3>
+                </div>
+                <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@Model.AuthorName</a></span>
+                <span class="tg-stars"><span></span></span>
+                <div class="tg-priceandbtn">
+                    <span class="tg-bookprice">
+                        @if (Model.IsInStock)
+                        {
+                            @if (Model.HasDiscount)
+                            {
+                                <ins>@Model.PriceWithDiscount تومان</ins>
+                                <del>@Model.Price تومان</del>
+                            }
+                            else
+                            {
+                                <ins>@Model.Price تومان</ins>
+                            }
+                        }
+                        else
+                        {
+                            <ins>به زودی</ins>
+                        }
+                    </span>
+                    @if (Model.IsInStock)
+                    {
+                        <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
+                            <i class="fa fa-shopping-basket"></i>
+                            <em>افزودن به سبد خرید</em>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

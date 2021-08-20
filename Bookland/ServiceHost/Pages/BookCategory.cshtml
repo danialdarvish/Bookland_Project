@@ -123,7 +123,7 @@
                                                     </div>
                                                     <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@book.AuthorName</a></span>
                                                     <span class="tg-stars"><span></span></span>
-                                                    <span class="tg-bookprice">
+                                                    <span class="tg-bookprice" style="margin: 5px">
                                                         @if (book.IsInStock)
                                                         {
                                                             @if (book.HasDiscount)
@@ -131,10 +131,15 @@
                                                                 <ins>@book.PriceWithDiscount تومان</ins>
                                                                 <del>@book.Price تومان</del>
                                                             }
+                                                            else
+                                                            {
+                                                                <ins class="blackText">@book.Price تومان</ins>
+
+                                                            }
                                                         }
                                                         else
                                                         {
-                                                            <ins>نا موجود</ins>
+                                                            <ins class="redText">نا موجود</ins>
                                                         }
                                                   
                                                     </span>

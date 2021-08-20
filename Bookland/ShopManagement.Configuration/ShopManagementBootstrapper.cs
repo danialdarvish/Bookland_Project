@@ -2,6 +2,7 @@
 using _01_BooklandQuery.Contract.Banner;
 using _01_BooklandQuery.Contract.Book;
 using _01_BooklandQuery.Contract.BookCategory;
+using _01_BooklandQuery.Contract.BookCategoryCount;
 using _01_BooklandQuery.Contract.Quote;
 using _01_BooklandQuery.Contract.Slide;
 using _01_BooklandQuery.Query;
@@ -54,6 +55,7 @@ namespace ShopManagement.Configuration
 
             services.AddTransient<ISlideQuery, SlideQuery>();
             services.AddTransient<IBookCategoryQuery, BookCategoryQuery>();
+            services.AddTransient<IBookCategoryCountQuery, BookCategoryCountQuery>();
             services.AddTransient<IBookQuery, BookQuery>();
             services.AddTransient<IAuthorQuery, AuthorQuery>();
             services.AddTransient<IQuoteQuery, QuoteQuery>();
