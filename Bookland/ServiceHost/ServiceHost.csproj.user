@@ -6,5 +6,7 @@
   <PropertyGroup>
     <ActiveDebugProfile>ServiceHost</ActiveDebugProfile>
     <ShowAllFiles>false</ShowAllFiles>
+    <RazorPage_SelectedScaffolderID>RazorPageScaffolder</RazorPage_SelectedScaffolderID>
+    <RazorPage_SelectedScaffolderCategoryPath>root/Common/RazorPage</RazorPage_SelectedScaffolderCategoryPath>
   </PropertyGroup>
 </Project>

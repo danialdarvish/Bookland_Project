@@ -276,7 +276,63 @@ namespace _01_BooklandQuery.Query
 
         public List<BookQueryModel> Search(string value)
         {
-            throw new NotImplementedException();
+            var inventory = _inventoryContext.Inventory
+                .Select(x => new { x.BookId, x.UnitPrice, x.InStock }).ToList();
+
+            var discounts = _discountContext.CustomerDiscounts
+                .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
+                .Select(x => new { x.BookId, x.DiscountRate, x.EndDate });
+
+            var query = _context.Books
+                .Include(x => x.Author)
+                .Include(x => x.BookCategories)
+                .ThenInclude(x => x.Category)
+                .Select(x => new BookQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
+                    CategoryId = MapCategoryId(x.Id, x.BookCategories),
+                    AuthorName = x.Author.FullName,
+                    ShortDescription = x.ShortDescription,
+                    Isbn = x.Isbn,
+                    Slug = x.Slug
+                }).ToList();
+
+            if (!string.IsNullOrWhiteSpace(value))
+                query = query.Where(x => x.Name.Contains(value) || x.ShortDescription.Contains(value) || x.Isbn == value).ToList();
+
+            var books = query.OrderByDescending(x => x.Name.Contains(value)).ToList();
+
+            foreach (var book in books)
+            {
+                var bookInventory = inventory
+                    .FirstOrDefault(x => x.BookId == book.Id);
+                if (bookInventory != null)
+                {
+                    book.IsInStock = bookInventory.InStock;
+                    var price = bookInventory.UnitPrice;
+                    book.Price = price.ToMoney();
+
+                    var discount = discounts
+                        .FirstOrDefault(x => x.BookId == book.Id);
+
+                    if (discount == null) continue;
+
+                    var discountRate = discount.DiscountRate;
+                    book.DiscountRate = discountRate;
+                    book.DiscountExpireDate = discount.EndDate.ToDiscountFormat();
+                    book.HasDiscount = discountRate > 0;
+
+                    var discountAmount = Math.Round((price * discountRate) / 100);
+                    book.PriceWithDiscount = (price - discountAmount).ToMoney();
+                }
+            }
+
+            return books;
         }
     }
 }
