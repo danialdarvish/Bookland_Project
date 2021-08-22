@@ -1,5 +1,4 @@
 using _01_BooklandQuery.Contract.BookCategory;
-using _01_BooklandQuery.Query;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Pages

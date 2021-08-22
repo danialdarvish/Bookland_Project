@@ -58,6 +58,7 @@ namespace _01_BooklandQuery.Query
                     Picture = x.Picture,
                     CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
                     CategoryId = MapCategoryId(x.Id, x.BookCategories),
+                    Categories = MapCategories(x.Id, x.BookCategories),
                     AuthorName = x.Author.FullName,
                     Slug = x.Slug
                 }).ToList();
@@ -106,6 +107,17 @@ namespace _01_BooklandQuery.Query
         {
             return bookCategories.Where(x => x.BookId == id)
                 .Select(x => x.Category.Id).ToList();
+        }
+        private static List<CategoryQueryModel> MapCategories(long bookId, List<BookCategory> bookCategories)
+        {
+            return bookCategories
+                .Where(x => x.BookId == bookId)
+                .Select(x => new CategoryQueryModel
+                {
+                    Id = x.CategoryId,
+                    Name = x.Category.Name,
+                    Slug = x.Category.Slug
+                }).ToList();
         }
 
         public List<BookCategoryQueryModel> GetBookCategories()

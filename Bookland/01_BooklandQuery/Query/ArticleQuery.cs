@@ -31,6 +31,7 @@ namespace _01_BooklandQuery.Query
                 {
                     Id = x.Id,
                     CategoryName = x.Category.Name,
+                    CategoryId = x.CategoryId,
                     CanonicalAddress = x.CanonicalAddress,
                     CategorySlug = x.Category.Slug,
                     Description = x.Description,
@@ -71,6 +72,25 @@ namespace _01_BooklandQuery.Query
             article.Comments = comments;
 
             return article;
+        }
+
+        public List<ArticleQueryModel> GetRelatedArticles(long categoryId)
+        {
+            return _context.Articles
+                .Where(x => x.CategoryId == categoryId)
+                .Include(x => x.Category)
+                .Select(x => new ArticleQueryModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    CategoryName = x.Category.Name,
+                    PublishDate = x.PublishDate.ToFarsi(),
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    Slug = x.Slug,
+                    ShortDescription = x.ShortDescription,
+                }).OrderByDescending(x => x.Id).ToList();
         }
 
         public List<ArticleQueryModel> LatestArticles()

@@ -1,0 +1,38 @@
+﻿@model List<_01_BooklandQuery.Contract.Article.ArticleQueryModel>
+
+<div class="tg-relatedproducts">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="tg-sectionhead">
+            <h2><span>همچنین ببینید</span>مقالات مرتبط</h2>
+            <a class="tg-btn" href="javascript:void(0);">مشاهده همه</a>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="tg-relatedproductslider" class="tg-relatedproductslider tg-relatedbooks owl-carousel">
+            @foreach (var article in Model)
+            {
+                <article class="item tg-post">
+                    <figure>
+                        <a asp-page="/Article" asp-route-id="@article.Slug">
+                            <img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle">
+                        </a>
+                    </figure>
+                    <div class="tg-postcontent">
+                        <ul class="tg-bookscategories">
+                            <li><a href="javascript:void(0);">@article.CategoryName</a></li>
+                        </ul>
+                        <div class="tg-themetagbox"><span class="tg-themetag">مرتبط</span></div>
+                        <div class="tg-posttitle">
+                            <h3><a asp-page="/Article" asp-route-id="@article.Slug">@article.Title</a></h3>
+                        </div>
+                        <ul class="tg-postmetadata">
+                            <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i><i>@article.PublishDate</i></a></li>
+                        </ul>
+                    </div>
+                </article>
+            }
+        </div>
+    </div>
+</div>
+
+

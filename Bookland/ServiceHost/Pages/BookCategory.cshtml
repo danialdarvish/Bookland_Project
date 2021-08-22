@@ -115,7 +115,10 @@
                                                 </figure>
                                                 <div class="tg-postbookcontent">
                                                     <ul class="tg-bookscategories">
-                                                        <li><a href="javascript:void(0);">@string.Join("، ", book.CategoryNames)</a></li>
+                                                        @foreach (var category in book.Categories)
+                                                        {
+                                                            <li><a asp-page="/BookCategory" asp-route-id="@category.Slug">@category.Name</a></li>
+                                                        }
                                                     </ul>
                                                     <div class="tg-themetagbox"><span class="tg-themetag">فروش</span></div>
                                                     <div class="tg-booktitle">

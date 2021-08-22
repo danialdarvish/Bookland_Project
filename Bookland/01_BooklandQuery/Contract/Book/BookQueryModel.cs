@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _01_BooklandQuery.Contract.BookCategory;
 using _01_BooklandQuery.Contract.Comment;
 
 namespace _01_BooklandQuery.Contract.Book
@@ -36,5 +37,11 @@ namespace _01_BooklandQuery.Contract.Book
 
         public string AuthorName { get; set; }
         public List<CommentQueryModel> Comments { get; set; }
+        public List<CategoryQueryModel> Categories { get; set; }
+
+        public BookQueryModel()
+        {
+            Categories = new List<CategoryQueryModel>();
+        }
     }
 }

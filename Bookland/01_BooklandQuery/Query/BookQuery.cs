@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _01_BooklandQuery.Contract.Book;
+using _01_BooklandQuery.Contract.BookCategory;
 using _01_BooklandQuery.Contract.Comment;
 using _01_Framework.Application;
 using CommentManagement.Infrastructure.EFCore;
@@ -64,7 +65,8 @@ namespace _01_BooklandQuery.Query
                     Slug = x.Slug,
                     IsEditorsChoice = x.IsEditorsChoice,
                     CategoryId = MapCategoryId(x.Id, x.BookCategories),
-                    CategoryNames = MapCategoryNames(x.Id, x.BookCategories)
+                    CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
+                    Categories = MapCategories(x.Id, x.BookCategories)
                 })
                 .FirstOrDefault(x => x.Slug == slug);
 
@@ -218,6 +220,7 @@ namespace _01_BooklandQuery.Query
                             PageCount = x.PageCount,
                             CategoryId = MapCategoryId(x.Id, x.BookCategories),
                             CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
+                            Categories = MapCategories(x.Id, x.BookCategories),
                             AuthorName = x.Author.FullName,
                             ShortDescription = x.ShortDescription,
                             IsEditorsChoice = x.IsEditorsChoice
@@ -267,6 +270,18 @@ namespace _01_BooklandQuery.Query
         {
             return bookCategories.Where(x => x.BookId == bookId)
                 .Select(x => x.Category.Id).ToList();
+        }
+
+        private static List<CategoryQueryModel> MapCategories(long bookId, List<BookCategory> bookCategories)
+        {
+            return bookCategories
+                .Where(x => x.BookId == bookId)
+                .Select(x => new CategoryQueryModel
+                {
+                    Id = x.CategoryId,
+                    Name = x.Category.Name,
+                    Slug = x.Category.Slug
+                }).ToList();
         }
 
         public List<BookQueryModel> GetLatestArrivals()

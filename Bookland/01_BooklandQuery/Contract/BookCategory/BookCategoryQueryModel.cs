@@ -20,8 +20,8 @@ namespace _01_BooklandQuery.Contract.BookCategory
 
         public BookCategoryQueryModel()
         {
-            Children = new List<BookCategoryQueryModel>();
             Books = new List<BookQueryModel>();
+            Children = new List<BookCategoryQueryModel>();
         }
     }
 }
