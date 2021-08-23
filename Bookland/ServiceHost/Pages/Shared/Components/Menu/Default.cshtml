@@ -78,11 +78,12 @@
                             <li><a href="products.html">پرفروش ترین</a></li>
                             <li><a href="products.html">تخفیف هفته</a></li>
                             <li class="menu-item-has-children">
-                                <a href="javascript:void(0);">آخرین اخبار</a>
+                                <a href="javascript:void(0);">مقالات</a>
                                 <ul class="sub-menu">
-                                    <li><a href="newslist.html">لیست اخبار</a></li>
-                                    <li><a href="newsgrid.html">گرید اخبار</a></li>
-                                    <li><a href="newsdetail.html">جزییات خبر </a></li>
+                                    @foreach (var category in Model.ArticleCategories)
+                                    {
+                                        <li><a asp-page="./ArticleCategory" asp-route-id="@category.Slug">@category.Name</a></li>
+                                    }
                                 </ul>
                             </li>
                             <li><a href="contactus.html">ارتباط با ما</a></li>

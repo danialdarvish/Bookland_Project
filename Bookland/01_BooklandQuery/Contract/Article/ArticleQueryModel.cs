@@ -21,6 +21,7 @@ namespace _01_BooklandQuery.Contract.Article
         public long CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategorySlug { get; set; }
+        public string CommentCount { get; set; }
         public List<CommentQueryModel> Comments { get; set; }
     }
 }

@@ -5,6 +5,8 @@ using _01_BooklandQuery.Contract.ArticleCategory;
 using _01_Framework.Application;
 using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Infrastructure.EFCore;
+using CommentManagement.Domain.CommentAgg;
+using CommentManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace _01_BooklandQuery.Query
@@ -12,15 +14,19 @@ namespace _01_BooklandQuery.Query
     public class ArticleCategoryQuery : IArticleCategoryQuery
     {
         private readonly BlogContext _context;
-
-        public ArticleCategoryQuery(BlogContext context)
+        private readonly CommentContext _commentContext;
+        public ArticleCategoryQuery(BlogContext context, CommentContext commentContext)
         {
             _context = context;
+            _commentContext = commentContext;
         }
 
 
         public ArticleCategoryQueryModel GetArticleCategory(string slug)
         {
+            var comments = _commentContext.Comments
+                .Where(x => x.Type == CommentType.Article).ToList();
+
             var articleCategory = _context.ArticleCategories
                 .Include(x => x.Articles)
                 .Select(x => new ArticleCategoryQueryModel
@@ -35,7 +41,7 @@ namespace _01_BooklandQuery.Query
                     Keywords = x.Keywords,
                     MetaDescription = x.MetaDescription,
                     ArticlesCount = x.Articles.Count,
-                    Articles = MapArticles(x.Articles)
+                    Articles = MapArticles(x.Articles, comments)
                 }).FirstOrDefault(x => x.Slug == slug);
 
             if (articleCategory != null)
@@ -45,7 +51,7 @@ namespace _01_BooklandQuery.Query
 
         }
 
-        private static List<ArticleQueryModel> MapArticles(List<Article> articles)
+        private static List<ArticleQueryModel> MapArticles(List<Article> articles, List<Comment> comments)
         {
             return articles.Select(x => new ArticleQueryModel
             {
@@ -55,8 +61,14 @@ namespace _01_BooklandQuery.Query
                 Picture = x.Picture,
                 PictureTitle = x.PictureTitle,
                 PictureAlt = x.PictureAlt,
-                PublishDate = x.PublishDate.ToFarsi()
+                PublishDate = x.PublishDate.ToFarsi(),
+                CommentCount = CountComments(x.Id, comments)
             }).ToList();
+        }
+
+        private static string CountComments(long articleId, List<Comment> comments)
+        {
+            return comments.Where(x => x.OwnerRecordId == articleId).Count().ToString();
         }
 
         public List<ArticleCategoryQueryModel> GetArticleCategories()
@@ -70,7 +82,7 @@ namespace _01_BooklandQuery.Query
                     PictureAlt = x.PictureAlt,
                     PictureTitle = x.PictureTitle,
                     Slug = x.Slug,
-                    ArticlesCount = x.Articles.Count,
+                    ArticlesCount = x.Articles.Count
                 }).ToList();
         }
     }

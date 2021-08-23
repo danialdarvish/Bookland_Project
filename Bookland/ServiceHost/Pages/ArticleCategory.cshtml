@@ -1,0 +1,152 @@
+﻿@page
+@model ServiceHost.Pages.ArticleCategoryModel
+@{
+}
+
+<!--************************************
+                Inner Banner Start
+        *************************************-->
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/parallax/bgparallax-07.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-innerbannercontent">
+                    <h1>@Model.ArticleCategory.Name</h1>
+                    <ol class="tg-breadcrumb">
+                        <li><a asp-page="Index">خانه</a></li>
+                        <li class="tg-active">مقالات</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--************************************
+        Inner Banner End
+*************************************-->
+<!--************************************
+        Main Start
+*************************************-->
+<main id="tg-main" class="tg-main tg-haslayout">
+    <!--************************************
+            News Grid Start
+    *************************************-->
+    <div class="tg-sectionspace tg-haslayout">
+        <div class="container">
+            <div class="row">
+                <div id="tg-twocolumns" class="tg-twocolumns">
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
+                        <div id="tg-content" class="tg-content">
+                            <div class="tg-newsgrid">
+                                <div class="tg-sectionhead">
+                                    <h2><span>لیست مقالات</span> @Model.ArticleCategory.Name</h2>
+                                </div>
+                                <div class="row">
+                                    @foreach (var article in Model.ArticleCategory.Articles)
+                                    {
+                                        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-4">
+                                            <article class="tg-post">
+                                                <figure><a href="javascript:void(0);"><img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle"></a></figure>
+                                                <div class="tg-postcontent">
+                                                    <ul class="tg-bookscategories">
+                                                        <li>@article.CategoryName</li>
+                                                    </ul>
+                                                    @*<div class="tg-themetagbox"><span class="tg-themetag">جدیدترین‌ها</span></div>*@
+                                                    <div class="tg-posttitle">
+                                                        <h3><a asp-page="/Article" asp-route-id="@article.Slug">@article.Title</a></h3>
+                                                    </div>
+                                                    @*<span class="tg-bookwriter">توسط: <a href="javascript:void(0);">کاترین کالبوستون</a></span>*@
+                                                    <ul class="tg-postmetadata">
+                                                        <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>@article.CommentCount نظر</i></a></li>
+                                                        <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i><i>@article.PublishDate</i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
+                        <aside id="tg-sidebar" class="tg-sidebar">
+                            <div class="tg-widget tg-widgetsearch">
+                                <form class="tg-formtheme tg-formsearch">
+                                    <div class="form-group">
+                                        <button type="submit"><i class="icon-magnifier"></i></button>
+                                        <input type="search" name="search" class="form-group" placeholder="جستجو">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tg-widget tg-catagories">
+                                <div class="tg-widgettitle">
+                                    <h3>دسته‌بندی‌ها</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        @foreach (var category in Model.ArticleCategories)
+                                        {
+                                            <li><a asp-page="/ArticleCategory" asp-route-id="@category.Slug"><span>@category.Name</span><em>@category.ArticlesCount</em></a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgettrending">
+                                <div class="tg-widgettitle">
+                                    <h3>مقالات اخیر</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        @foreach (var article in Model.LatestArticles)
+                                        {
+                                            <li>
+                                                <article class="tg-post">
+                                                    <figure><a href="javascript:void(0);"><img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle"></a></figure>
+                                                    <div class="tg-postcontent">
+                                                        <div class="tg-posttitle">
+                                                            <h3><a href="javascript:void(0);">@article.Title</a></h3>
+                                                        </div>
+                                                        <ul class="tg-postmetadata">
+                                                            <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i><i>@article.PublishDate</i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </article>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgetblogers">
+                                <div class="tg-widgettitle">
+                                    <h3>نویسنده های برتر</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        @foreach (var author in Model.Authors)
+                                        {
+                                            <li>
+                                                <div class="tg-author">
+                                                    <figure><a href="javascript:void(0);"><img src="~/Pictures/@author.Picture" alt="@author.PictureAlt" title="@author.PictureTitle"></a></figure>
+                                                    <div class="tg-authorcontent">
+                                                        <h2><a href="javascript:void(0);">@author.FullName</a></h2>
+                                                        <span>@author.BooksCount کتاب در سایت</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--************************************
+            News Grid End
+    *************************************-->
+</main>
+<!--************************************
+        Main End
+*************************************-->

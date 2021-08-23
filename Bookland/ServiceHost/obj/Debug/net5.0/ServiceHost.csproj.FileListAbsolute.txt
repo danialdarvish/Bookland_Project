@@ -189,3 +189,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Books.cshtml.g.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\RelatedArticles\Default.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\ArticleCategory.cshtml.g.cs
