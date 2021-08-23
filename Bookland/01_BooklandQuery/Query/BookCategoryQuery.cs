@@ -60,6 +60,7 @@ namespace _01_BooklandQuery.Query
                     CategoryId = MapCategoryId(x.Id, x.BookCategories),
                     Categories = MapCategories(x.Id, x.BookCategories),
                     AuthorName = x.Author.FullName,
+                    AuthorSlug = x.Author.Slug,
                     Slug = x.Slug
                 }).ToList();
 

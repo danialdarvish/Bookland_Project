@@ -4,6 +4,7 @@
     {
         public long Id { get; set; }
         public string BookName { get; set; }
+        public string BookSlug { get; set; }
         public string AuthorName { get; set; }
         public string Picture { get; set; }
         public string PictureAlt { get; set; }

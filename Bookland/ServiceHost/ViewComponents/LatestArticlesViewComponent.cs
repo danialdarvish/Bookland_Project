@@ -13,10 +13,10 @@ namespace ServiceHost.ViewComponents
         }
 
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(string type)
         {
             var latestArticles = _articleQuery.LatestArticles();
-            return View(latestArticles);
+            return View(type, latestArticles);
         }
     }
 }

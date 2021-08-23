@@ -1,0 +1,23 @@
+﻿@model List<_01_BooklandQuery.Contract.Author.AuthorQueryModel>
+
+<div class="tg-widget tg-widgetblogers">
+    <div class="tg-widgettitle">
+        <h3>نویسنده های برتر</h3>
+    </div>
+    <div class="tg-widgetcontent">
+        <ul>
+            @foreach (var author in Model)
+            {
+                <li>
+                    <div class="tg-author">
+                        <figure><a><img src="~/Pictures/@author.Picture" alt="@author.PictureAlt" title="@author.PictureTitle"></a></figure>
+                        <div class="tg-authorcontent">
+                            <h2><a asp-page="/AuthorDetail" asp-route-id="@author.Slug">@author.FullName</a></h2>
+                            <span>@author.BooksCount کتاب در سایت</span>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

@@ -13,10 +13,10 @@ namespace ServiceHost.ViewComponents
         }
 
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(string type)
         {
             var bestAuthors = _authorQuery.GetBestAuthors();
-            return View(bestAuthors);
+            return View(type, bestAuthors);
         }
     }
 }

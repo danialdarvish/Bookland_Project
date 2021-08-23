@@ -15,7 +15,7 @@
                     <div class="item tg-author">
                         <figure><a href="javascript:void(0);"><img src="~/Pictures/@author.Picture" alt="@author.PictureAlt" title="@author.PictureTitle"></a></figure>
                         <div class="tg-authorcontent">
-                            <h2><a href="javascript:void(0);">@author.FullName</a></h2>
+                            <h2><a asp-page="./AuthorDetail" asp-route-id="@author.Slug">@author.FullName</a></h2>
                             <span>@author.BooksCount کتاب در سایت</span>
                             <ul class="tg-socialicons">
                                 <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>

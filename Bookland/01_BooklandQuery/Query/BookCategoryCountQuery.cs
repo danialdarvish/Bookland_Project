@@ -54,7 +54,8 @@ namespace _01_BooklandQuery.Query
             return categories.Select(category => new BookCategoryCountQueryModel
             {
                 BooksCount = category.BookCategories.Count,
-                CategoryName = category.Name
+                CategoryName = category.Name,
+                Slug = category.Slug
             }).Shuffle().Take(10).OrderByDescending(x=>x.BooksCount).ToList();
         }
     }

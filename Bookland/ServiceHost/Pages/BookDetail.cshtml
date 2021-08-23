@@ -13,8 +13,8 @@
                 <div class="tg-innerbannercontent">
                     <h1>محصولات</h1>
                     <ol class="tg-breadcrumb">
-                        <li><a href="javascript:void(0);">خانه</a></li>
-                        <li><a href="javascript:void(0);">کتاب ها</a></li>
+                        <li><a asp-page="/Index">خانه</a></li>
+                        <li><a>کتاب ها</a></li>
                         <li class="tg-active">@Model.Book.Name</li>
                     </ol>
                 </div>
@@ -23,16 +23,8 @@
     </div>
 </div>
 
-
-
-<!--************************************
-        Main Start
-*************************************-->
 <main id="tg-main" class="tg-main tg-haslayout">
-    <!--************************************
-            News Grid Start
-    *************************************-->
-    <div class="tg-sectionspace tg-haslayout">
+<div class="tg-sectionspace tg-haslayout">
         <div class="container">
             <div class="row">
                 <div id="tg-twocolumns" class="tg-twocolumns">
@@ -42,8 +34,9 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
+
                                 @await Component.InvokeAsync("Banner", false)
-                                
+
                             </div>
                             <div class="tg-productdetail">
                                 <div class="row">
@@ -109,7 +102,7 @@
                                             <div class="tg-booktitle">
                                                 <h3>@Model.Book.Name</h3>
                                             </div>
-                                            <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@Model.Book.AuthorName</a></span>
+                                            <span class="tg-bookwriter">توسط: <a asp-page="/AuthorDetail" asp-route-id="@Model.Book.AuthorSlug">@Model.Book.AuthorName</a></span>
                                             <span class="tg-stars"><span></span></span>
                                             <span class="tg-addreviews"><a href="javascript:void(0);">ارسال رتبه</a></span>
                                             <div class="tg-share">
@@ -242,7 +235,7 @@
                                         </form>
                                     </div>
 
-                                    @await Component.InvokeAsync("RelatedBooks", new { Model.Book.CategoryId, Model.Book.Id})
+                                    @await Component.InvokeAsync("RelatedBooks", new { Model.Book.CategoryId, Model.Book.Id })
 
                                 </div>
                             </div>
@@ -258,71 +251,12 @@
                                     </div>
                                 </form>
                             </div>
-                  
-                            <div class="tg-widget tg-catagories">
-                                <div class="tg-widgettitle">
-                                    <h3>دسته ‌بندی ‌ها</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        @foreach (var category in Model.BookCategories)
-                                        {
-                                            <li><a href="javascript:void(0);"><span>@category.CategoryName</span><em>@category.BooksCount</em></a></li>
-                                        }
-                                    </ul>
-                                </div>
-                            </div> 
 
-                            <div class="tg-widget tg-widgettrending">
-                                <div class="tg-widgettitle">
-                                    <h3>مقالات اخیر</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        @foreach (var article in Model.LatestArticles)
-                                        {
-                                            <li>
-                                                <article class="tg-post">
-                                                    <figure style=" width: 70px; height: 70px;">
-                                                        <a style=" width: 70px; height: 70px;">
-                                                            <img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle" style="width: 70px;height: 70px; margin: -6px;"/>
-                                                        </a>
-                                                    </figure>
-                                                    <div class="tg-postcontent">
-                                                        <div class="tg-posttitle">
-                                                            <h3><a asp-page="/Article" asp-route-id="@article.Slug">@article.Title</a></h3>
-                                                        </div>
-                                                        <span class="tg-bookwriter"><a href="javascript:void(0);">@article.CategoryName</a></span>
-                                                    </div>
-                                                </article>
-                                            </li>
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
+                            @await Component.InvokeAsync("BookCategoriesSideBar")
 
-                            <div class="tg-widget tg-widgetblogers">
-                                <div class="tg-widgettitle">
-                                    <h3>نویسنده های برتر</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        @foreach (var author in Model.Authors)
-                                        {
-                                            <li>
-                                                <div class="tg-author">
-                                                    <figure><a><img src="~/Pictures/@author.Picture" alt="@author.PictureAlt" title="@author.PictureTitle"></a></figure>
-                                                    <div class="tg-authorcontent">
-                                                        <h2><a href="javascript:void(0);">@author.FullName</a></h2>
-                                                        <span>@author.BooksCount کتاب در سایت</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        }
-                                        
-                                    </ul>
-                                </div>
-                            </div>
+                            @await Component.InvokeAsync("LatestArticles", "SideBar")
+
+                            @await Component.InvokeAsync("BestAuthors", "SideBar")
                         </aside>
                     </div>
                 </div>

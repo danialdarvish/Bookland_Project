@@ -1,0 +1,15 @@
+﻿@model List<_01_BooklandQuery.Contract.BookCategoryCount.BookCategoryCountQueryModel>
+
+<div class="tg-widget tg-catagories">
+    <div class="tg-widgettitle">
+        <h3>دسته ‌بندی ‌ها</h3>
+    </div>
+    <div class="tg-widgetcontent">
+        <ul>
+            @foreach (var category in Model)
+            {
+                <li><a asp-page="/BookCategory" asp-route-id="@category.Slug"><span>@category.CategoryName</span><em>@category.BooksCount</em></a></li>
+            }
+        </ul>
+    </div>
+</div>

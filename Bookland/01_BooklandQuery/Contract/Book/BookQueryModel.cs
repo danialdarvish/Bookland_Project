@@ -36,6 +36,7 @@ namespace _01_BooklandQuery.Contract.Book
         public bool IsEditorsChoice { get; set; }
 
         public string AuthorName { get; set; }
+        public string AuthorSlug { get; set; }
         public List<CommentQueryModel> Comments { get; set; }
         public List<CategoryQueryModel> Categories { get; set; }
 

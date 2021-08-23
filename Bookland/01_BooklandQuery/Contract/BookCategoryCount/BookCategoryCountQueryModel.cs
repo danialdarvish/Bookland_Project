@@ -7,6 +7,7 @@
         public long BooksCount { get; set; }
         public string Icon { get; set; }
         public string Color { get; set; }
+        public string Slug { get; set; }
 
         //public BookCategoryCountQueryModel SetIcon()
         //{

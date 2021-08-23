@@ -3,10 +3,7 @@
 @{
 }
 
-<!--************************************
-                Inner Banner Start
-        *************************************-->
-<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/parallax/bgparallax-07.jpg">
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -21,16 +18,8 @@
         </div>
     </div>
 </div>
-<!--************************************
-        Inner Banner End
-*************************************-->
-<!--************************************
-        Main Start
-*************************************-->
+
 <main id="tg-main" class="tg-main tg-haslayout">
-    <!--************************************
-            News Grid Start
-    *************************************-->
     <div class="tg-sectionspace tg-haslayout">
         <div class="container">
             <div class="row">
@@ -101,13 +90,17 @@
                                         {
                                             <li>
                                                 <article class="tg-post">
-                                                    <figure><a href="javascript:void(0);"><img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle"></a></figure>
+                                                    <figure style="width: 70px; height: 70px;">
+                                                        <a asp-page="/Article" asp-route-id="@article.Slug" style="width: 70px; height: 70px;">
+                                                            <img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle" style="width: 70px;height: 70px; margin: -6px;">
+                                                        </a>
+                                                    </figure>
                                                     <div class="tg-postcontent">
                                                         <div class="tg-posttitle">
-                                                            <h3><a href="javascript:void(0);">@article.Title</a></h3>
+                                                            <h3><a asp-page="/Article" asp-route-id="@article.Slug">@article.Title</a></h3>
                                                         </div>
                                                         <ul class="tg-postmetadata">
-                                                            <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i><i>@article.PublishDate</i></a></li>
+                                                            <li><i class="fa fa-calendar"></i><i>@article.PublishDate</i></li>
                                                         </ul>
                                                     </div>
                                                 </article>
@@ -143,10 +136,5 @@
             </div>
         </div>
     </div>
-    <!--************************************
-            News Grid End
-    *************************************-->
 </main>
-<!--************************************
-        Main End
-*************************************-->
+

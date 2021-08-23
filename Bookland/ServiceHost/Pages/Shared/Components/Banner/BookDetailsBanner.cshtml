@@ -9,7 +9,7 @@
             <div class="tg-featureditmcontent">
                 <div class="tg-themetagbox"><span class="tg-themetag">@Model.Tag</span></div>
                 <div class="tg-booktitle">
-                    <h3><a href="javascript:void(0);">@Model.BookName </a></h3>
+                    <h3><a asp-page="./BookDetail" asp-route-id="@Model.BookSlug">@Model.BookName</a></h3>
                 </div>
                 <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@Model.AuthorName</a></span>
                 <span class="tg-stars"><span></span></span>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _01_BooklandQuery.Contract.Book;
 using ShopManagement.Application.Contracts.Book;
 
 namespace _01_BooklandQuery.Contract.Author
@@ -13,6 +14,6 @@ namespace _01_BooklandQuery.Contract.Author
         public string PictureTitle { get; set; }
         public string Slug { get; set; }
         public int BooksCount { get; set; }
-        public List<BookViewModel> Books { get; set; }
+        public List<BookQueryModel> Books { get; set; }
     }
 }

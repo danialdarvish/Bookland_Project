@@ -46,7 +46,8 @@ namespace _01_BooklandQuery.Query
                     PictureAlt = x.PictureAlt,
                     PictureTitle = x.PictureTitle,
                     Tag = x.Tag,
-                    BookId = x.BookId
+                    BookId = x.BookId,
+                    BookSlug = x.Book.Slug
                 }).AsNoTracking().AsEnumerable().Shuffle().Take(1).SingleOrDefault();
 
             if (banner == null) return new BannerQueryModel();

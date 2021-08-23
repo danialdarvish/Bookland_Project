@@ -4,34 +4,24 @@
     ViewData["Title"] = "نتیجه جستجو";
 }
 
-<!--************************************
-                Inner Banner Start
-        *************************************-->
-<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/parallax/bgparallax-07.jpg">
+
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="tg-innerbannercontent">
                     <h1>محصولات</h1>
                     <ol class="tg-breadcrumb">
-                        <li><a href="javascript:void(0);">خانه</a></li>
-                        <li class="tg-active">محصولات</li>
+                        <li><a asp-page="/Index">خانه</a></li>
+                        <li class="tg-active">جستجو</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--************************************
-        Inner Banner End
-*************************************-->
-<!--************************************
-        Main Start
-*************************************-->
+
 <main id="tg-main" class="tg-main tg-haslayout">
-    <!--************************************
-            News Grid Start
-    *************************************-->
     <div class="tg-sectionspace tg-haslayout">
         <div class="container">
             <div class="row">
@@ -46,33 +36,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                    <div class="tg-featureditm">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
-                                                <figure><img src="images/img-04.png" alt="image description"></figure>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                                                <div class="tg-featureditmcontent">
-                                                    <div class="tg-themetagbox"><span class="tg-themetag">جدیدترین‌ها</span></div>
-                                                    <div class="tg-booktitle">
-                                                        <h3><a href="javascript:void(0);">چیزهایی که راجع به طراحی فلت باید دونست </a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">فرح شکوفا</a></span>
-                                                    <span class="tg-stars"><span></span></span>
-                                                    <div class="tg-priceandbtn">
-                                                        <span class="tg-bookprice">
-                                                            <ins>230 تومان</ins>
-                                                            <del>302 تومان</del>
-                                                        </span>
-                                                        <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
-                                                            <i class="fa fa-shopping-basket"></i>
-                                                            <em>افزودن به سبدخرید</em>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @await Component.InvokeAsync("Banner", false)
                                 </div>
                                 <div class="tg-productgrid">
                                     <div class="tg-refinesearch">
@@ -118,9 +82,9 @@
                                                 </figure>
                                                 <div class="tg-postbookcontent">
                                                     <ul class="tg-bookscategories">
-                                                        @foreach (var category in book.CategoryNames)
+                                                        @foreach (var category in book.Categories)
                                                         {
-                                                            <li><a href="javascript:void(0);">@category</a></li>
+                                                            <li><a asp-page="/BookCategory" asp-route-id="@category.Slug">@category.Name</a></li>
                                                         }
                                                     </ul>
                                                     @*<div class="tg-themetagbox"><span class="tg-themetag">فروش</span></div>*@
@@ -170,197 +134,16 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="tg-widget tg-catagories">
-                                <div class="tg-widgettitle">
-                                    <h3>دسته‌بندی‌ها</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        <li><a href="javascript:void(0);"><span>هنر و عکاسی</span><em>28245</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>بیوگرافی</span><em>4856</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>کتاب کودکان</span><em>8654</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>هنر و سرگرمی</span><em>6247</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>جنایی و ترسناک</span><em>888654</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>فانتزی و ترسناک</span><em>873144</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>تخیلی</span><em>18465</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>آشپزی و دسر</span><em>3148</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>گرافیک، مانگا و انیمه</span><em>77531</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>علمی تخیلی</span><em>9247</em></a></li>
-                                        <li><a href="javascript:void(0);"><span>مشاهده همه</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tg-widget tg-widgettrending">
-                                <div class="tg-widgettitle">
-                                    <h3>محصولات ترند</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="images/products/img-04.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">وحشی ها کجا رفتند؟</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">کاترین کالبوستون</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="images/products/img-05.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">وحشی ها کجا رفتند؟</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">کاترین کالبوستون</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="images/products/img-06.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">وحشی ها کجا رفتند؟</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">کاترین کالبوستون</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                        <li>
-                                            <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="images/products/img-07.jpg" alt="image description"></a></figure>
-                                                <div class="tg-postcontent">
-                                                    <div class="tg-posttitle">
-                                                        <h3><a href="javascript:void(0);">وحشی ها کجا رفتند؟</a></h3>
-                                                    </div>
-                                                    <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">کاترین کالبوستون</a></span>
-                                                </div>
-                                            </article>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tg-widget tg-widgetinstagram">
-                                <div class="tg-widgettitle">
-                                    <h3>اینستاگرام</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-01.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-02.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-03.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-04.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-05.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-06.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-07.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-08.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/instagram/img-09.jpg" alt="image description">
-                                                <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
-                                            </figure>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tg-widget tg-widgetblogers">
-                                <div class="tg-widgettitle">
-                                    <h3>برترین بلاگرها</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-03.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
-                                                    <span>21,658 کتاب منتشرشده</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-04.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
-                                                    <span>21,658 کتاب منتشرشده</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-05.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
-                                                    <span>21,658 کتاب منتشرشده</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="tg-author">
-                                                <figure><a href="javascript:void(0);"><img src="images/author/imag-06.jpg" alt="image description"></a></figure>
-                                                <div class="tg-authorcontent">
-                                                    <h2><a href="javascript:void(0);">جودی مورفی</a></h2>
-                                                    <span>21,658 کتاب منتشرشده</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
+                            @await Component.InvokeAsync("BookCategoriesSideBar")
+
+                            @await Component.InvokeAsync("LatestArticles", "SideBar")
+
+                            @await Component.InvokeAsync("BestAuthors", "SideBar")
                         </aside>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--************************************
-            News Grid End
-    *************************************-->
 </main>
-<!--************************************
-        Main End
-*************************************-->
