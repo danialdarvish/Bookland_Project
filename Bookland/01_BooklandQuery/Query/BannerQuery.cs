@@ -42,6 +42,7 @@ namespace _01_BooklandQuery.Query
                     Id = x.Id,
                     BookName = x.Book.Name,
                     AuthorName = x.Book.Author.FullName,
+                    AuthorSlug = x.Book.Author.Slug,
                     Picture = x.Picture,
                     PictureAlt = x.PictureAlt,
                     PictureTitle = x.PictureTitle,

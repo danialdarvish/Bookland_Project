@@ -11,7 +11,7 @@
                 <div class="tg-booktitle">
                     <h3><a asp-page="./BookDetail" asp-route-id="@Model.BookSlug">@Model.BookName</a></h3>
                 </div>
-                <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@Model.AuthorName</a></span>
+                <span class="tg-bookwriter">توسط: <a asp-page="./AuthorDetail" asp-route-id="@Model.AuthorSlug">@Model.AuthorName</a></span>
                 <span class="tg-stars"><span></span></span>
                 <div class="tg-priceandbtn">
                     <span class="tg-bookprice">

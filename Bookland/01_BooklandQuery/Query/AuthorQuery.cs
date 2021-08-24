@@ -28,6 +28,22 @@ namespace _01_BooklandQuery.Query
         }
 
 
+        public List<AuthorQueryModel> GetAllAuthors()
+        {
+            return _shopContext.Authors
+                .Include(x => x.Books)
+                .Select(x => new AuthorQueryModel
+                {
+                    Id = x.Id,
+                    FullName = x.FullName,
+                    BooksCount = x.Books.Count,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    Slug = x.Slug
+                }).OrderByDescending(x=>x.BooksCount).ToList();
+        }
+
         public AuthorQueryModel GetAuthorDetails(string authorSlug)
         {
             var inventory = _inventoryContext.Inventory
@@ -38,9 +54,9 @@ namespace _01_BooklandQuery.Query
                 .Select(x => new { x.BookId, x.DiscountRate, x.EndDate });
 
             var author = _shopContext.Authors
-                .Include(x=>x.Books)
-                .ThenInclude(x=>x.BookCategories)
-                .ThenInclude(x=>x.Category)
+                .Include(x => x.Books)
+                .ThenInclude(x => x.BookCategories)
+                .ThenInclude(x => x.Category)
                 .Select(x => new AuthorQueryModel
                 {
                     Id = x.Id,

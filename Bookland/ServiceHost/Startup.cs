@@ -1,6 +1,9 @@
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using _01_BooklandQuery.Contract.Status;
 using _01_BooklandQuery.Query;
 using _01_Framework.Application;
+using AccountManagement.Configuration;
 using BlogManagement.Configuration;
 using CommentManagement.Infrastructure.Configuration;
 using DiscountManagement.Configuration;
@@ -31,10 +34,13 @@ namespace ServiceHost
             InventoryManagementBootstrapper.Configure(services, connectionString);
             CommentManagementBootstrapper.Configure(services, connectionString);
             BlogManagementBootstrapper.Configure(services, connectionString);
+            AccountManagementBootstrapper.Configure(services, connectionString);
 
             services.AddTransient<IStatusQuery, StatusQuery>();
             services.AddTransient<IFileUploader, FileUploader>();
 
+            services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
             services.AddRazorPages();
         }
 

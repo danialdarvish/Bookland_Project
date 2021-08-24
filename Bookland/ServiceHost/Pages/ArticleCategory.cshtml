@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id}"
 @model ServiceHost.Pages.ArticleCategoryModel
 @{
 }
@@ -35,7 +35,7 @@
                                     {
                                         <div class="col-xs-6 col-sm-12 col-md-6 col-lg-4">
                                             <article class="tg-post">
-                                                <figure><a href="javascript:void(0);"><img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle"></a></figure>
+                                                <figure><a asp-page="/Article" asp-route-id="@article.Slug"><img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle"></a></figure>
                                                 <div class="tg-postcontent">
                                                     <ul class="tg-bookscategories">
                                                         <li>@article.CategoryName</li>
@@ -80,56 +80,9 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="tg-widget tg-widgettrending">
-                                <div class="tg-widgettitle">
-                                    <h3>مقالات اخیر</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        @foreach (var article in Model.LatestArticles)
-                                        {
-                                            <li>
-                                                <article class="tg-post">
-                                                    <figure style="width: 70px; height: 70px;">
-                                                        <a asp-page="/Article" asp-route-id="@article.Slug" style="width: 70px; height: 70px;">
-                                                            <img src="~/Pictures/@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle" style="width: 70px;height: 70px; margin: -6px;">
-                                                        </a>
-                                                    </figure>
-                                                    <div class="tg-postcontent">
-                                                        <div class="tg-posttitle">
-                                                            <h3><a asp-page="/Article" asp-route-id="@article.Slug">@article.Title</a></h3>
-                                                        </div>
-                                                        <ul class="tg-postmetadata">
-                                                            <li><i class="fa fa-calendar"></i><i>@article.PublishDate</i></li>
-                                                        </ul>
-                                                    </div>
-                                                </article>
-                                            </li>
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tg-widget tg-widgetblogers">
-                                <div class="tg-widgettitle">
-                                    <h3>نویسنده های برتر</h3>
-                                </div>
-                                <div class="tg-widgetcontent">
-                                    <ul>
-                                        @foreach (var author in Model.Authors)
-                                        {
-                                            <li>
-                                                <div class="tg-author">
-                                                    <figure><a href="javascript:void(0);"><img src="~/Pictures/@author.Picture" alt="@author.PictureAlt" title="@author.PictureTitle"></a></figure>
-                                                    <div class="tg-authorcontent">
-                                                        <h2><a href="javascript:void(0);">@author.FullName</a></h2>
-                                                        <span>@author.BooksCount کتاب در سایت</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
+                            @await Component.InvokeAsync("LatestArticles", "SideBar")
+
+                            @await Component.InvokeAsync("BestAuthors", "SideBar")
                         </aside>
                     </div>
                 </div>

@@ -1,0 +1,56 @@
+﻿@page
+@model ServiceHost.Pages.AuthorsModel
+@{
+}
+
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-innerbannercontent">
+                    <h1>نویسندگان</h1>
+                    <ol class="tg-breadcrumb">
+                        <li><a asp-page="/Index">خانه</a></li>
+                        <li class="tg-active">نویسندگان</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main id="tg-main" class="tg-main tg-haslayout">
+<div class="tg-authorsgrid">
+        <div class="container">
+            <div class="row">
+                <div class="tg-authors">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="tg-sectionhead">
+                            <h2><span>ذهن زیبا پنهان</span>محبوبترین نویسندگان</h2>
+                        </div>
+                    </div>
+                    @foreach (var author in Model.Authors)
+                    {
+                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="tg-author">
+                                <figure><a asp-page="/AuthorDetail" asp-route-id="@author.Slug"><img src="~/Pictures/@author.Picture" alt="@author.PictureAlt" title="@author.PictureTitle"></a></figure>
+                                <div class="tg-authorcontent">
+                                    <h2><a asp-page="/AuthorDetail" asp-route-id="@author.Slug">@author.FullName</a></h2>
+                                    <span>@author.BooksCount کتاب منتشر شده</span>
+                                    <ul class="tg-socialicons">
+                                        <li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Component.InvokeAsync("Quote")
+
+</main>

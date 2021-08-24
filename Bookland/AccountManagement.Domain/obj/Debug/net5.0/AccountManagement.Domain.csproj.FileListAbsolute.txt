@@ -1,0 +1,17 @@
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\AccountManagement.Domain.deps.json
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\ref\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\01_Framework.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\01_Framework.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.csproj.CopyComplete
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\ref\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Domain\obj\Debug\net5.0\AccountManagement.Domain.pdb

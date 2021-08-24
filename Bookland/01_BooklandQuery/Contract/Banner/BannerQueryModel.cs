@@ -6,6 +6,7 @@
         public string BookName { get; set; }
         public string BookSlug { get; set; }
         public string AuthorName { get; set; }
+        public string AuthorSlug { get; set; }
         public string Picture { get; set; }
         public string PictureAlt { get; set; }
         public string PictureTitle { get; set; }

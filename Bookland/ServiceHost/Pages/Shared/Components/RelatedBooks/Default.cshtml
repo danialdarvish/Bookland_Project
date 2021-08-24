@@ -3,8 +3,8 @@
 <div class="tg-relatedproducts">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="tg-sectionhead">
-            <h2><span>محصولات مرتبط</span>همچنین ببینید</h2>
-            <a class="tg-btn" href="javascript:void(0);">مشاهده همه</a>
+            <h2><span>کتاب های مرتبط</span>همچنین ببینید</h2>
+            @*<a class="tg-btn" asp-page="./Books" asp-route-id="@Model">مشاهده همه</a>*@
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -35,7 +35,7 @@
                                 <div class="tg-themetagbox"><span class="tg-themetag">پیشنهاد خاص</span></div>
                             }
                             <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">@book.Name</a></h3>
+                                <h3><a asp-page="./BookDetail" asp-route-id="@book.Slug">@book.Name</a></h3>
                             </div>
                             <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@book.AuthorName</a></span>
                             <span class="tg-stars"><span></span></span>

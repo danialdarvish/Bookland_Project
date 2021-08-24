@@ -102,7 +102,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.AssemblyInfoInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.AssemblyInfo.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.csproj.CoreCompileInputs.cache
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.RazorAssemblyInfo.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.RazorAssemblyInfo.cs
@@ -194,3 +193,14 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\BookCategoriesSideBar\Default.cshtml.g.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\LatestArticles\SideBar.cshtml.g.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\AuthorDetail.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Authors.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Application.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Configuration.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Configuration.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Application.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
