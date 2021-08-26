@@ -1,4 +1,5 @@
 ﻿using _01_Framework.Domain;
+using AccountManagement.Domain.RoleAgg;
 
 namespace AccountManagement.Domain.AccountAgg
 {
@@ -9,6 +10,7 @@ namespace AccountManagement.Domain.AccountAgg
         public string Password { get; private set; }
         public string Mobile { get; private set; }
         public long RoleId { get; private set; }
+        public Role Role { get; private set; }
 
         public Account(string fullName, string username, string password, string mobile,
             long roleId)
