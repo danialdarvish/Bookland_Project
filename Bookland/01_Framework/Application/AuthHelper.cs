@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using _01_Framework.Infrastructure;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -62,7 +63,7 @@ namespace _01_Framework.Application
             result.Username = claims.FirstOrDefault(x => x.Type == "Username")?.Value;
             result.Fullname = claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
             result.RoleId = long.Parse(claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value);
-            //result.Role = Roles.GetRoleBy(result.RoleId);
+            result.Role = Roles.GetRoleBy(result.RoleId);
 
             return result;
         }

@@ -68,6 +68,9 @@ namespace ServiceHost
 
                 options.AddPolicy("Shop",
                     builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+
+                options.AddPolicy("Discount",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator }));
             });
 
 
@@ -76,6 +79,7 @@ namespace ServiceHost
                 {
                     options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");
                     options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
                 });
         }
 

@@ -6,6 +6,7 @@ using _01_BooklandQuery.Contract.BookCategoryCount;
 using _01_BooklandQuery.Contract.Quote;
 using _01_BooklandQuery.Contract.Slide;
 using _01_BooklandQuery.Query;
+using _01_Framework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ShopManagement.Application;
@@ -16,6 +17,7 @@ using ShopManagement.Application.Contracts.BookCategory;
 using ShopManagement.Application.Contracts.Category;
 using ShopManagement.Application.Contracts.Quote;
 using ShopManagement.Application.Contracts.Slide;
+using ShopManagement.Configuration.Permissions;
 using ShopManagement.Domain.AuthorAgg;
 using ShopManagement.Domain.BannerAgg;
 using ShopManagement.Domain.BookAgg;
@@ -61,6 +63,7 @@ namespace ShopManagement.Configuration
             services.AddTransient<IQuoteQuery, QuoteQuery>();
             services.AddTransient<IBannerQuery, BannerQuery>();
 
+            services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
             services.AddDbContext<ShopContext>(x =>
                 x.UseSqlServer(connectionString));
         }

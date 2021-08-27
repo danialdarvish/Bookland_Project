@@ -19,7 +19,7 @@
                                         <span asp-validation-for="Command.Name" class="error"></span>
                                     </div>
                                 </div>
-                                @*<div class="col-md-6">
+                                <div class="col-md-6">
                                     <label class="control-label col-md-3">انتخاب دسترسی ها</label>
                                     <div class="col-md-12">
                                         <select asp-items="Model.Permissions" asp-for="Command.Permissions" class="multi-select" multiple="multiple" id="my_multi_select3">
@@ -27,8 +27,7 @@
                                         </select>
                                     </div>
                                     <input type="hidden" asp-for="Command.Id" value="@Model.Command.Id" />
-                                </div>*@
- 
+                                </div>
                             </div>
                             <a asp-page="./Index" class="btn btn-dark waves-effect waves-light m-b-5">بازگشت</a>
                             <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
