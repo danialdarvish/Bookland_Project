@@ -29,12 +29,12 @@
                     <div class="content-page">
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
-                                @*@if (Model.LoginMessage != null)
+                                @if (Model.LoginMessage != null)
                                     {
                                         <div class="alert alert-danger">
                                             @Model.LoginMessage
                                         </div>
-                                    }*@
+                                    }
                                 <form method="post" asp-page-handler="Login">
                                     <div class="form-group">
                                         <h4 class="title">ورود</h4>
@@ -48,7 +48,6 @@
                                                 <input type="password" name="password" placeholder="********">
                                             </div>
                                             @*<div class="col-sm-6">
-
                                                     <div class="check-box d-inline-block ml-0 ml-md-2">
                                                         <input type="checkbox" id="remember_me">
                                                         <label for="remember_me">Remember me</label>

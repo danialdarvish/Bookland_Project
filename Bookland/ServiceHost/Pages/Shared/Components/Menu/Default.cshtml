@@ -1,4 +1,6 @@
-﻿@model _01_BooklandQuery.MenuModel
+﻿@using _01_Framework.Application
+@model _01_BooklandQuery.MenuModel
+@inject IAuthHelper authHelper;
 
 <div class="tg-navigationarea">
     <div class="container">
@@ -86,6 +88,14 @@
                                     }
                                 </ul>
                             </li>
+                            @if (!authHelper.IsAuthenticated())
+                            {
+                                <li><a asp-page="/Account">ورود</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-page="/Account" asp-page-handler="Logout">خروج</a></li>
+                            }
                             <li><a href="contactus.html">ارتباط با ما</a></li>
                             <li class="menu-item-has-children current-menu-item">
                                 <a href="javascript:void(0);"><i class="icon-menu"></i></a>
@@ -98,7 +108,6 @@
                                         </ul>
                                     </li>
                                     <li><a href="aboutus.html">درباره ما</a></li>
-                                    <li><a asp-page="/Account">ورود</a></li>
                                     <li><a href="comingsoon.html">به زودی</a></li>
                                 </ul>
                             </li>
