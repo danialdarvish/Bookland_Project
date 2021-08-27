@@ -10,24 +10,23 @@ namespace ShopManagement.Configuration.Permissions
             return new Dictionary<string, List<PermissionDto>>
             {
                 {
-                    "Book", new List<PermissionDto>
+                    "Books", new List<PermissionDto>
                     {
-                        new PermissionDto(ShopPermissions.ListBooks, "ListBooks"),
-                        new PermissionDto(ShopPermissions.SearchBooks, "SearchBooks"),
-                        new PermissionDto(ShopPermissions.CreateBooks, "CreateBook"),
-                        new PermissionDto(ShopPermissions.EditBooks, "EditBook"),
+                        new PermissionDto(ShopPermissions.ListBooks, "نمایش کتاب ها"),
+                        new PermissionDto(ShopPermissions.SearchBooks, "جستجو کتاب ها"),
+                        new PermissionDto(ShopPermissions.CreateBooks, "اضافه کردن کتاب"),
+                        new PermissionDto(ShopPermissions.EditBooks, "ویرایش کتاب"),
                     }
                 },
                 {
-                    "BookCategory", new List<PermissionDto>
+                    "Book Categories", new List<PermissionDto>
                     {
-                        new PermissionDto(ShopPermissions.ListBookCategories, "ListBookCategories"),
-                        new PermissionDto(ShopPermissions.SearchBookCategories, "SearchBookCategories"),
-                        new PermissionDto(ShopPermissions.CreateBookCategories, "CreateBookCategory"),
-                        new PermissionDto(ShopPermissions.EditBookCategories, "EditBookCategory"),
+                        new PermissionDto(ShopPermissions.ListBookCategories, "نمایش دسته بندی ها"),
+                        new PermissionDto(ShopPermissions.SearchBookCategories, "جستجو در دسته بندی ها"),
+                        new PermissionDto(ShopPermissions.CreateBookCategories, "ایجاد دسته بندی جدید"),
+                        new PermissionDto(ShopPermissions.EditBookCategories, "ویرایش دسته بندی"),
                     }
-                },
-
+                }
             };
         }
     }

@@ -1,9 +1,11 @@
 ﻿using _01_BooklandQuery.Contract.Article;
 using _01_BooklandQuery.Contract.ArticleCategory;
 using _01_BooklandQuery.Query;
+using _01_Framework.Infrastructure;
 using BlogManagement.Application;
 using BlogManagement.Application.Contracts.Article;
 using BlogManagement.Application.Contracts.ArticleCategory;
+using BlogManagement.Configuration.Permissions;
 using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
 using BlogManagement.Infrastructure.EFCore;
@@ -26,6 +28,7 @@ namespace BlogManagement.Configuration
             services.AddTransient<IArticleQuery, ArticleQuery>();
             services.AddTransient<IArticleCategoryQuery, ArticleCategoryQuery>();
 
+            services.AddTransient<IPermissionExposer, ArticlePermissionExposer>();
             services.AddDbContext<BlogContext>(x =>
                 x.UseSqlServer(connectionString));
         }
