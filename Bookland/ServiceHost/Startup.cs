@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using _01_BooklandQuery.Contract.Status;
 using _01_BooklandQuery.Query;
 using _01_Framework.Application;
+using _01_Framework.Infrastructure;
 using AccountManagement.Configuration;
 using BlogManagement.Configuration;
 using CommentManagement.Infrastructure.Configuration;
@@ -59,7 +61,22 @@ namespace ServiceHost
                     o.AccessDeniedPath = new PathString("/AccessDenied");
                 });
 
-            services.AddRazorPages();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminArea",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentCreator }));
+
+                options.AddPolicy("Shop",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+            });
+
+
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

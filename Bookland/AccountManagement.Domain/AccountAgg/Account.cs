@@ -19,7 +19,8 @@ namespace AccountManagement.Domain.AccountAgg
             Username = username;
             Password = password;
             Mobile = mobile;
-            RoleId = roleId;
+            RoleId = roleId == 0 ? 2 : roleId;
+
         }
 
         public void Edit(string fullName, string username, string mobile, long roleId)

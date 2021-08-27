@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using _01_Framework.Infrastructure;
 using InventoryManagement.Application.Contracts.Inventory;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,7 +9,7 @@ using ShopManagement.Application.Contracts.Book;
 
 namespace ServiceHost.Areas.Administration.Pages.Inventory
 {
-    //[Authorize(Roles = Roles.Administrator)]
+    [Authorize(Roles = Roles.Administrator)]
     public class IndexModel : PageModel
     {
         [TempData]
