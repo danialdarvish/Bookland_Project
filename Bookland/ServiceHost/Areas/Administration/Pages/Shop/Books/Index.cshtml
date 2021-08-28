@@ -1,5 +1,6 @@
 ﻿@page
 @using _01_Framework.Application
+@using ShopManagement.Configuration.Permissions
 @model ServiceHost.Areas.Administration.Pages.Shop.Books.IndexModel
 @{
     Layout = "Shared/_AdminLayout";
@@ -9,12 +10,12 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" asp-page="./Create">ایجاد کتاب جدید</a>
+            <a permission="@ShopPermissions.CreateBooks" class="btn btn-success btn-lg" asp-page="./Create">ایجاد کتاب جدید</a>
         </p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" permission="@ShopPermissions.SearchBooks">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -42,7 +43,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div class="row" permission="@ShopPermissions.ListBooks">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -101,7 +102,7 @@
                                         <td>@item.Format</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-warning pull-right m-rl-5" asp-page="./Edit" asp-route-id="@item.Id">
+                                            <a permission="@ShopPermissions.EditBooks" class="btn btn-warning pull-right m-rl-5" asp-page="./Edit" asp-route-id="@item.Id">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
                                         </td>

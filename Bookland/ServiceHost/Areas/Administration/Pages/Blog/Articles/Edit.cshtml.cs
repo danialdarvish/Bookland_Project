@@ -1,5 +1,7 @@
+using _01_Framework.Infrastructure;
 using BlogManagement.Application.Contracts.Article;
 using BlogManagement.Application.Contracts.ArticleCategory;
+using CommentManagement.Infrastructure.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,6 +22,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
         }
 
 
+        [NeedsPermission(ArticlePermissions.EditArticles)]
         public void OnGet(long id)
         {
             Command = _articleApplication.GetDetails(id);

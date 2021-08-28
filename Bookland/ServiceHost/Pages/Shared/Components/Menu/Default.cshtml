@@ -1,4 +1,5 @@
 ﻿@using _01_Framework.Application
+@using _01_Framework.Infrastructure
 @model _01_BooklandQuery.MenuModel
 @inject IAuthHelper authHelper;
 
@@ -97,6 +98,10 @@
                                 <li><a asp-page="/Account" asp-page-handler="Logout">خروج</a></li>
                             }
                             <li><a href="contactus.html">ارتباط با ما</a></li>
+                            @if (authHelper.CurrentAccountRole() != Roles.SystemUser && authHelper.IsAuthenticated())
+                            {
+                                <li><a asp-page="./Administration/">پنل ادمین</a></li>
+                            }
                             <li class="menu-item-has-children current-menu-item">
                                 <a href="javascript:void(0);"><i class="icon-menu"></i></a>
                                 <ul class="sub-menu">

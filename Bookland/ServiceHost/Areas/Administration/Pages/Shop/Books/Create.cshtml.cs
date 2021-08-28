@@ -1,3 +1,4 @@
+using _01_Framework.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -5,6 +6,7 @@ using ShopManagement.Application.Contracts.Author;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Application.Contracts.BookCategory;
 using ShopManagement.Application.Contracts.Category;
+using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.Books
 {
@@ -27,6 +29,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Books
         }
 
 
+        [NeedsPermission(ShopPermissions.CreateBooks)]
         public void OnGet()
         {
             Categories = new SelectList(_categoryApplication.GetSubCategories(),

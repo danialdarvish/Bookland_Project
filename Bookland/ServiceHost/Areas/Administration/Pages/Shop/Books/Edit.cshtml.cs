@@ -1,3 +1,4 @@
+using _01_Framework.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -6,6 +7,7 @@ using ShopManagement.Application.Contracts.Author;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Application.Contracts.BookCategory;
 using ShopManagement.Application.Contracts.Category;
+using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.Books
 {
@@ -28,6 +30,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Books
         }
 
 
+        [NeedsPermission(ShopPermissions.EditBooks)]
         public void OnGet(long id)
         {
             Command = _bookApplication.GetDetails(id);

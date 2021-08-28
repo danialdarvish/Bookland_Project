@@ -1,5 +1,7 @@
+using _01_Framework.Infrastructure;
 using BlogManagement.Application.Contracts.Article;
 using BlogManagement.Application.Contracts.ArticleCategory;
+using CommentManagement.Infrastructure.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -19,7 +21,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
             _articleCategoryApplication = articleCategoryApplication;
         }
 
-
+        [NeedsPermission(ArticlePermissions.CreateArticles)]
         public void OnGet()
         {
             ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(),

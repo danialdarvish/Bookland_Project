@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using _01_Framework.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopManagement.Application.Contracts.Category;
+using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.Categories
 {
@@ -16,11 +18,13 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Categories
             _categoryApplication = categoryApplication;
         }
 
+        [NeedsPermission(ShopPermissions.ListBooks)]
         public void OnGet(CategorySearchModel searchModel)
         {
             Categories = _categoryApplication.Search(searchModel);
         }
 
+        [NeedsPermission(ShopPermissions.CreateBookCategories)]
         public IActionResult OnGetCreate()
         {
             var command = new CreateCategory
@@ -36,6 +40,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Categories
             return new JsonResult(result);
         }
 
+        [NeedsPermission(ShopPermissions.EditBookCategories)]
         public IActionResult OnGetEdit(long id)
         {
             var category = _categoryApplication.GetDetails(id);

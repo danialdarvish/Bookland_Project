@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using _01_Framework.Infrastructure;
 using DiscountManagement.Application.Contract.ColleagueDiscount;
+using DiscountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -26,12 +28,14 @@ namespace ServiceHost.Areas.Administration.Pages.Discounts.ColleagueDiscounts
         }
 
 
+        [NeedsPermission(DiscountPermissions.ListColleagueDiscounts)]
         public void OnGet(ColleagueDiscountSearchModel searchModel)
         {
             ColleagueDiscounts = _colleagueDiscountApplication.Search(searchModel);
             Books = new SelectList(_bookApplication.GetBooks(), "Id", "Name");
         }
 
+        [NeedsPermission(DiscountPermissions.DefineColleagueDiscounts)]
         public IActionResult OnGetCreate()
         {
             var command = new DefineColleagueDiscount
@@ -47,6 +51,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discounts.ColleagueDiscounts
             return new JsonResult(result);
         }
 
+        [NeedsPermission(DiscountPermissions.EditColleagueDiscounts)]
         public IActionResult OnGetEdit(long id)
         {
             var customerDiscount = _colleagueDiscountApplication.GetDetails(id);
@@ -60,12 +65,14 @@ namespace ServiceHost.Areas.Administration.Pages.Discounts.ColleagueDiscounts
             return new JsonResult(result);
         }
 
+        [NeedsPermission(DiscountPermissions.RemoveColleagueDiscounts)]
         public IActionResult OnGetRemove(long id)
         {
             _colleagueDiscountApplication.Remove(id);
             return RedirectToPage("./Index");
         }
 
+        [NeedsPermission(DiscountPermissions.RestoreColleagueDiscounts)]
         public IActionResult OnGetRestore(long id)
         {
             _colleagueDiscountApplication.Restore(id);

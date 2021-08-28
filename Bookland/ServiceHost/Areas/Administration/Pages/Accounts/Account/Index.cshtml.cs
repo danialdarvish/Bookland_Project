@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using _01_Framework.Infrastructure;
 using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -27,12 +29,14 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Account
         }
 
 
+        [NeedsPermission(AccountPermissions.ListAccounts)]
         public void OnGet(AccountSearchModel searchModel)
         {
             Roles = new SelectList(_roleApplication.List(), "Id", "Name");
             Accounts = _accountApplication.Search(searchModel);
         }
 
+        [NeedsPermission(AccountPermissions.CreateAccounts)]
         public IActionResult OnGetCreate()
         {
             var command = new CreateAccount
@@ -48,6 +52,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Account
             return new JsonResult(result);
         }
 
+        [NeedsPermission(AccountPermissions.EditAccounts)]
         public IActionResult OnGetEdit(long id)
         {
             var account = _accountApplication.GetDetails(id);
@@ -61,6 +66,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Account
             return new JsonResult(result);
         }
 
+        [NeedsPermission(AccountPermissions.ChangeAccountsPasswords)]
         public IActionResult OnGetChangePassword(long id)
         {
             var command = new ChangePassword

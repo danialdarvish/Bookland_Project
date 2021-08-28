@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _01_Framework.Infrastructure;
 using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -22,6 +23,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
         }
 
 
+        [NeedsPermission(AccountPermissions.EditRoles)]
         public void OnGet(long id)
         {
             Command = _roleApplication.GetDetails(id);

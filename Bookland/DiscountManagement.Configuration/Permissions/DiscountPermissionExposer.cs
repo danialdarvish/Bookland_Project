@@ -14,7 +14,7 @@ namespace DiscountManagement.Configuration.Permissions
                     {
                         new PermissionDto(DiscountPermissions.ListDiscounts, "نمایش تخفیف ها"),
                         new PermissionDto(DiscountPermissions.SearchDiscounts, "جستجو تخفیف ها"),
-                        new PermissionDto(DiscountPermissions.CreateDiscounts, "ایجاد تخفیف جدید"),
+                        new PermissionDto(DiscountPermissions.DefineDiscounts, "ایجاد تخفیف جدید"),
                         new PermissionDto(DiscountPermissions.EditDiscounts, "ویرایش تخفیف ها"),
                     }
                 },
@@ -23,8 +23,10 @@ namespace DiscountManagement.Configuration.Permissions
                     {
                         new PermissionDto(DiscountPermissions.ListColleagueDiscounts, "نمایش تخفیف های همکاری"),
                         new PermissionDto(DiscountPermissions.SearchColleagueDiscounts, "جستجو در تخفیف های همکاری"),
-                        new PermissionDto(DiscountPermissions.CreateColleagueDiscounts, "ایجاد تخفیف همکاری جدید"),
+                        new PermissionDto(DiscountPermissions.DefineColleagueDiscounts, "ایجاد تخفیف همکاری جدید"),
                         new PermissionDto(DiscountPermissions.EditColleagueDiscounts, "ویرایش تخفیف همکاری"),
+                        new PermissionDto(DiscountPermissions.RemoveColleagueDiscounts, "غیرفعال تخفیف همکاری"),
+                        new PermissionDto(DiscountPermissions.RestoreColleagueDiscounts, "فعال کردن تخفیف همکاری")
                     }
                 }
             };

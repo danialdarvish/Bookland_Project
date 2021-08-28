@@ -1,21 +1,25 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using _01_Framework.Application;
 using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain.AccountAgg;
+using AccountManagement.Domain.RoleAgg;
 
 namespace AccountManagement.Application
 {
     public class AccountApplication : IAccountApplication
     {
         private readonly IAuthHelper _authHelper;
+        private readonly IRoleRepository _roleRepository;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IAccountRepository _accountRepository;
 
         public AccountApplication(IAccountRepository accountRepository,
-            IPasswordHasher passwordHasher, IAuthHelper authHelper)
+            IPasswordHasher passwordHasher, IAuthHelper authHelper, IRoleRepository roleRepository)
         {
             _authHelper = authHelper;
+            _roleRepository = roleRepository;
             _passwordHasher = passwordHasher;
             _accountRepository = accountRepository;
         }
@@ -84,8 +88,10 @@ namespace AccountManagement.Application
             if (!result.Verified)
                 return operation.Failed(ApplicationMessages.UserOrPassWrong);
 
+            var permissions = _roleRepository.Get(account.RoleId).Permissions.Select(x => x.Code).ToList();
+
             var authViewModel = new AuthViewModel(account.Id, account.RoleId, account.FullName,
-                account.Username, account.Mobile);
+                account.Username, permissions, account.Mobile);
 
             _authHelper.Signin(authViewModel);
 

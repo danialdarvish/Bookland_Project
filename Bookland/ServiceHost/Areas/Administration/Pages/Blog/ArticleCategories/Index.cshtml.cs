@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using _01_Framework.Infrastructure;
 using BlogManagement.Application.Contracts.ArticleCategory;
+using CommentManagement.Infrastructure.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -17,11 +19,13 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.ArticleCategories
         }
 
 
+        [NeedsPermission(ArticlePermissions.ListArticleCategories)]
         public void OnGet(ArticleCategorySearchModel searchModel)
         {
             ArticleCategories = _articleCategoryApplication.Search(searchModel);
         }
 
+        [NeedsPermission(ArticlePermissions.ListArticleCategories)]
         public IActionResult OnGetCreate()
         {
             return Partial("./Create", new CreateArticleCategory());
@@ -33,6 +37,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.ArticleCategories
             return new JsonResult(result);
         }
 
+        [NeedsPermission(ArticlePermissions.EditArticleCategories)]
         public IActionResult OnGetEdit(long id)
         {
             var productCategory = _articleCategoryApplication.GetDetails(id);

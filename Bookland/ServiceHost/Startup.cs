@@ -58,7 +58,7 @@ namespace ServiceHost
                 {
                     o.LoginPath = new PathString("/Account");
                     o.LogoutPath = new PathString("/Account");
-                    o.AccessDeniedPath = new PathString("/AccessDenied");
+                    o.AccessDeniedPath = new PathString("/404NotFound");
                 });
 
             services.AddAuthorization(options =>
@@ -75,6 +75,7 @@ namespace ServiceHost
 
 
             services.AddRazorPages()
+                .AddMvcOptions(options => options.Filters.Add<SecurityPageFilter>())
                 .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");

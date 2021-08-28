@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using _01_Framework.Infrastructure;
 using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -20,11 +22,13 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
         }
 
 
+        [NeedsPermission(AccountPermissions.ListRoles)]
         public void OnGet()
         {
             Roles = _roleApplication.List();
         }
 
+        [NeedsPermission(AccountPermissions.CreateRoles)]
         public IActionResult OnGetCreate()
         {
             var command = new CreateRole();
@@ -37,6 +41,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
             return new JsonResult(result);
         }
 
+        //[NeedsPermission(AccountPermissions.EditRoles)]
         public IActionResult OnGetEdit(long id)
         {
             var account = _roleApplication.GetDetails(id);

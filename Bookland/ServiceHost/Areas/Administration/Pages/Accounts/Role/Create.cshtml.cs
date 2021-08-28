@@ -1,4 +1,6 @@
+using _01_Framework.Infrastructure;
 using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -15,6 +17,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
         }
 
 
+        [NeedsPermission(AccountPermissions.CreateRoles)]
         public void OnGet()
         {
         }

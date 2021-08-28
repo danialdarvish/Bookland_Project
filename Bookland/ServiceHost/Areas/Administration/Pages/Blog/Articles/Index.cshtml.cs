@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using _01_Framework.Infrastructure;
 using BlogManagement.Application.Contracts.Article;
 using BlogManagement.Application.Contracts.ArticleCategory;
+using CommentManagement.Infrastructure.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -21,6 +23,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
         }
 
 
+        [NeedsPermission(ArticlePermissions.ListArticles)]
         public void OnGet(ArticleSearchModel searchModel)
         {
             ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(),
