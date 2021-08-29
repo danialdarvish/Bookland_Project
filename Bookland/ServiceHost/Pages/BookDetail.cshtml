@@ -77,11 +77,11 @@
                                                 </ul>
                                                 <div class="tg-quantityholder">
                                                     <em class="minus">-</em>
-                                                    <input type="text" class="result" value="0" id="quantity1" name="quantity">
+                                                    <input class="result" id="quantity1" name="quantity" type="text" value="0">
                                                     <em class="plus">+</em>
                                                 </div>
-                                                <a class="tg-btn tg-active tg-btn-lg" href="javascript:void(0);">افزودن به سبدخرید</a>
-                                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                                <a class="tg-btn tg-active tg-btn-lg" href="javascript:void(0)" onclick="addToCart('@Model.Book.Id', '@Model.Book.Name', '@Model.Book.Price', '@Model.Book.Picture', '@Model.Book.Slug')">افزودن به سبد خرید</a>
+                                                <a class="tg-btnaddtowishlist">
                                                     <span>افزودن به علاقه‌مندی‌ها</span>
                                                 </a>
                                             </div>
@@ -126,7 +126,7 @@
                                                 <li><span>صفحات:</span><span>@Model.Book.PageCount</span></li>
                                                 <li><span>تاریخ انتشار:</span><span>@Model.Book.PublishDate</span></li>
                                                 <li><span>انتشارات:</span><span>@Model.Book.Publisher</span></li>
-                                                <li><span>زیان:</span><span>@Model.Book.Language</span></li>
+                                                <li><span>زبان:</span><span>@Model.Book.Language</span></li>
                                                 <li><span>آی اس بی ان 10:</span><span>@Model.Book.Isbn</span></li>
                                             </ul>
                                         </div>

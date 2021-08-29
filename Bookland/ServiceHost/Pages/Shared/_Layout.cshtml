@@ -101,44 +101,16 @@
                                         <div class="tg-description"><p>هیچ محصولی به علاقه‌مندی‌ها اضافه نشده است.</p></div>
                                     </div>
                                 </div>
+
                                 <div class="dropdown tg-themedropdown tg-minicartdropdown">
                                     <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="tg-themebadge">3</span>
+                                        <span class="tg-themebadge" id="cart_items_count">0</span>
                                         <i class="icon-cart"></i>
                                         <span>123000 تومان</span>
                                     </a>
                                     <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
-                                        <div class="tg-minicartbody">
-                                            <div class="tg-minicarproduct">
-                                                <figure>
-                                                    <img src="~/Theme/assets/images/products/img-01.jpg" alt="image description">
-
-                                                </figure>
-                                                <div class="tg-minicarproductdata">
-                                                    <h5><a href="javascript:void(0);">عدالت کاری بزرگ اما سخت</a></h5>
-                                                    <h6><a href="javascript:void(0);">121500 تومان</a></h6>
-                                                </div>
-                                            </div>
-                                            <div class="tg-minicarproduct">
-                                                <figure>
-                                                    <img src="~/Theme/assets/images/products/img-02.jpg" alt="image description">
-
-                                                </figure>
-                                                <div class="tg-minicarproductdata">
-                                                    <h5><a href="javascript:void(0);">مرا به روشنی ببر</a></h5>
-                                                    <h6><a href="javascript:void(0);">121500 تومان</a></h6>
-                                                </div>
-                                            </div>
-                                            <div class="tg-minicarproduct">
-                                                <figure>
-                                                    <img src="~/Theme/assets/images/products/img-03.jpg" alt="image description">
-
-                                                </figure>
-                                                <div class="tg-minicarproductdata">
-                                                    <h5><a href="javascript:void(0);">به خودت ایمان داشته باش</a></h5>
-                                                    <h6><a href="javascript:void(0);">121500 تومان</a></h6>
-                                                </div>
-                                            </div>
+                                        <div class="tg-minicartbody" id="cart_items_wrapper">
+                                            
                                         </div>
                                         <div class="tg-minicartfoot">
                                             <a class="tg-btnemptycart" href="javascript:void(0);">
@@ -348,6 +320,7 @@
     <!--************************************
             Wrapper End
     *************************************-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/Theme/assets/js/vendor/jquery-library.js"></script>
     <script src="~/Theme/assets/js/vendor/bootstrap.min.js"></script>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>
@@ -360,6 +333,15 @@
     <script src="~/Theme/assets/js/appear.js"></script>
     <script src="~/Theme/assets/js/gmap3.js"></script>
     <script src="~/Theme/assets/js/main.js"></script>
+    <script src="~/Theme/assets/js/plugins.js"></script>
+    <script src="~/Theme/assets/js/custom.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            updateCart();
+        });
+    </script>
+
 </body>
 
 </html>
