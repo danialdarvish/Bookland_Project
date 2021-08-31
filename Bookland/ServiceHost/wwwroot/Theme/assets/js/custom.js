@@ -44,7 +44,7 @@ function updateCart() {
                                                     <img src="/Pictures/${x.picture}" style='width: 70px'>
                                                 </figure>
                                                 <div class="tg-minicarproductdata">
-                                                    <h6><a asp-page="/BookDetail" asp-route-id="${x.slug}">${x.name}</a></h6>
+                                                    <h6><a asp-page="/BookDetail" href="javascript:void(0)" asp-route-id="${x.slug}">${x.name}</a></h6>
                                                     <h5><a>${x.unitPrice} تومان</a></h5>
                                                     <h5><a>تعداد: ${x.count} </a></h5>
                                                 </div>

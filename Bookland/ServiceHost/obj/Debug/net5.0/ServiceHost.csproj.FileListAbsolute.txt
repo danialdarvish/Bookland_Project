@@ -214,3 +214,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Account.cshtml.g.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\404NotFound.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Cart.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Nancy.dll

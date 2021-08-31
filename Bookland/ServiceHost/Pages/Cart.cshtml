@@ -1,0 +1,80 @@
+﻿@page
+@using _01_Framework.Application
+@model ServiceHost.Pages.CartModel
+@{
+}
+
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-innerbannercontent">
+                    <h1>کتاب ها</h1>
+                    <ol class="tg-breadcrumb">
+                        <li><a asp-page="/Index">خانه</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 cart">
+            <div class="wrapper-page">
+                <div class="content-page">
+                    <div class="table-responsive">
+                        <table class="cart-table table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="thumb-img">عکس</th>
+                                    <th class="card-title">نام محصول</th>
+                                    <th class="price_card">قیمت واحد</th>
+                                    <th class="tg-quantityholder">تعداد</th>
+                                    <th class="">قیمت کل</th>
+                                    <th class="">حذف</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.CartItems)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/Pictures/@item.Picture" alt="@item.Name" />
+                                        </td>
+                                        <td class="card-title">
+                                            <a href="#">
+                                                @item.Name
+                                            </a>
+                                        </td>
+                                        <td class="price_card">
+                                            <span>@item.UnitPrice.ToMoney()</span>
+                                        </td>
+                                        <td class="">
+                                            <div class="tg-quantityholder">
+                                                <input type="number" value="@item.Count" min="1" />
+                                            </div>
+                                        </td>
+                                        <td class="">
+                                            <span>@item.TotalItemPrice.ToMoney()</span>
+                                        </td>
+                                        <td>
+                                            <a href="#">
+                                                <i class="fa fa-trash-o"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <a class="btn btn-success checkout-btn">
+                        تکمیل فرآیند خرید
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

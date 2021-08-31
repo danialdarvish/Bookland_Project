@@ -1953,6 +1953,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.8, )"
+            },
+            "Nancy": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
