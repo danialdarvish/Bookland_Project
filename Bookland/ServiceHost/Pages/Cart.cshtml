@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="tg-innerbannercontent">
-                    <h1>کتاب ها</h1>
+                    <h1>سبد خرید شما</h1>
                     <ol class="tg-breadcrumb">
                         <li><a asp-page="/Index">خانه</a></li>
                     </ol>
@@ -24,6 +24,12 @@
         <div class="col-lg-12 cart">
             <div class="wrapper-page">
                 <div class="content-page">
+                    @foreach (var item in Model.CartItems.Where(x => !x.IsInStock))
+                    {
+                        <div class="alert alert-warning"><i class="fa fa-warning"></i>
+                            کالای <strong>@item.Name</strong> کمتر از تعداد درخواست در انبار موجود است
+                        </div>
+                    }
                     <div class="table-responsive">
                         <table class="cart-table table table-bordered table-striped">
                             <thead>
@@ -44,33 +50,32 @@
                                             <img src="~/Pictures/@item.Picture" alt="@item.Name" />
                                         </td>
                                         <td class="card-title">
-                                            <a href="#">
+                                            <a asp-page="/BookDetail" asp-route-id="@item.Slug" class="blackText">
                                                 @item.Name
                                             </a>
                                         </td>
                                         <td class="price_card">
                                             <span>@item.UnitPrice.ToMoney()</span>
                                         </td>
-                                        <td class="">
-                                            <div class="tg-quantityholder">
-                                                <input type="number" value="@item.Count" min="1" />
+                                        <td>
+                                            <div>
+                                                <input type="number" value="@item.Count" min="1" onchange="changeCartItemCount('@item.Id', 'totalItemPrice-@item.Id', this.value)"/>
                                             </div>
                                         </td>
-                                        <td class="">
-                                            <span>@item.TotalItemPrice.ToMoney()</span>
+                                        <td>
+                                            <span id="totalItemPrice-@item.Id">@item.TotalItemPrice.ToMoney()</span>
                                         </td>
                                         <td>
-                                            <a href="#">
+                                            <a asp-page-handler="RemoveFromCart" asp-route-id="@item.Id">
                                                 <i class="fa fa-trash-o"></i>
                                             </a>
                                         </td>
                                     </tr>
-
                                 }
                             </tbody>
                         </table>
                     </div>
-                    <a class="btn btn-success checkout-btn">
+                    <a asp-page-handler="GoToCheckout" class="btn btn-success checkout-btn">
                         تکمیل فرآیند خرید
                     </a>
                 </div>

@@ -1,4 +1,5 @@
-﻿using _01_BooklandQuery.Contract.Author;
+﻿using _01_BooklandQuery.Contract;
+using _01_BooklandQuery.Contract.Author;
 using _01_BooklandQuery.Contract.Banner;
 using _01_BooklandQuery.Contract.Book;
 using _01_BooklandQuery.Contract.BookCategory;
@@ -63,6 +64,7 @@ namespace ShopManagement.Configuration
             services.AddTransient<IQuoteQuery, QuoteQuery>();
             services.AddTransient<IBannerQuery, BannerQuery>();
 
+            services.AddTransient<ICartCalculatorService, CartCalculatorService>();
             services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
             services.AddDbContext<ShopContext>(x =>
                 x.UseSqlServer(connectionString));

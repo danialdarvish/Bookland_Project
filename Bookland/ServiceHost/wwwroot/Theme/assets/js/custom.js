@@ -10,10 +10,10 @@ function addToCart(id, name, price, picture, slug) {
     }
 
     const count = $("#quantity1").val();
-    const currentProduct = products.find(x => x.id === id);
+    const currentProduct = products.find(x => x.id == id);
 
     if (currentProduct !== undefined) {
-        products.find(x => x.id === id).count = parseInt(currentProduct.count) + parseInt(count);
+        products.find(x => x.id == id).count = parseInt(currentProduct.count) + parseInt(count);
     } else {
         const product = {
             id,
@@ -44,7 +44,7 @@ function updateCart() {
                                                     <img src="/Pictures/${x.picture}" style='width: 70px'>
                                                 </figure>
                                                 <div class="tg-minicarproductdata">
-                                                    <h6><a asp-page="/BookDetail" href="javascript:void(0)" asp-route-id="${x.slug}">${x.name}</a></h6>
+                                                    <h6><a asp-page="/BookDetail" asp-route-id="${x.slug}">${x.name}</a></h6>
                                                     <h5><a>${x.unitPrice} تومان</a></h5>
                                                     <h5><a>تعداد: ${x.count} </a></h5>
                                                 </div>

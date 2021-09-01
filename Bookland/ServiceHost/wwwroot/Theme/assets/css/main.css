@@ -57,6 +57,18 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,700|Work+Sans:300,400,500,600,700);
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -5575,6 +5587,11 @@ body.tg-comingsoonpage .tg-footerbar {
     font-weight: bold;
 }
 
+.cart-table input[type="number"] {
+    width: 71px;
+    text-align: center;
+}
+
 .cart-table th {
     font-weight: bold;
     font-size: 17px;
@@ -5593,4 +5610,91 @@ body.tg-comingsoonpage .tg-footerbar {
     border-color: lightgreen;
     padding: 8px 27px;
     margin-top: 22px;
+}
+
+.checkout-btn-pay {
+    margin-bottom: 25px;
+    float: left;
+    font-size: x-large;
+    font-family: 'iransans-medium';
+    border-radius: 4px;
+    border-color: lightgreen;
+    padding: 8px 27px;
+    margin-top: 22px;
+    margin-left: -13px;
+}
+
+    .cart-table td.pro-subtotal span {
+        font-size: 15px;
+        font-weight: 500;
+        display: block;
+        color: #707070;
+    }
+
+.cart-summary {
+    margin-left: 0;
+}
+
+    .cart-summary .cart-summary-button {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+        .cart-summary .cart-summary-button button {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+
+            .cart-summary .cart-summary-button button:last-child {
+                margin-right: 0;
+            }
+
+    .cart-summary .cart-summary-wrap {
+        padding: 25px 30px;
+    }
+
+.cart-summery-container {
+    background-color: lightgreen;
+    border-radius: 20px;
+    box-shadow: 0 4px 19px rgb(37 20 16 / 36%);
+    float: left;
+}
+
+.cart-summery-heading {
+    font-size: 29px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.cart-summary-wrap p span {
+    float: left;
+    font-size: x-large;
+}
+
+.cart-summary-wrap p {
+    font-size: 20px;
+    margin-top: 22px;
+}
+
+.splitter-line {
+    color: black;
+    width: 100%;
+    border-color: darkgreen;
+    border-style: revert;
+}
+
+.cart-summery-result {
+    font-weight: bold;
+    font-size: 29px;
+}
+
+.cart-summery-result span {
+    float: left;
+    font-weight: bold;
 }

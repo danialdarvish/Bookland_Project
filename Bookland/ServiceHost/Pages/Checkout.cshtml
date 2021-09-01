@@ -1,0 +1,99 @@
+﻿@page
+@using _01_Framework.Application
+@model ServiceHost.Pages.CheckoutModel
+@{
+}
+
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-innerbannercontent">
+                    <h1>سبد خرید شما</h1>
+                    <ol class="tg-breadcrumb">
+                        <li><a asp-page="/Index">خانه</a></li>
+                        <li><a asp-page="/Cart">سبد خرید</a></li>
+                        <li>تایید و پرداخت</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 cart">
+            <div class="wrapper-page">
+                <div class="content-page">
+                    <div class="table-responsive">
+                        <table class="cart-table table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="thumb-img">عکس</th>
+                                    <th class="card-title">نام محصول</th>
+                                    <th class="price_card">قیمت واحد</th>
+                                    <th class="tg-quantityholder">تعداد</th>
+                                    <th class="">مبلغ کل بدون تخفیف</th>
+                                    <th class="">درصد تخفیف</th>
+                                    <th class="">مبلغ تخفیف</th>
+                                    <th class="">مبلغ پس از تخفیف</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Cart.Items)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/Pictures/@item.Picture" alt="@item.Name" />
+                                        </td>
+                                        <td class="card-title">
+                                            <a asp-page="/BookDetail" asp-route-id="@item.Slug" class="blackText">
+                                                @item.Name
+                                            </a>
+                                        </td>
+                                        <td class="price_card">
+                                            <span>@item.UnitPrice.ToMoney()</span>
+                                        </td>
+                                        <td>
+                                            <span>@item.Count عدد</span>
+                                        </td>
+                                        <td>
+                                            <span id="totalItemPrice-@item.Id">@item.TotalItemPrice.ToMoney()</span>
+                                        </td>
+                                        <td class="pro-subtotal">
+                                            <span>@item.DiscountRate%</span>
+                                        </td>
+                                        <td class="pro-subtotal">
+                                            <span>@item.DiscountAmount.ToMoney()</span>
+                                        </td>
+                                        <td class="pro-subtotal">
+                                            <span>@item.ItemPayAmount.ToMoney()</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-12 d-flex cart-summery-container">
+                            <div class="cart-summary">
+                                <div class="cart-summary-wrap">
+                                    <h4 class="cart-summery-heading">خلاصه وضعیت فاکتور</h4>
+                                    <p>مبلغ نهایی <span>@Model.Cart.TotalAmount.ToMoney() تومان</span></p>
+                                    <p>مبلغ تخفیف <span>@Model.Cart.DiscountAmount.ToMoney() تومان</span></p>
+                                    <hr class="splitter-line"/>
+                                    <h2 class="cart-summery-result">مبلغ قابل پرداخت <span>@Model.Cart.PayAmount.ToMoney() تومان</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a asp-page-handler="GoToCheckout" class="btn btn-success checkout-btn-pay">
+                        پرداخت
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

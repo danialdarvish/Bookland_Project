@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ShopManagement.Application.Contracts.Order;
 
 namespace _01_BooklandQuery.Contract.Book
 {
@@ -10,6 +11,6 @@ namespace _01_BooklandQuery.Contract.Book
         List<BookQueryModel> GetBestBooks();
 
         List<BookQueryModel> GetRelatedBooks(List<long> categoryId, long bookId);
-        //List<CartItem> CheckInventoryStatus(List<CartItem> cartItems);
+        List<CartItem> CheckInventoryStatus(List<CartItem> cartItems);
     }
 }

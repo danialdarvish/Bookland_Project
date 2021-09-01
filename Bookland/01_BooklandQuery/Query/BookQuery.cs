@@ -9,6 +9,7 @@ using CommentManagement.Infrastructure.EFCore;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Application.Contracts.Order;
 using ShopManagement.Domain.BookCategoryAgg;
 using ShopManagement.Infrastructure.EFCore;
 
@@ -259,6 +260,22 @@ namespace _01_BooklandQuery.Query
             }
 
             return relatedBooks;
+        }
+
+        public List<CartItem> CheckInventoryStatus(List<CartItem> cartItems)
+        {
+            var inventory = _inventoryContext.Inventory.ToList();
+
+            foreach (var cartItem in cartItems.Where(cartItem =>
+                inventory.Any(x => x.BookId == cartItem.Id && x.InStock)))
+            {
+                var itemInventory = inventory
+                    .Find(x => x.BookId == cartItem.Id);
+                if (itemInventory != null)
+                    cartItem.IsInStock = itemInventory.CalculateCurrentCount() >= cartItem.Count;
+            }
+
+            return cartItems;
         }
 
         private static List<string> MapCategoryNames(long bookId, List<BookCategory> bookCategories)

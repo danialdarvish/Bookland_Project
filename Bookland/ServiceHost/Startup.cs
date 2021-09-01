@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using _01_BooklandQuery.Contract;
 using _01_BooklandQuery.Contract.Status;
 using _01_BooklandQuery.Query;
 using _01_Framework.Application;
