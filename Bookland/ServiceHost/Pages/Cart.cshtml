@@ -12,6 +12,7 @@
                     <h1>سبد خرید شما</h1>
                     <ol class="tg-breadcrumb">
                         <li><a asp-page="/Index">خانه</a></li>
+                        <li><a>سبد خرید</a></li>
                     </ol>
                 </div>
             </div>
@@ -36,10 +37,10 @@
                                 <tr>
                                     <th class="thumb-img">عکس</th>
                                     <th class="card-title">نام محصول</th>
-                                    <th class="price_card">قیمت واحد</th>
-                                    <th class="tg-quantityholder">تعداد</th>
-                                    <th class="">قیمت کل</th>
-                                    <th class="">حذف</th>
+                                    <th>قیمت واحد</th>
+                                    <th>تعداد</th>
+                                    <th>قیمت کل</th>
+                                    <th>حذف</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,12 +51,12 @@
                                             <img src="~/Pictures/@item.Picture" alt="@item.Name" />
                                         </td>
                                         <td class="card-title">
-                                            <a asp-page="/BookDetail" asp-route-id="@item.Slug" class="blackText">
+                                            <a asp-page="/BookDetail" asp-route-id="@item.Slug" class="greyText">
                                                 @item.Name
                                             </a>
                                         </td>
-                                        <td class="price_card">
-                                            <span>@item.UnitPrice.ToMoney()</span>
+                                        <td>
+                                            <span class="greyText">@item.UnitPrice.ToMoney()</span>
                                         </td>
                                         <td>
                                             <div>
@@ -63,7 +64,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span id="totalItemPrice-@item.Id">@item.TotalItemPrice.ToMoney()</span>
+                                            <span id="totalItemPrice-@item.Id" class="greyText">@item.TotalItemPrice.ToMoney()</span>
                                         </td>
                                         <td>
                                             <a asp-page-handler="RemoveFromCart" asp-route-id="@item.Id">

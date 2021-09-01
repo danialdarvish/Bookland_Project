@@ -1,7 +1,6 @@
 ﻿const cookieName = "cart_items";
 
 function addToCart(id, name, price, picture, slug) {
-    debugger;
     let products = $.cookie(cookieName);
     if (products === undefined) {
         products = [];
@@ -31,7 +30,6 @@ function addToCart(id, name, price, picture, slug) {
 }
 
 function updateCart() {
-    debugger;
     let products = $.cookie(cookieName);
     products = JSON.parse(products);
     $("#cart_items_count").text(products.length);

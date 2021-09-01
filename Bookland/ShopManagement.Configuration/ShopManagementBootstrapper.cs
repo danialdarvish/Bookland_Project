@@ -16,6 +16,7 @@ using ShopManagement.Application.Contracts.Banner;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Application.Contracts.BookCategory;
 using ShopManagement.Application.Contracts.Category;
+using ShopManagement.Application.Contracts.Order;
 using ShopManagement.Application.Contracts.Quote;
 using ShopManagement.Application.Contracts.Slide;
 using ShopManagement.Configuration.Permissions;
@@ -24,6 +25,7 @@ using ShopManagement.Domain.BannerAgg;
 using ShopManagement.Domain.BookAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 using ShopManagement.Domain.CategoryAgg;
+using ShopManagement.Domain.OrderAgg;
 using ShopManagement.Domain.QuoteAgg;
 using ShopManagement.Domain.SlideAgg;
 using ShopManagement.Infrastructure.EFCore;
@@ -56,6 +58,9 @@ namespace ShopManagement.Configuration
             services.AddTransient<IBannerApplication, BannerApplication>();
             services.AddTransient<IBannerRepository, BannerRepository>();
 
+            services.AddTransient<IOrderApplication, OrderApplication>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+
             services.AddTransient<ISlideQuery, SlideQuery>();
             services.AddTransient<IBookCategoryQuery, BookCategoryQuery>();
             services.AddTransient<IBookCategoryCountQuery, BookCategoryCountQuery>();
@@ -66,6 +71,8 @@ namespace ShopManagement.Configuration
 
             services.AddTransient<ICartCalculatorService, CartCalculatorService>();
             services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
+
+            services.AddSingleton<ICartService, CartService>();
             services.AddDbContext<ShopContext>(x =>
                 x.UseSqlServer(connectionString));
         }
