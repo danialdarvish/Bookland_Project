@@ -1,0 +1,29 @@
+﻿@using _01_Framework.Application
+@model _01_BooklandQuery.CartModel
+
+<div class="dropdown tg-themedropdown tg-minicartdropdown">
+    <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="tg-themebadge" id="cart_items_count">0</span>
+        <i class="icon-cart"></i>
+        <span>@Model.TotalAmount.ToMoney() تومان</span>
+    </a>
+    <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
+        <div class="tg-minicartbody" id="cart_items_wrapper">
+                                            
+        </div>
+        <div class="tg-minicartfoot">
+            <a class="tg-btnemptycart" href="javascript:void(0);">
+                <i class="fa fa-trash-o"></i>
+                <span>پاک کردن سبد</span>
+            </a>
+            <span class="tg-subtotal">جمع کل:<strong>@Model.TotalAmount.ToMoney() تومان</strong></span>
+            <div class="tg-btns">
+                @if (Model.Items.Count > 0)
+                {
+                    <a class="tg-btn tg-active" asp-page="/Cart">مشاهده سبد خرید</a>
+                }
+                <a class="tg-btn" href="javascript:void(0);">ادامه خرید</a>
+            </div>
+        </div>
+    </div>
+</div>

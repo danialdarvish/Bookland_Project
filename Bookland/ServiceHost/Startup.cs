@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
-using _01_BooklandQuery.Contract;
 using _01_BooklandQuery.Contract.Status;
 using _01_BooklandQuery.Query;
 using _01_Framework.Application;
+using _01_Framework.Application.ZarinPal;
 using _01_Framework.Infrastructure;
 using AccountManagement.Configuration;
 using BlogManagement.Configuration;
@@ -45,13 +45,14 @@ namespace ServiceHost
             services.AddTransient<IStatusQuery, StatusQuery>();
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddTransient<IAuthHelper, AuthHelper>();
+            services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
-                options.CheckConsentNeeded = context => false;
+                options.CheckConsentNeeded = context => false; // True in Atryia 
                 options.MinimumSameSitePolicy = SameSiteMode.Lax;
             });
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

@@ -218,3 +218,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.PlatformAbstractions.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Nancy.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Checkout.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\RestSharp.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\PaymentResult.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Cart\Default.cshtml.g.cs

@@ -263,4 +263,26 @@ jQuery(document).on('ready', function() {
 	jQuery('em.plus').on('click', function () {
 		jQuery('#quantity1').val(parseInt(jQuery('#quantity1').val(), 10) + 1);
 	});
+
+	/*=============================================
+	=            payment  method select            =
+	=============================================*/
+
+
+	$('[name="paymentMethod"]').on('click', function () {
+
+		var $value = $(this).attr('value');
+
+		$('.single-method p').slideUp();
+		$('[data-method="' + $value + '"]').slideDown();
+	});
+
+
+	/*=====  End of payment  method select  ======*/
+
+
+	/*=============================================
+	=            shipping form toggle            =
+	=============================================*/
+
 });

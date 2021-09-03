@@ -23,7 +23,7 @@ namespace ShopManagement.Application
         public long PlaceOrder(Cart cart)
         {
             var currentAccountId = _authHelper.CurrentAccountId();
-            var order = new Order(currentAccountId, cart.TotalAmount, cart.DiscountAmount,
+            var order = new Order(currentAccountId, cart.PaymentMethod, cart.TotalAmount, cart.DiscountAmount,
                 cart.PayAmount);
 
             foreach (var cartItem in cart.Items)
@@ -38,7 +38,7 @@ namespace ShopManagement.Application
             return order.Id;
         }
 
-        public void PaymentSucceeded(long orderId, long refId)
+        public string PaymentSucceeded(long orderId, long refId)
         {
             var order = _orderRepository.Get(orderId);
 
@@ -50,6 +50,13 @@ namespace ShopManagement.Application
             //Reduce
 
             _orderRepository.SaveChanges();
+
+            return issueTrackingNo;
+        }
+
+        public double GetAmountBy(long id)
+        {
+            return _orderRepository.GetAmountBy(id);
         }
     }
 }

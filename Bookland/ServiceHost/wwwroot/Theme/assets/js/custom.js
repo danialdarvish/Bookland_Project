@@ -30,9 +30,30 @@ function addToCart(id, name, price, picture, slug) {
 }
 
 function updateCart() {
+    debugger;
+    var totalPrice = 0;
     let products = $.cookie(cookieName);
     products = JSON.parse(products);
     $("#cart_items_count").text(products.length);
+    //products.forEach(x => {
+    //    if (isNaN(x.unitPrice)) {
+    //        alert(x.unitPrice)
+    //    }
+    //    if (isNaN(x.count)) {
+    //        alert(x.count)
+    //    }
+        
+    //});
+    Array.from(products).forEach(x => {
+        debugger;
+        var price = x.unitPrice;
+        var count = x.count;
+        var productTotalPrice = count * price;
+        totalPrice = totalPrice + productTotalPrice;
+    })
+    totalPrice = separate(totalPrice);
+    $("#totalPrice1").text(totalPrice)
+    $("#totalPrice2").text("جمع کل: " + totalPrice)
     const cartItemsWrapper = $("#cart_items_wrapper");
     cartItemsWrapper.html('');
     products.forEach(x => {
@@ -43,7 +64,7 @@ function updateCart() {
                                                 </figure>
                                                 <div class="tg-minicarproductdata">
                                                     <h6><a asp-page="/BookDetail" asp-route-id="${x.slug}">${x.name}</a></h6>
-                                                    <h5><a>${x.unitPrice} تومان</a></h5>
+                                                    <h5><a>${separate(x.unitPrice)} تومان</a ></h5 >
                                                     <h5><a>تعداد: ${x.count} </a></h5>
                                                 </div>
                                             </div>`;
@@ -123,4 +144,16 @@ function changeCartItemCount(id, totalId, count) {
             }
         }
     });
+}
+
+function separate(Number) {
+    Number += '';
+    Number = Number.replace(',', '');
+    x = Number.split('.');
+    y = x[0];
+    z = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(y))
+        y = y.replace(rgx, '$1' + ',' + '$2');
+    return y + z;
 }

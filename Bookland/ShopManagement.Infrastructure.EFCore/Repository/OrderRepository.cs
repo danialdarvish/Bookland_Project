@@ -1,5 +1,5 @@
 ﻿using _01_Framework.Infrastructure;
-using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using ShopManagement.Domain.OrderAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Repository
@@ -13,5 +13,13 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
         }
 
 
+        public double GetAmountBy(long id)
+        {
+            var order = _context.Orders
+                .Select(x => new {x.Id, x.PayAmount}).FirstOrDefault(x=>x.Id == id);
+            if (order != null)
+                return order.PayAmount;
+            return 0;
+        }
     }
 }

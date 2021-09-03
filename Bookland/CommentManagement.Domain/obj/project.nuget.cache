@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7VbZfX6syqXYfG5umjL26O1bUFsGVaZ91Q6/Qp0fyojVqBeTc5xOrJNSNxKcsG+aJRUj787qC6zwmvEJUvTPDQ==",
+  "dgSpecHash": "rVFEfKn+4a9B2EeQjM7M9+fLtSrGC5aTyS+IsjetPs5+QxoJntoh5g2zWi/dR6XCgXDBLUB8qn7wv5D8GMm6JA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\CommentManagement.Domain\\CommentManagement.Domain.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\restsharp\\106.12.0\\restsharp.106.12.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",

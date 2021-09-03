@@ -102,30 +102,32 @@
                                         <div class="tg-description"><p>هیچ محصولی به علاقه‌مندی‌ها اضافه نشده است.</p></div>
                                     </div>
                                 </div>
-
                                 <div class="dropdown tg-themedropdown tg-minicartdropdown">
                                     <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="tg-themebadge" id="cart_items_count">0</span>
                                         <i class="icon-cart"></i>
-                                        <span>123000 تومان</span>
+                                        <span id="totalPrice1"></span>
                                     </a>
                                     <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
                                         <div class="tg-minicartbody" id="cart_items_wrapper">
-                                            
+
                                         </div>
                                         <div class="tg-minicartfoot">
                                             <a class="tg-btnemptycart" href="javascript:void(0);">
                                                 <i class="fa fa-trash-o"></i>
                                                 <span>پاک کردن سبد</span>
                                             </a>
-                                            <span class="tg-subtotal">جمع کل:<strong>3578000 تومان</strong></span>
+                                            <span class="tg-subtotal" id="totalPrice2"><strong></strong></span>
                                             <div class="tg-btns">
+
                                                 <a class="tg-btn tg-active" asp-page="/Cart">مشاهده سبد خرید</a>
+
                                                 <a class="tg-btn" href="javascript:void(0);">ادامه خرید</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                @*@await Component.InvokeAsync("Cart")*@
                             </div>
                             <div class="tg-searchbox">
                                 <form asp-page="./Books" class="tg-formtheme tg-formsearch" method="get">
@@ -338,7 +340,7 @@
     <script src="~/Theme/assets/js/custom.js"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             updateCart();
         });
     </script>

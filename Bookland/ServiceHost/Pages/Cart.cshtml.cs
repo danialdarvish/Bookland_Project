@@ -28,7 +28,8 @@ namespace ServiceHost.Pages
             var serializer = new JavaScriptSerializer();
             var value = Request.Cookies[CookieName];
             var cartItems = serializer.Deserialize<List<CartItem>>(value);
-
+            if (cartItems == null)
+                cartItems = new List<CartItem>();
             foreach (var item in cartItems)
             {
                 item.CalculateTotalItemPrice();
