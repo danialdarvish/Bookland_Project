@@ -1,4 +1,6 @@
-﻿using _01_Framework.Infrastructure;
+﻿using _01_BooklandQuery.Contract.Inventory;
+using _01_BooklandQuery.Query;
+using _01_Framework.Infrastructure;
 using InventoryManagement.Application;
 using InventoryManagement.Application.Contracts.Inventory;
 using InventoryManagement.Domain.InventoryAgg;
@@ -16,6 +18,8 @@ namespace InventoryManagement.Infrastructure.Configuration
         {
             services.AddTransient<IInventoryApplication, InventoryApplication>();
             services.AddTransient<IInventoryRepository, InventoryRepository>();
+
+            services.AddTransient<IInventoryQuery, InventoryQuery>();
 
             services.AddTransient<IPermissionExposer, InventoryPermissionExposer>();
             services.AddDbContext<InventoryContext>(x =>

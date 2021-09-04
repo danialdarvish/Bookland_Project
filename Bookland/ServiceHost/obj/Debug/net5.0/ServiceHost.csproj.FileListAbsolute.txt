@@ -225,3 +225,8 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Orders\Index.cshtml.g.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Orders\Items.cshtml.g.cs
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.Api.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.Api.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

@@ -30,22 +30,11 @@ function addToCart(id, name, price, picture, slug) {
 }
 
 function updateCart() {
-    debugger;
     var totalPrice = 0;
     let products = $.cookie(cookieName);
     products = JSON.parse(products);
     $("#cart_items_count").text(products.length);
-    //products.forEach(x => {
-    //    if (isNaN(x.unitPrice)) {
-    //        alert(x.unitPrice)
-    //    }
-    //    if (isNaN(x.count)) {
-    //        alert(x.count)
-    //    }
-        
-    //});
     Array.from(products).forEach(x => {
-        debugger;
         var price = x.unitPrice;
         var count = x.count;
         var productTotalPrice = count * price;
@@ -102,7 +91,7 @@ function changeCartItemCount(id, totalId, count) {
             "Content-Type": "application/json"
         },
         "data": JSON.stringify({
-            "productId": id,
+            "bookId": id,
             "count": count
         }),
     };
@@ -126,14 +115,16 @@ function changeCartItemCount(id, totalId, count) {
     //        }
     //    }
     //});
+   
     $.ajax(settings).done(function (data) {
+        debugger;
         if (data.isInStock == false) {
             const warningsDiv = $('#productStockWarnings');
             if ($(`#${id}`).length == 0) {
                 warningsDiv.append(`
                     <div class="alert alert-warning" id="${id}">
                         <i class="fa fa-warning"></i> کالای
-                        <strong>${data.productName}</strong>
+                        <strong>${data.bookName}</strong>
                         در انبار کمتر از تعداد درخواستی موجود است.
                     </div>
                 `);

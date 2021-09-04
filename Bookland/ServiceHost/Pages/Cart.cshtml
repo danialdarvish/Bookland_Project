@@ -25,12 +25,15 @@
         <div class="col-lg-12 cart">
             <div class="wrapper-page">
                 <div class="content-page">
-                    @foreach (var item in Model.CartItems.Where(x => !x.IsInStock))
-                    {
-                        <div class="alert alert-warning"><i class="fa fa-warning"></i>
-                            کالای <strong>@item.Name</strong> کمتر از تعداد درخواست در انبار موجود است
-                        </div>
-                    }
+                    <div id="productStockWarnings">
+                        @foreach (var item in Model.CartItems.Where(x => !x.IsInStock))
+                        {
+                            <div class="alert alert-warning">
+                                <i class="fa fa-warning"></i>
+                                کالای <strong>@item.Name</strong> کمتر از تعداد درخواست در انبار موجود است
+                            </div>
+                        }
+                    </div>
                     <div class="table-responsive">
                         <table class="cart-table table table-bordered table-striped">
                             <thead>
@@ -60,7 +63,7 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <input type="number" value="@item.Count" min="1" onchange="changeCartItemCount('@item.Id', 'totalItemPrice-@item.Id', this.value)"/>
+                                                <input type="number" value="@item.Count" min="1" onchange="changeCartItemCount('@item.Id', 'totalItemPrice-@item.Id', this.value)" />
                                             </div>
                                         </td>
                                         <td>
