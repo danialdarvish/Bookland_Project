@@ -25,6 +25,17 @@ namespace AccountManagement.Application
         }
 
 
+        public AccountViewModel GetAccountBy(long id)
+        {
+            var account = _accountRepository.Get(id);
+
+            return new AccountViewModel
+            {
+                FullName = account.FullName,
+                Mobile = account.Mobile
+            };
+        }
+
         public OperationResult Create(CreateAccount command)
         {
             var operation = new OperationResult();
@@ -55,7 +66,7 @@ namespace AccountManagement.Application
 
             account.Edit(command.FullName, command.Username, command.Mobile, command.RoleId);
             _accountRepository.SaveChanges();
-            
+
             return operation.Succeed();
         }
 

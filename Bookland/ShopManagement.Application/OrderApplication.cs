@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Application;
+using _01_Framework.Application.Sms;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.Application.Contracts.Order;
 using ShopManagement.Domain.OrderAgg;
@@ -9,15 +10,19 @@ namespace ShopManagement.Application
 {
     public class OrderApplication : IOrderApplication
     {
+        private readonly ISmsService _smsService;
         private readonly IAuthHelper _authHelper;
         private readonly IConfiguration _configuration;
+        private readonly IShopAccountAcl _shopAccountAcl;
         private readonly IOrderRepository _orderRepository;
         private readonly IShopInventoryAcl _shopInventoryAcl;
 
-        public OrderApplication(IOrderRepository orderRepository, IAuthHelper authHelper, IConfiguration configuration, IShopInventoryAcl shopInventoryAcl)
+        public OrderApplication(IOrderRepository orderRepository, IAuthHelper authHelper, IConfiguration configuration, IShopInventoryAcl shopInventoryAcl, ISmsService smsService, IShopAccountAcl shopAccountAcl)
         {
+            _smsService = smsService;
             _authHelper = authHelper;
             _configuration = configuration;
+            _shopAccountAcl = shopAccountAcl;
             _orderRepository = orderRepository;
             _shopInventoryAcl = shopInventoryAcl;
         }
@@ -53,6 +58,8 @@ namespace ShopManagement.Application
             if (!_shopInventoryAcl.ReduceFromInventory(order.Items)) return "";
 
             _orderRepository.SaveChanges();
+            //var (name, mobile) = _shopAccountAcl.GetAccountBy(order.AccountId);
+            //_smsService.Send(mobile, SmsMessages.PaymentSucceeded(name, issueTrackingNo));
             return issueTrackingNo;
         }
 

@@ -230,3 +230,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\SmsIrRestful.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.Account.Acl.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.Account.Acl.pdb

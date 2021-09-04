@@ -857,6 +857,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "SmsIrRestful/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/SmsIrRestful.dll": {}
+        },
+        "runtime": {
+          "lib/SmsIrRestful.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2004,7 +2013,8 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.EntityFrameworkCore": "5.0.8",
-          "RestSharp": "106.12.0"
+          "RestSharp": "106.12.0",
+          "SmsIrRestful": "1.1.3"
         },
         "compile": {
           "bin/placeholder/01_Framework.dll": {}
@@ -2269,6 +2279,20 @@
         },
         "runtime": {
           "bin/placeholder/ShopManagement.Domain.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.Account.Acl/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AccountManagement.Application.Contracts": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Infrastructure.Account.Acl.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Infrastructure.Account.Acl.dll": {}
         }
       },
       "ShopManagement.Infrastructure.EFCore/1.0.0": {
@@ -3412,6 +3436,18 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.3.0.nupkg.sha512",
         "runtime.native.system.nuspec"
+      ]
+    },
+    "SmsIrRestful/1.1.3": {
+      "sha512": "ouYKkhQv0zLbdDIPw5Eagpod9828Fd2zQhqt2N2MMPHdCV7oHYuAvClSBS4Pru1MclEvH5mmLfE7cgeFZ9ea+w==",
+      "type": "package",
+      "path": "smsirrestful/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/SmsIrRestful.dll",
+        "smsirrestful.1.1.3.nupkg.sha512",
+        "smsirrestful.nuspec"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -7232,6 +7268,11 @@
       "path": "../ShopManagement.Domain/ShopManagement.Domain.csproj",
       "msbuildProject": "../ShopManagement.Domain/ShopManagement.Domain.csproj"
     },
+    "ShopManagement.Infrastructure.Account.Acl/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Infrastructure.Account.Acl/ShopManagement.Infrastructure.Account.Acl.csproj",
+      "msbuildProject": "../ShopManagement.Infrastructure.Account.Acl/ShopManagement.Infrastructure.Account.Acl.csproj"
+    },
     "ShopManagement.Infrastructure.EFCore/1.0.0": {
       "type": "project",
       "path": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj",
@@ -7248,6 +7289,7 @@
       "01_BooklandQuery >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 5.0.0",
       "ShopManagement.Application >= 1.0.0",
+      "ShopManagement.Infrastructure.Account.Acl >= 1.0.0",
       "ShopManagement.Infrastructure.EFCore >= 1.0.0",
       "ShopManagement.Infrastructure.InventoryAcl >= 1.0.0"
     ]
@@ -7289,6 +7331,9 @@
             },
             "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Application\\ShopManagement.Application.csproj": {
               "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Application\\ShopManagement.Application.csproj"
+            },
+            "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Infrastructure.Account.Acl\\ShopManagement.Infrastructure.Account.Acl.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Infrastructure.Account.Acl\\ShopManagement.Infrastructure.Account.Acl.csproj"
             },
             "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
               "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
@@ -7332,5 +7377,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SmsIrRestful 1.1.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SmsIrRestful",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

@@ -4,6 +4,7 @@ using System.Text.Unicode;
 using _01_BooklandQuery.Contract.Status;
 using _01_BooklandQuery.Query;
 using _01_Framework.Application;
+using _01_Framework.Application.Sms;
 using _01_Framework.Application.ZarinPal;
 using _01_Framework.Infrastructure;
 using AccountManagement.Configuration;
@@ -47,6 +48,7 @@ namespace ServiceHost
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddTransient<IAuthHelper, AuthHelper>();
             services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
+            services.AddTransient<ISmsService, SmsService>();
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
             services.AddSingleton<IPasswordHasher, PasswordHasher>();

@@ -29,6 +29,7 @@ using ShopManagement.Domain.OrderAgg;
 using ShopManagement.Domain.QuoteAgg;
 using ShopManagement.Domain.Services;
 using ShopManagement.Domain.SlideAgg;
+using ShopManagement.Infrastructure.Account.Acl;
 using ShopManagement.Infrastructure.EFCore;
 using ShopManagement.Infrastructure.EFCore.Repository;
 using ShopManagement.Infrastructure.InventoryAcl;
@@ -74,6 +75,7 @@ namespace ShopManagement.Configuration
             services.AddTransient<ICartCalculatorService, CartCalculatorService>();
             services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
             services.AddTransient<IShopInventoryAcl, ShopInventoryAcl>();
+            services.AddTransient<IShopAccountAcl, ShopAccountAcl>();
 
             services.AddSingleton<ICartService, CartService>();
 

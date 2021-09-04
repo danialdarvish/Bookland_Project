@@ -55,3 +55,5 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configu
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.Account.Acl.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.Account.Acl.pdb
