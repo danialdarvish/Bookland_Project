@@ -37,18 +37,31 @@ namespace ServiceHost.Pages
             _cartCalculatorService = cartCalculatorService;
         }
 
-
-        public void OnGet()
+        public List<CartItem> LoadCookie()
         {
             var serializer = new JavaScriptSerializer();
             var value = Request.Cookies[CookieName];
             var cartItems = serializer.Deserialize<List<CartItem>>(value);
-
             foreach (var item in cartItems)
             {
                 item.CalculateTotalItemPrice();
             }
 
+            return cartItems;
+        }
+
+        public void ClearCookie()
+        {
+            var serializer = new JavaScriptSerializer();
+            var value = Request.Cookies[CookieName];
+            var cartItems = serializer.Deserialize<List<CartItem>>(value);
+            cartItems.Clear();
+            Response.Cookies.Append(CookieName, serializer.Serialize(cartItems));
+        }
+
+        public void OnGet()
+        {
+            var cartItems = LoadCookie();
             Cart = _cartCalculatorService.ComputeCart(cartItems);
             _cartService.Set(Cart);
         }
@@ -77,7 +90,8 @@ namespace ServiceHost.Pages
             {
                 var paymentResult = new PaymentResult();
                 paymentResult.Succeeded(".سفارش شما با موفقیت ثبت شد", "");
-                Response.Cookies.Delete(CookieName);
+                //Response.Cookies.Delete(CookieName);
+                ClearCookie();
                 return RedirectToPage("/PaymentResult", paymentResult);
             }
         }

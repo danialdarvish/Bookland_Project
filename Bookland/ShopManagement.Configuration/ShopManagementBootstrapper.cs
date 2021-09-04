@@ -27,9 +27,11 @@ using ShopManagement.Domain.BookCategoryAgg;
 using ShopManagement.Domain.CategoryAgg;
 using ShopManagement.Domain.OrderAgg;
 using ShopManagement.Domain.QuoteAgg;
+using ShopManagement.Domain.Services;
 using ShopManagement.Domain.SlideAgg;
 using ShopManagement.Infrastructure.EFCore;
 using ShopManagement.Infrastructure.EFCore.Repository;
+using ShopManagement.Infrastructure.InventoryAcl;
 
 namespace ShopManagement.Configuration
 {
@@ -71,8 +73,10 @@ namespace ShopManagement.Configuration
 
             services.AddTransient<ICartCalculatorService, CartCalculatorService>();
             services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
+            services.AddTransient<IShopInventoryAcl, ShopInventoryAcl>();
 
             services.AddSingleton<ICartService, CartService>();
+
             services.AddDbContext<ShopContext>(x =>
                 x.UseSqlServer(connectionString));
         }

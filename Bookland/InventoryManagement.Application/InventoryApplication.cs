@@ -7,10 +7,12 @@ namespace InventoryManagement.Application
 {
     public class InventoryApplication : IInventoryApplication
     {
+        private readonly IAuthHelper _authHelper;
         private readonly IInventoryRepository _inventoryRepository;
 
-        public InventoryApplication(IInventoryRepository inventoryRepository)
+        public InventoryApplication(IInventoryRepository inventoryRepository, IAuthHelper authHelper)
         {
+            _authHelper = authHelper;
             _inventoryRepository = inventoryRepository;
         }
 
@@ -68,8 +70,8 @@ namespace InventoryManagement.Application
             if (inventory == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
-            //var operatorId = _authHelper.CurrentAccountId();
-            inventory.Reduce(command.Count, 2, command.Description, 0);
+            var operatorId = _authHelper.CurrentAccountId();
+            inventory.Reduce(command.Count, operatorId, command.Description, 0);
 
             _inventoryRepository.SaveChanges();
             return operation.Succeed();
@@ -78,11 +80,11 @@ namespace InventoryManagement.Application
         public OperationResult Reduce(List<ReduceInventory> command)
         {
             var operation = new OperationResult();
-            //var operatorId = _authHelper.CurrentAccountId();
+            var operatorId = _authHelper.CurrentAccountId();
             foreach (var item in command)
             {
                 var inventory = _inventoryRepository.GetBy(item.BookId);
-                inventory.Reduce(item.Count, 2, item.Description, item.OrderId);
+                inventory.Reduce(item.Count, operatorId, item.Description, item.OrderId);
 
             }
             _inventoryRepository.SaveChanges();

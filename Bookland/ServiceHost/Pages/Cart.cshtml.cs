@@ -23,7 +23,7 @@ namespace ServiceHost.Pages
             CartItems = new List<CartItem>();
         }
 
-        public void OnGet()
+        public List<CartItem> LoadCookie()
         {
             var serializer = new JavaScriptSerializer();
             var value = Request.Cookies[CookieName];
@@ -35,6 +35,21 @@ namespace ServiceHost.Pages
                 item.CalculateTotalItemPrice();
             }
 
+            return cartItems;
+        }
+
+        public void ClearCookie()
+        {
+            var serializer = new JavaScriptSerializer();
+            var value = Request.Cookies[CookieName];
+            var cartItems = serializer.Deserialize<List<CartItem>>(value);
+            cartItems.Clear();
+            Response.Cookies.Append(CookieName, serializer.Serialize(cartItems));
+        }
+
+        public void OnGet()
+        {
+            var cartItems = LoadCookie();
             CartItems = _bookQuery.CheckInventoryStatus(cartItems);
         }
 

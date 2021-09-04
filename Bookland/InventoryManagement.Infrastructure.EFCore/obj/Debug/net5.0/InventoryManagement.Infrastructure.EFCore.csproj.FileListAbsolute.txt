@@ -26,3 +26,9 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.In
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\InventoryManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.genruntimeconfig.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.pdb

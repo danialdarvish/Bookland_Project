@@ -43,3 +43,9 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\obj\D
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\obj\Debug\net5.0\01_BooklandQuery.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\obj\Debug\net5.0\ref\01_BooklandQuery.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\obj\Debug\net5.0\01_BooklandQuery.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\01_BooklandQuery\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb

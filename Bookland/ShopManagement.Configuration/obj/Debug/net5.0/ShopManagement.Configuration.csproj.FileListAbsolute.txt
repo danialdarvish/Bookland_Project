@@ -47,3 +47,11 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configu
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\obj\Debug\net5.0\ref\ShopManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.dll
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
