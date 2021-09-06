@@ -2424,6 +2424,7 @@ li.menu-item-has-mega-menu {
     float: right;
     padding: 15px 0 0;
     text-align: right;
+    height: 230px;
 }
 
 .tg-bookscategories {
@@ -5577,6 +5578,10 @@ body.tg-comingsoonpage .tg-footerbar {
 
 .largeFontSize {
     font-size: large;
+}
+
+.fix-tag {
+    margin-left: -5px;
 }
 
 .cart-table tbody td img {

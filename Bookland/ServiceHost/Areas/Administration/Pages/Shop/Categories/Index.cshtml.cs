@@ -21,7 +21,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Categories
         [NeedsPermission(ShopPermissions.ListBooks)]
         public void OnGet(CategorySearchModel searchModel)
         {
-            Categories = _categoryApplication.Search(searchModel);
+            Categories = _categoryApplication.Search(searchModel, false);
         }
 
         [NeedsPermission(ShopPermissions.CreateBookCategories)]
@@ -29,9 +29,9 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Categories
         {
             var command = new CreateCategory
             {
-                Categories = _categoryApplication.GetMainCategories()
+                Categories = _categoryApplication.GetMainCategories(),
             };
-            return Partial("./Create", command);
+            return Partial("Create", command);
         }
 
         public JsonResult OnPostCreate(CreateCategory command)

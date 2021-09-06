@@ -32,20 +32,34 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
-        public List<CategoryViewModel> Search(CategorySearchModel searchModel)
+        public List<CategoryViewModel> Search(CategorySearchModel searchModel, bool isParent)
         {
-            var query = _context.Categories.Select(x => new CategoryViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                CreationDate = x.CreationDate.ToFarsi()
-            });
+            var query = _context.Categories
+                .Where(x => isParent ? x.ParentId == 0 : x.ParentId > 0)
+                .Select(x => new CategoryViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Description = x.Description,
+                    CreationDate = x.CreationDate.ToFarsi(),
+                    ParentCategory = MapParentCategory(x.ParentId, _context.Categories.ToList()),
+                    ChildrenCount = CountChildren(x.Id, _context.Categories.ToList())
+                });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))
                 query = query.Where(x => x.Name.Contains(searchModel.Name));
 
             return query.OrderByDescending(x => x.Id).ToList();
+        }
+
+        private static long CountChildren(long id, List<Category> categories)
+        {
+            return categories.Count(x => x.ParentId == id);
+        }
+
+        private static string MapParentCategory(long parentId, List<Category> categories)
+        {
+            return categories.FirstOrDefault(x => x.Id == parentId)?.Name;
         }
 
         public List<CategoryViewModel> GetCategories()

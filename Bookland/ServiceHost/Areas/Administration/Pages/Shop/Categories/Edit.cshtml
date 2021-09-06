@@ -32,9 +32,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="ParentId" class="control-label">دسته بندی مادر</label>
+                    <label asp-for="ParentId" class="control-label">دسته بندی مرجع</label>
                     <select type="text" class="form-control" asp-for="ParentId" asp-items='new SelectList(Model.Categories, "Id", "Name")'>
-                        <option value="0">هیچ کدام</option>
                     </select>
                     <span asp-validation-for="ParentId" class="error"></span>
                 </div>
@@ -69,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <input type="hidden" asp-for="Id" value="@Model.Id"/>
+        <input type="hidden" asp-for="Id" value="@Model.Id" />
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>

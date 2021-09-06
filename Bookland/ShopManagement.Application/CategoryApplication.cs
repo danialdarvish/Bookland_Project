@@ -55,9 +55,9 @@ namespace ShopManagement.Application
             return _categoryRepository.GetDetails(id);
         }
 
-        public List<CategoryViewModel> Search(CategorySearchModel searchModel)
+        public List<CategoryViewModel> Search(CategorySearchModel searchModel, bool isParent)
         {
-            return _categoryRepository.Search(searchModel);
+            return _categoryRepository.Search(searchModel, isParent);
         }
 
         public List<CategoryViewModel> GetCategories()

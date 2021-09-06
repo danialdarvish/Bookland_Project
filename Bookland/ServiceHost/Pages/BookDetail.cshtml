@@ -24,7 +24,7 @@
 </div>
 
 <main id="tg-main" class="tg-main tg-haslayout">
-<div class="tg-sectionspace tg-haslayout">
+    <div class="tg-sectionspace tg-haslayout">
         <div class="container">
             <div class="row">
                 <div id="tg-twocolumns" class="tg-twocolumns">
@@ -75,12 +75,15 @@
                                                         <li><i class="icon-store"></i><span><strong class="redText largeFontSize">نا موجود</strong></span></li>
                                                     }
                                                 </ul>
-                                                <div class="tg-quantityholder">
-                                                    <em class="minus">-</em>
-                                                    <input class="result" id="quantity1" name="quantity" type="text" value="0">
-                                                    <em class="plus">+</em>
-                                                </div>
-                                                <a class="tg-btn tg-active tg-btn-lg" href="javascript:void(0)" onclick="addToCart('@Model.Book.Id', '@Model.Book.Name', '@Model.Book.DoublePrice', '@Model.Book.Picture', '@Model.Book.Slug')">افزودن به سبد خرید</a>
+                                                @if (Model.Book.IsInStock)
+                                                {
+                                                    <div class="tg-quantityholder">
+                                                        <em class="minus">-</em>
+                                                        <input class="result" id="quantity1" name="quantity" type="text" value="0">
+                                                        <em class="plus">+</em>
+                                                    </div>
+                                                    <a class="tg-btn tg-active tg-btn-lg" href="javascript:void(0)" onclick="addToCart('@Model.Book.Id', '@Model.Book.Name', '@Model.Book.DoublePrice', '@Model.Book.Picture', '@Model.Book.Slug')">افزودن به سبد خرید</a>
+                                                }
                                                 <a class="tg-btnaddtowishlist">
                                                     <span>افزودن به علاقه‌مندی‌ها</span>
                                                 </a>

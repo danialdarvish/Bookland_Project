@@ -187,6 +187,85 @@ namespace _01_BooklandQuery.Query
             return bestBooks;
         }
 
+        public List<BookQueryModel> TopSales()
+        {
+            var inventory = _inventoryContext.Inventory
+                .Select(x => new { x.BookId, x.UnitPrice, x.InStock }).ToList();
+            var discounts = _discountContext.CustomerDiscounts
+                .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
+                .Select(x => new { x.BookId, x.DiscountRate, x.EndDate });
+
+            var allOrderItems = new List<BookCountHelper>();
+
+            var orderItems = _context.Orders.Select(x => x.Items).AsNoTracking();
+
+            foreach (var order in orderItems)
+            {
+                var projectedOrderItems = order.Select(x => new BookCountHelper()
+                {
+                    BookId = x.BookId,
+                    Count = x.Count
+                });
+                allOrderItems.AddRange(projectedOrderItems);
+            }
+
+            var topSellingBooks = allOrderItems.GroupBy(x => x.BookId).Select(x => new BookCountHelper
+            {
+                BookId = x.Key,
+                Count = x.Count()
+            }).OrderByDescending(x => x.Count).Take(10);
+
+            var topSales = new List<BookQueryModel>();
+            foreach (var item in topSellingBooks)
+            {
+                var book = _context.Books
+                    .Include(x => x.Author)
+                    .Include(x => x.BookCategories).ThenInclude(x => x.Category)
+                    .Select(x => new BookQueryModel
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        Slug = x.Slug,
+                        Picture = x.Picture,
+                        PictureAlt = x.PictureAlt,
+                        PictureTitle = x.PictureTitle,
+                        PageCount = x.PageCount,
+                        Categories = MapCategories(x.Id, x.BookCategories),
+                        AuthorName = x.Author.FullName,
+                        ShortDescription = x.ShortDescription,
+                        IsEditorsChoice = x.IsEditorsChoice
+                    }).FirstOrDefault(x => x.Id == item.BookId);
+                topSales.Add(book);
+            }
+
+            foreach (var book in topSales)
+            {
+                var bookInventory = inventory
+                    .FirstOrDefault(x => x.BookId == book.Id);
+                if (bookInventory != null)
+                {
+                    var price = bookInventory.UnitPrice;
+                    book.Price = price.ToMoney();
+                    book.IsInStock = bookInventory.InStock;
+
+                    var discount = discounts
+                        .FirstOrDefault(x => x.BookId == book.Id);
+
+                    if (discount != null)
+                    {
+                        var discountRate = discount.DiscountRate;
+                        book.DiscountRate = discountRate;
+                        book.HasDiscount = discountRate > 0;
+
+                        var discountAmount = Math.Round(price * discountRate / 100);
+                        book.PriceWithDiscount = (price - discountAmount).ToMoney();
+                    }
+                }
+            }
+
+            return topSales.Shuffle().ToList();
+        }
+
         public List<BookQueryModel> GetRelatedBooks(List<long> categoryId, long bookId)
         {
             var relatedBooks = new List<BookQueryModel>();

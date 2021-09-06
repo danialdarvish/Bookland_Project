@@ -8,7 +8,7 @@ namespace ShopManagement.Application.Contracts.Category
         OperationResult Create(CreateCategory command);
         OperationResult Edit(EditCategory command);
         EditCategory GetDetails(long id);
-        List<CategoryViewModel> Search(CategorySearchModel searchModel);
+        List<CategoryViewModel> Search(CategorySearchModel searchModel, bool isParent);
         List<CategoryViewModel> GetCategories(); 
         List<CategoryViewModel> GetSubCategories();
         List<CategoryViewModel> GetMainCategories();

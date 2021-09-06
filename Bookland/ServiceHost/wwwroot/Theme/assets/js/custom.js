@@ -32,21 +32,22 @@ function addToCart(id, name, price, picture, slug) {
 function updateCart() {
     var totalPrice = 0;
     let products = $.cookie(cookieName);
-    products = JSON.parse(products);
-    $("#cart_items_count").text(products.length);
-    Array.from(products).forEach(x => {
-        var price = x.unitPrice;
-        var count = x.count;
-        var productTotalPrice = count * price;
-        totalPrice = totalPrice + productTotalPrice;
-    })
-    totalPrice = separate(totalPrice);
-    $("#totalPrice1").text(totalPrice)
-    $("#totalPrice2").text("جمع کل: " + totalPrice)
-    const cartItemsWrapper = $("#cart_items_wrapper");
-    cartItemsWrapper.html('');
-    products.forEach(x => {
-        const product = `<div class="tg-minicarproduct">
+    if (products != undefined) {
+        products = JSON.parse(products);
+        $("#cart_items_count").text(products.length);
+        Array.from(products).forEach(x => {
+            var price = x.unitPrice;
+            var count = x.count;
+            var productTotalPrice = count * price;
+            totalPrice = totalPrice + productTotalPrice;
+        })
+        totalPrice = separate(totalPrice);
+        $("#totalPrice1").text(totalPrice)
+        $("#totalPrice2").text("جمع کل: " + totalPrice)
+        const cartItemsWrapper = $("#cart_items_wrapper");
+        cartItemsWrapper.html('');
+        products.forEach(x => {
+            const product = `<div class="tg-minicarproduct">
                                                     <a class="fa fa-remove" href="javascript:void(0)" onclick="removeFromCart('${x.id}')" style="float: left;"> </a>
                                                 <figure>
                                                     <img src="/Pictures/${x.picture}" style='width: 70px'>
@@ -57,8 +58,9 @@ function updateCart() {
                                                     <h5><a>تعداد: ${x.count} </a></h5>
                                                 </div>
                                             </div>`;
-        cartItemsWrapper.append(product);
-    });
+            cartItemsWrapper.append(product);
+        });
+    }
 }
 
 function removeFromCart(id) {
@@ -115,7 +117,7 @@ function changeCartItemCount(id, totalId, count) {
     //        }
     //    }
     //});
-   
+
     $.ajax(settings).done(function (data) {
         debugger;
         if (data.isInStock == false) {

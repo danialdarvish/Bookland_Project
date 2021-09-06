@@ -7,7 +7,7 @@ namespace ShopManagement.Domain.CategoryAgg
     public interface ICategoryRepository : IRepository<long, Category>
     {
         EditCategory GetDetails(long id);
-        List<CategoryViewModel> Search(CategorySearchModel searchModel);
+        List<CategoryViewModel> Search(CategorySearchModel searchModel, bool isParent);
         List<CategoryViewModel> GetCategories(); 
         List<CategoryViewModel> GetSubCategories();
         List<CategoryViewModel> GetMainCategories();

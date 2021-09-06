@@ -5,11 +5,14 @@
     Layout = "Shared/_AdminLayout";
     ViewData["title"] = "مدیریت دسته بندی ها";
 }
+
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a permission="@ShopPermissions.CreateBookCategories" class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد گروه محصول جدید</a>
+            <a permission="@ShopPermissions.CreateBookCategories" class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">
+                ایجاد دسته بندی جدید
+            </a>
         </p>
     </div>
 </div>
@@ -18,7 +21,9 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">جستجو در دسته بندی ها</h3>
+                <h3 class="panel-title">
+                    جستجو در دسته بندی ها
+                </h3>
             </div>
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
@@ -48,6 +53,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>نام</th>
+                                    <th>دسته بندی مرجع</th>
                                     <th>توضیحات</th>
                                     <th>تاریخ تولید</th>
                                     <th>عملیات</th>
@@ -59,6 +65,7 @@
                                     <tr>
                                         <td>@item.Id</td>
                                         <td>@item.Name</td>
+                                        <td>@item.ParentCategory</td>
                                         <td>@item.Description</td>
                                         <td>@item.CreationDate</td>
                                         <td>
