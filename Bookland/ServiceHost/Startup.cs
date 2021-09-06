@@ -9,6 +9,8 @@ using _01_Framework.Application.ZarinPal;
 using _01_Framework.Infrastructure;
 using AccountManagement.Configuration;
 using BlogManagement.Configuration;
+using BooklandReporting.ChartModels;
+using BooklandReporting.Query;
 using CommentManagement.Infrastructure.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Infrastructure.Configuration;
@@ -49,6 +51,7 @@ namespace ServiceHost
             services.AddTransient<IAuthHelper, AuthHelper>();
             services.AddTransient<IZarinPalFactory, ZarinPalFactory>();
             services.AddTransient<ISmsService, SmsService>();
+            services.AddTransient<IChartQuery, ChartQuery>();
 
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
             services.AddSingleton<IPasswordHasher, PasswordHasher>();

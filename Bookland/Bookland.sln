@@ -121,9 +121,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IM.Presentation", "IM.Presentation", "{1DF81148-EC51-4641-95B1-ACD16B0400EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Presentation.Api", "InventoryManagement.Presentation.Api\InventoryManagement.Presentation.Api.csproj", "{3A42A38F-D2F3-4371-93E7-2F42AC484806}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagement.Presentation.Api", "InventoryManagement.Presentation.Api\InventoryManagement.Presentation.Api.csproj", "{3A42A38F-D2F3-4371-93E7-2F42AC484806}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.Account.Acl", "ShopManagement.Infrastructure.Account.Acl\ShopManagement.Infrastructure.Account.Acl.csproj", "{0FC43D62-DC5B-4EAD-A72F-2016D769B6C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.Account.Acl", "ShopManagement.Infrastructure.Account.Acl\ShopManagement.Infrastructure.Account.Acl.csproj", "{0FC43D62-DC5B-4EAD-A72F-2016D769B6C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooklandReporting", "BooklandReporting\BooklandReporting.csproj", "{BEF602C0-78AA-4985-B759-DA46F9FDE61C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -275,6 +277,10 @@ Global
 		{0FC43D62-DC5B-4EAD-A72F-2016D769B6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FC43D62-DC5B-4EAD-A72F-2016D769B6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FC43D62-DC5B-4EAD-A72F-2016D769B6C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF602C0-78AA-4985-B759-DA46F9FDE61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF602C0-78AA-4985-B759-DA46F9FDE61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF602C0-78AA-4985-B759-DA46F9FDE61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF602C0-78AA-4985-B759-DA46F9FDE61C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

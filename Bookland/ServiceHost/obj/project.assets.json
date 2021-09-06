@@ -2807,6 +2807,21 @@
           "bin/placeholder/BlogManagement.Infrastructure.EFCore.dll": {}
         }
       },
+      "BooklandReporting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AccountManagement.Infrastructure.EFCore": "1.0.0",
+          "Newtonsoft.Json": "12.0.2",
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BooklandReporting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BooklandReporting.dll": {}
+        }
+      },
       "CommentManagement.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -9077,6 +9092,11 @@
       "path": "../BlogManagement.Infrastructure.EFCore/BlogManagement.Infrastructure.EFCore.csproj",
       "msbuildProject": "../BlogManagement.Infrastructure.EFCore/BlogManagement.Infrastructure.EFCore.csproj"
     },
+    "BooklandReporting/1.0.0": {
+      "type": "project",
+      "path": "../BooklandReporting/BooklandReporting.csproj",
+      "msbuildProject": "../BooklandReporting/BooklandReporting.csproj"
+    },
     "CommentManagement.Application/1.0.0": {
       "type": "project",
       "path": "../CommentManagement.Application/CommentManagement.Application.csproj",
@@ -9197,6 +9217,7 @@
     "net5.0": [
       "AccountManagement.Configuration >= 1.0.0",
       "BlogManagement.Configuration >= 1.0.0",
+      "BooklandReporting >= 1.0.0",
       "CommentManagement.Infrastructure.Configuration >= 1.0.0",
       "DiscountManagement.Application.Contract >= 1.0.0",
       "DiscountManagement.Configuration >= 1.0.0",
@@ -9248,6 +9269,9 @@
             },
             "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BlogManagement.Configuration\\BlogManagement.Configuration.csproj": {
               "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BlogManagement.Configuration\\BlogManagement.Configuration.csproj"
+            },
+            "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BooklandReporting\\BooklandReporting.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\BooklandReporting\\BooklandReporting.csproj"
             },
             "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\CommentManagement.Infrastructure.Configuration\\CommentManagement.Infrastructure.Configuration.csproj": {
               "projectPath": "C:\\Users\\ASUS\\source\\repos\\Bookland_Project\\Code\\Bookland\\CommentManagement.Infrastructure.Configuration\\CommentManagement.Infrastructure.Configuration.csproj"
