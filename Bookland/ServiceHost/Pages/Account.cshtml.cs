@@ -1,4 +1,4 @@
-using AccountManagement.Application.Contracts.Account;
+﻿using AccountManagement.Application.Contracts.Account;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -42,11 +42,16 @@ namespace ServiceHost.Pages
 
         public IActionResult OnPostRegister(CreateAccount command)
         {
-            var result = _accountApplication.Create(command);
-            if (result.IsSucceed)
-                RedirectToPage("/Account");
+            if (ModelState.IsValid)
+            {
+                var result = _accountApplication.Create(command);
+                if (result.IsSucceed)
+                    RedirectToPage("/Account");
+                RegisterMessage = result.Message;
+                return RedirectToPage("/Account");
+            }
 
-            RegisterMessage = result.Message;
+            RegisterMessage = "همه فیلد ها را پر کنید";
             return RedirectToPage("/Account");
         }
     }

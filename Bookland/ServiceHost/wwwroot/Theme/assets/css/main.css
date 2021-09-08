@@ -5857,3 +5857,51 @@ body.tg-comingsoonpage .tg-footerbar {
         margin-top: 8px;
         color: #707070;
     }
+
+.login-container {
+    background-color: ghostwhite;
+    margin: 22px;
+    border-radius: 20px;
+    box-shadow: 0 4px 19px rgb(37 20 16 / 36%);
+    margin-right: -35px;
+}
+
+.register-container {
+    padding: 35px;
+    width: 554px;
+    background-color: ghostwhite;
+    margin: 22px;
+    border-radius: 20px;
+    box-shadow: 0 4px 19px rgb(37 20 16 / 36%);
+    padding-bottom: 16px;
+}
+
+
+.login-heading {
+    padding: 15px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.login-label {
+    padding-right: 15px;
+    font-weight: bold;
+}
+
+.login-password-label {
+    padding-right: 15px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.login-button {
+    float: left;
+    padding: 5px 51px;
+}
+
+.register-button {
+    float: left;
+    padding: 5px 51px;  
+    margin-top: 16px;
+    margin-left: 30px;
+}

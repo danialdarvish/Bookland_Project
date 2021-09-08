@@ -88,7 +88,7 @@
                 Website Stats
             </h3>
             <div class="portlet-widgets">
-                <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
+                <a href="javascript:" data-toggle="reload"><i class="ion-refresh"></i></a>
                 <span class="divider"></span>
                 <a data-toggle="collapse" data-parent="#accordion1" href="#portlet1"><i class="ion-minus-round"></i></a>
                 <span class="divider"></span>
@@ -122,13 +122,36 @@
     </div>-->
     <!-- /Portlet -->
     <!--</div>--> <!-- end col -->
-
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group spinner-3">
+                <label class="control-label col-md-3" style="margin-top: 8px;">انتخاب سال</label>
+                <div class="col-md-9" style="margin-right: -60px;">
+                    <div id="spinner3">
+                        <div class="input-group" style="width: 150px;">
+                            <input type="text" id="year" class="spinner-input form-control" maxlength="4" readonly>
+                            <div class="spinner-buttons input-group-btn">
+                                <button type="button" class="btn btn-info spinner-up waves-effect" onclick="Load()">
+                                    <i class="fa fa-angle-up"></i>
+                                </button>
+                                <button type="button" class="btn btn-pink spinner-down waves-effect" onclick="Load()">
+                                    <i class="fa fa-angle-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="help-block">
+                        بیشترین مقدار: @Convert.ToDateTime(DateTime.Now.ToFarsi()).Year
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-sm-12">
         <div class="portlet">
-
-            <div class="portlet-heading">
-                <h3 class="portlet-title text-dark text-uppercase">
-                    Website Stats
+            <div class="portlet-heading" id="ShowListOfFeature">
+                <h3 class="portlet-title text-dark text-uppercase pull-right">
+                    آمار فروش
                 </h3>
                 <canvas id="bar"></canvas>
                 <div class="clearfix"></div>
@@ -139,6 +162,8 @@
 
 
 @section Scripts {
+    <script type="text/javascript" src="~/AdminTheme/assets/spinner/spinner.min.js"></script>
+    <script src="~/AdminTheme/assets/js/persian-date-convert.js"></script>
     <script>
         const barChartDiv = document.getElementById("bar");
         const data = @Html.Raw(JsonConvert.SerializeObject(Model.DataSet));
@@ -157,6 +182,40 @@
                     }
                 }
             });
+
+        let year = @Convert.ToDateTime(DateTime.Now.ToFarsi()).Year;
+        $('#spinner3').spinner({ value: year, min: 0, max: year });
+
+
+        function Load() {
+            const year = $('#year').val();
+            $.ajax({
+                url: "@Url.Page("/Index")?handler=LoadChart",
+                type: "Get",
+                data: { year:year}
+            }).done(function (res) {
+                debugger;
+                $("#ShowListOfFeature").html(`<canvas id="bar"></canvas>`);
+                const barChartDiv = document.getElementById("bar");
+                const data = @Html.Raw(JsonConvert.SerializeObject(Model.DataSet));
+                const barChart = new Chart(barChartDiv,
+                    {
+                        type: "bar",
+                        data: {
+                            labels: ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"],
+                            datasets: data
+                        },
+                        options: {
+                            elements: {
+                                bar: {
+                                    borderWidth: 2
+                                }
+                            }
+                        }
+                    });
+            });
+        }
+
     </script>
 }
 

@@ -39,7 +39,7 @@ namespace BooklandReporting.Query
             return _shopContext.Orders.Sum(x => x.PayAmount);
         }
 
-        public List<SalesChartHelper> SalesByEachMonth()
+        public List<SalesChartHelper> SalesByYear(int year)
         {
             #region GroupByCode
             //var orders = _shopContext.Orders.Select(x => new SalesChartHelper
@@ -63,6 +63,9 @@ namespace BooklandReporting.Query
                 Month = Convert.ToDateTime(x.CreationDate.ToFarsi()).Month,
                 Sale = x.PayAmount
             }).ToList();
+
+            orders = orders.Where(x => x.Year == year).ToList();
+
             var result = new List<SalesChartHelper>();
             for (var i = 1; i <= 12; i++)
             {

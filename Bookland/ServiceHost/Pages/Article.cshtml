@@ -1,6 +1,7 @@
 ﻿@page "{id}"
 @model ServiceHost.Pages.ArticleModel
 @{
+    ViewData["Title"] = Model.Article.Title;
 }
 
 <div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">
@@ -10,8 +11,8 @@
                 <div class="tg-innerbannercontent">
                     <h1>اخبار و مقالات</h1>
                     <ol class="tg-breadcrumb">
-                        <li><a href="javascript:void(0);">خانه</a></li>
-                        <li><a href="javascript:void(0);">مقالات</a></li>
+                        <li><a asp-page="/Index">خانه</a></li>
+                        <li><a>مقالات</a></li>
                         <li class="tg-active">@Model.Article.Title</li>
                     </ol>
                 </div>

@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using _01_Framework.Application;
 using BooklandReporting.ChartModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Areas.Administration.Pages
@@ -14,7 +17,6 @@ namespace ServiceHost.Areas.Administration.Pages
 
         public List<Chart> DataSet { get; set; }
 
-
         private readonly IChartQuery _chartQuery;
 
         public IndexModel(IChartQuery chartQuery)
@@ -22,9 +24,12 @@ namespace ServiceHost.Areas.Administration.Pages
             _chartQuery = chartQuery;
         }
 
-        public void OnGet()
+        public void OnGet(int year)
         {
-            var data = _chartQuery.SalesByEachMonth();
+            if (year == 0)
+                year = Convert.ToDateTime(DateTime.Now.ToFarsi()).Year;
+
+            var data = _chartQuery.SalesByYear(year);
             DataSet = new List<Chart>
             {
                 new Chart
@@ -39,6 +44,24 @@ namespace ServiceHost.Areas.Administration.Pages
             UsersCount = _chartQuery.CountAllUsers();
             TotalSale = _chartQuery.TotalSales();
             AllOrderCount = _chartQuery.CountAllOrders();
+        }
+
+        public void OnGetLoadChart(int year)
+        {
+            if (year == 0)
+                year = Convert.ToDateTime(DateTime.Now.ToFarsi()).Year;
+
+            var data = _chartQuery.SalesByYear(year);
+            DataSet = new List<Chart>
+            {
+                new Chart
+                {
+                    Data = data.Select(x=>x.Sale).ToList(),
+                    Label = "میزان فروش",
+                    BackgroundColor = "#38b000",
+                    BorderColor = "#008000"
+                }
+            };
         }
     }
 }

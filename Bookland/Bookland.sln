@@ -125,7 +125,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagement.Present
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.Account.Acl", "ShopManagement.Infrastructure.Account.Acl\ShopManagement.Infrastructure.Account.Acl.csproj", "{0FC43D62-DC5B-4EAD-A72F-2016D769B6C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooklandReporting", "BooklandReporting\BooklandReporting.csproj", "{BEF602C0-78AA-4985-B759-DA46F9FDE61C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooklandReporting", "BooklandReporting\BooklandReporting.csproj", "{BEF602C0-78AA-4985-B759-DA46F9FDE61C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

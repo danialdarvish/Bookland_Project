@@ -1,6 +1,7 @@
 ﻿@page "{id}"
 @model ServiceHost.Pages.ArticleCategoryModel
 @{
+    ViewData["Title"] = "لیست مقالات";
 }
 
 <div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">
@@ -46,8 +47,8 @@
                                                     </div>
                                                     @*<span class="tg-bookwriter">توسط: <a href="javascript:void(0);">کاترین کالبوستون</a></span>*@
                                                     <ul class="tg-postmetadata">
-                                                        <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>@article.CommentCount نظر</i></a></li>
-                                                        <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i><i>@article.PublishDate</i></a></li>
+                                                        <li><a><i class="fa fa-comment-o"></i><i>@article.CommentCount نظر</i></a></li>
+                                                        <li><a><i class="fa fa-calendar"></i><i>@article.PublishDate</i></a></li>
                                                     </ul>
                                                 </div>
                                             </article>

@@ -1,6 +1,8 @@
 ﻿@page "{id}"
 @model ServiceHost.Pages.BookCategoryModel
 @{
+    ViewData["Title"] = $"کتاب های {Model.BookCategory.Name}";
+
 }
 
 <div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Theme/assets/images/parallax/bgparallax-07.jpg">

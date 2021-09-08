@@ -146,9 +146,10 @@ namespace _01_BooklandQuery.Query
                     PictureAlt = x.PictureAlt,
                     PictureTitle = x.PictureTitle,
                     PageCount = x.PageCount,
-                    CategoryId = MapCategoryId(x.Id, x.BookCategories),
+                    Categories = MapCategories(x.Id, x.BookCategories),
                     CategoryNames = MapCategoryNames(x.Id, x.BookCategories),
                     AuthorName = x.Author.FullName,
+                    AuthorSlug = x.Author.Slug,
                     ShortDescription = x.ShortDescription,
                     IsEditorsChoice = x.IsEditorsChoice
                 }).AsNoTracking()
@@ -383,7 +384,28 @@ namespace _01_BooklandQuery.Query
 
         public List<BookQueryModel> GetLatestArrivals()
         {
-            throw new NotImplementedException();
+            var books = _context.Books
+                .Where(x => x.CreationDate > DateTime.Now.AddDays(-30))
+                .Include(x => x.Author)
+                .Include(x => x.BookCategories)
+                .ThenInclude(x => x.Category)
+                .Select(x => new BookQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Slug = x.Slug,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    PageCount = x.PageCount,
+                    Categories = MapCategories(x.Id, x.BookCategories),
+                    AuthorName = x.Author.FullName,
+                    AuthorSlug = x.Author.Slug,
+                    ShortDescription = x.ShortDescription,
+                    IsEditorsChoice = x.IsEditorsChoice
+                }).AsNoTracking().Shuffle().Take(3).ToList();
+
+            return books;
         }
 
         public List<BookQueryModel> Search(string value)

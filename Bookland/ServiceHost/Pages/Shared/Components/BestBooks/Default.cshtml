@@ -47,12 +47,12 @@
                             </figure>
                             <div class="tg-postbookcontent">
                                 <div class="tg-booktitle">
-                                    <h2 class="titleBig"><a href="javascript:void(0);">@book.Name</a></h2>
+                                    <h2 class="titleBig"><a asp-page="./BookDetail" asp-route-id="@book.Slug">@book.Name</a></h2>
                                 </div>
-                                <span class="tg-bookwriter">توسط: <a href="javascript:void(0);">@book.AuthorName</a></span>
+                                <span class="tg-bookwriter">توسط: <a asp-page="./AuthorDetail" asp-route-id="@book.AuthorSlug">@book.AuthorName</a></span>
                                 <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
                                     <i class="fa fa-shopping-basket"></i>
-                                    <em>افزودن به سبدخرید</em>
+                                    <em>افزودن به سبد خرید</em>
                                 </a>
                             </div>
                         </div>

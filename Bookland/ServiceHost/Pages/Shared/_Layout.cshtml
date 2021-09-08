@@ -1,10 +1,12 @@
-﻿<!doctype html>
+﻿@using _01_Framework.Application
+@inject IAuthHelper _authHelper
+<!doctype html>
 <html class="no-js" lang="">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>کتابخانه - بهترین قالب کتابخانه آنلاین</title>
+    <title>فروشگاه بوکلند | @ViewData["Title"]</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="~/Theme/assets/images/apple-touch-icon.png">
@@ -78,10 +80,13 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="tg-userlogin">
-                                <figure><a href="javascript:void(0);"><img src="~/Theme/assets/images/users/img-01.jpg" alt="image description"></a></figure>
-                                <span>سلام، ملانی</span>
-                            </div>
+                            @if (_authHelper.IsAuthenticated())
+                            {
+                                <div class="tg-userlogin">
+                                    <figure><a href="javascript:void(0);"><img src="~/Theme/assets/images/users/download.png" alt="image description"></a></figure>
+                                    <span>سلام، @_authHelper.CurrentAccountInfo().Fullname</span>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,6 @@ namespace BooklandReporting.ChartModels
         long CountAllUsers();
         long CountAllBooks();
         double TotalSales();
-        List<SalesChartHelper> SalesByEachMonth();
+        List<SalesChartHelper> SalesByYear(int year);
     }
 }
