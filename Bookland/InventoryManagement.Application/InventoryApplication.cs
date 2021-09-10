@@ -23,7 +23,8 @@ namespace InventoryManagement.Application
             if (_inventoryRepository.Exists(x => x.BookId == command.BookId))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            var inventory = new Inventory(command.BookId, command.UnitPrice);
+            var unitPrice = double.Parse(command.UnitPriceString.Replace(",", ""));
+            var inventory = new Inventory(command.BookId, unitPrice);
             _inventoryRepository.Create(inventory);
             _inventoryRepository.SaveChanges();
 
@@ -41,7 +42,8 @@ namespace InventoryManagement.Application
                 x.BookId == command.BookId && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            inventory.Edit(command.BookId, command.UnitPrice);
+            var unitPrice = double.Parse(command.UnitPriceString.Replace(",", ""));
+            inventory.Edit(command.BookId, unitPrice);
             _inventoryRepository.SaveChanges();
 
             return operation.Succeed();

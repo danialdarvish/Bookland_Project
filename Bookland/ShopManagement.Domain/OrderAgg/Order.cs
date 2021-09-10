@@ -10,19 +10,22 @@ namespace ShopManagement.Domain.OrderAgg
         public double TotalAmount { get; private set; }
         public double DiscountAmount { get; private set; }
         public double PayAmount { get; private set; }
+        public string Address { get; private set; }
         public bool IsPaid { get; private set; }
         public bool IsCanceled { get; private set; }
         public string IssueTrackingNo { get; private set; }
         public long RefId { get; set; }
         public List<OrderItem> Items { get; set; }
 
-        public Order(long accountId, int paymentMethod, double totalAmount, double discountAmount, double payAmount)
+        public Order(long accountId, int paymentMethod, double totalAmount, double discountAmount, double payAmount,
+            string address)
         {
             AccountId = accountId;
             PaymentMethod = paymentMethod;
             TotalAmount = totalAmount;
             DiscountAmount = discountAmount;
             PayAmount = payAmount;
+            Address = address;
             PaymentMethod = paymentMethod;
             IsPaid = false;
             IsCanceled = false;

@@ -17,17 +17,17 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="BookId" class="control-label">انتخاب کتاب</label>
-                    <select type="text" class="form-control" asp-for="BookId" asp-items='new SelectList(Model.Books, "Id", "Name")'>
-                        <option value="0">کتاب</option>
+                    <select type="text" class="select2" id="mySelect2" asp-for="BookId" asp-items='new SelectList(Model.Books, "Id", "Name")'>
+                        <option value="0">کتاب...</option>
                     </select>
                     <span asp-validation-for="BookId" class="error"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="UnitPrice" class="control-label">قیمت واحد</label>
-                    <input type="text" class="form-control" asp-for="UnitPrice">
-                    <span asp-validation-for="UnitPrice" class="error"></span>
+                    <label asp-for="UnitPriceString" class="control-label">قیمت واحد</label>
+                    <input type="text" class="form-control" asp-for="UnitPriceString" id="price" onchange="toMoney(this.value)">
+                    <span asp-validation-for="UnitPriceString" class="error"></span>
                 </div>
             </div>
         </div>
@@ -38,3 +38,34 @@
         <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
     </div>
 </form>
+
+<link href="~/AdminTheme/assets/select2/select2.css" rel="stylesheet" type="text/css" />
+
+<script src="~/AdminTheme/assets/select2/select2.min.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function () {
+
+        jQuery("#mySelect2").select2({
+            width: '100%',
+            dropdownParent: $("#myModal")
+        });
+    });
+
+    function toMoney(price) {
+        const a = price.replace(",", "");
+        const doublePrice = parseFloat(a);
+        $("#price").val(separate(doublePrice));
+    }
+
+    function separate(Number) {
+        Number += '';
+        Number = Number.replace(',', '');
+        x = Number.split('.');
+        y = x[0];
+        z = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(y))
+            y = y.replace(rgx, '$1' + ',' + '$2');
+        return y + z;
+    }
+</script>

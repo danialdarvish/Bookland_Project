@@ -12,6 +12,9 @@ namespace ServiceHost.Pages
         [TempData]
         public string RegisterMessage { get; set; }
 
+        public bool IsSuccessful { get; set; }
+
+
         private readonly IAccountApplication _accountApplication;
 
         public AccountModel(IAccountApplication accountApplication)
@@ -46,12 +49,16 @@ namespace ServiceHost.Pages
             {
                 var result = _accountApplication.Create(command);
                 if (result.IsSucceed)
+                {
                     RedirectToPage("/Account");
+                    IsSuccessful = true;
+                }
                 RegisterMessage = result.Message;
                 return RedirectToPage("/Account");
             }
 
             RegisterMessage = "همه فیلد ها را پر کنید";
+            IsSuccessful = false;
             return RedirectToPage("/Account");
         }
     }

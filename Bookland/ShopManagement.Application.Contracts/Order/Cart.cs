@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using _01_Framework.Application;
 
 namespace ShopManagement.Application.Contracts.Order
 {
@@ -8,6 +10,10 @@ namespace ShopManagement.Application.Contracts.Order
         public double DiscountAmount { get; set; }
         public double PayAmount { get; set; }
         public int PaymentMethod { get; set; }
+
+        [Required(ErrorMessage = ValidationMessages.IsRequired)]
+        public string Address { get; set; }
+
         public List<CartItem> Items { get; set; }
 
         public Cart()
@@ -26,6 +32,11 @@ namespace ShopManagement.Application.Contracts.Order
         public void SetPaymentMethod(int methodId)
         {
             PaymentMethod = methodId;
+        }
+
+        public void SetAddress(string address)
+        {
+            Address = address;
         }
     }
 }

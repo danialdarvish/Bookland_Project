@@ -5580,6 +5580,10 @@ body.tg-comingsoonpage .tg-footerbar {
     font-size: large;
 }
 
+.bold {
+    font-weight: bold !important;
+}
+
 .fix-tag {
     margin-left: -5px;
 }
@@ -5635,6 +5639,17 @@ body.tg-comingsoonpage .tg-footerbar {
     padding: 8px 50px;
     margin-top: 22px;
     margin-left: -82px;
+}
+
+.address-label {
+    font-weight: bold !important;
+    font-size: larger !important;
+}
+
+.address-container {
+    margin-top: 22px;
+    margin-right: -60px;
+    margin-bottom: 50px;
 }
 
 .cart-table td.pro-subtotal span {

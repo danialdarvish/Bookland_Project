@@ -71,12 +71,16 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 IssueTrackingNo = x.IssueTrackingNo,
                 PayAmount = x.PayAmount,
                 PaymentMethodId = x.PaymentMethod,
+                Address = x.Address,
                 RefId = x.RefId,
                 TotalAmount = x.TotalAmount,
                 CreationDate = x.CreationDate.ToFarsi()
             });
 
             query = query.Where(x => x.IsCanceled == searchModel.IsCanceled);
+
+            if (!string.IsNullOrWhiteSpace(searchModel.Address))
+                query = query.Where(x => x.Address.Contains(searchModel.Address));
 
             if (searchModel.AccountId > 0)
                 query = query.Where(x => x.AccountId == searchModel.AccountId);

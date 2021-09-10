@@ -29,7 +29,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-authordetail">
                         <figure class="tg-authorimg">
-                            <img src="~/Pictures/@Model.Author.Picture" alt="@Model.Author.PictureAlt" title="@Model.Author.PictureTitle">
+                            <img src="~/Pictures/@Model.Author.Picture" alt="@Model.Author.PictureAlt" title="@Model.Author.PictureTitle" style="width: 200px; height: 200px;">
                         </figure>
                         <div class="tg-authorcontentdetail">
                             <div class="tg-sectionhead">
@@ -76,7 +76,7 @@
                                                         <div class="tg-themetagbox"><span class="tg-themetag">پیشنهاد خاص</span></div>
                                                     }
                                                     <div class="tg-booktitle">
-                                                        <h3><a asp-page="/BookDetail" asp-route-id="@book.Slug">@book.Name</a></h3>
+                                                        <h3><a asp-page="/BookDetail" asp-route-id="@book.Slug" style="font-weight: bold;">@book.Name</a></h3>
                                                     </div>
                                                     <span class="tg-stars"><span></span></span>
                                                     <span class="tg-bookprice" style="margin: 5px">

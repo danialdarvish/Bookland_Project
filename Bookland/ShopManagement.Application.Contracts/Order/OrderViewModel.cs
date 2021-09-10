@@ -10,6 +10,7 @@
         public double TotalAmount { get; set; }
         public double DiscountAmount { get; set; }
         public double PayAmount { get; set; }
+        public string Address { get; set; }
         public bool IsPaid { get; set; }
         public bool IsCanceled { get; set; }
         public string IssueTrackingNo { get; set; }

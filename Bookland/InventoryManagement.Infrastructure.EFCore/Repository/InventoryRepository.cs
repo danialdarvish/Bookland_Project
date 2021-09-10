@@ -28,7 +28,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 BookId = x.BookId,
-                UnitPrice = x.UnitPrice
+                UnitPriceString = x.UnitPrice.ToMoney()
             }).FirstOrDefault(x => x.Id == id);
         }
 

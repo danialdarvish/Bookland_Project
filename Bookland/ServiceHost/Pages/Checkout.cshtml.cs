@@ -66,10 +66,11 @@ namespace ServiceHost.Pages
             _cartService.Set(Cart);
         }
 
-        public IActionResult OnPostPay(int paymentMethod)
+        public IActionResult OnPostPay(int paymentMethod, string address)
         {
             var cart = _cartService.Get();
             cart.SetPaymentMethod(paymentMethod);
+            cart.SetAddress(address);
             var result = _bookQuery.CheckInventoryStatus(cart.Items);
             if (result.Any(x => !x.IsInStock))
                 return RedirectToPage("/Cart");

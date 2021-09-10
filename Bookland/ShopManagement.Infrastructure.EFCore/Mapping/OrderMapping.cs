@@ -12,6 +12,7 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.IssueTrackingNo).HasMaxLength(8);
+            builder.Property(x => x.Address).IsRequired();
 
             builder.OwnsMany(x => x.Items, navigationBuilder =>
             {

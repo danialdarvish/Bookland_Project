@@ -1,10 +1,10 @@
-﻿using System;
+﻿using _01_Framework.Application;
+using BooklandReporting.ChartModels;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using _01_Framework.Application;
-using BooklandReporting.ChartModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Areas.Administration.Pages
 {
@@ -46,7 +46,7 @@ namespace ServiceHost.Areas.Administration.Pages
             AllOrderCount = _chartQuery.CountAllOrders();
         }
 
-        public void OnGetLoadChart(int year)
+        public IActionResult OnGetLoadChart(int year)
         {
             if (year == 0)
                 year = Convert.ToDateTime(DateTime.Now.ToFarsi()).Year;
@@ -62,6 +62,9 @@ namespace ServiceHost.Areas.Administration.Pages
                     BorderColor = "#008000"
                 }
             };
+
+            var chartData = DataSet;
+            return new JsonResult(chartData);
         }
     }
 }

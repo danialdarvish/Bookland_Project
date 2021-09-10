@@ -24,7 +24,6 @@ function addToCart(id, name, price, picture, slug) {
         }
         products.push(product);
     }
-
     $.cookie(cookieName, JSON.stringify(products), { expires: 2, path: "/" });
     updateCart();
 }

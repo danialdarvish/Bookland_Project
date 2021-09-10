@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label asp-for="BookId" class="control-label">انتخاب کتاب</label>
                     <select type="text" class="select2" id="mySelect2" asp-for="BookId" asp-items='new SelectList(Model.Books, "Id", "Name")'>
-                        <option value="0">محصول</option>
+                        <option value="0">کتاب...</option>
                     </select>
                     <span asp-validation-for="BookId" class="error"></span>
                 </div>

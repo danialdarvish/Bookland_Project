@@ -13,7 +13,7 @@
             {
                 case 1:
                     return "مدیر سیستم";
-                case 2:
+                case 3:
                     return "محتوا گذار";
                 default:
                     return "";

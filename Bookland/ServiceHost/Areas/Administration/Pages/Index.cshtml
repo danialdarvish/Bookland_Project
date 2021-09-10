@@ -23,7 +23,7 @@
         <div class="mini-stat clearfix bx-shadow">
             <span class="mini-stat-icon bg-info"><i class="ion-social-usd"></i></span>
             <div class="mini-stat-info text-right text-muted">
-                <span class="counter">@Model.TotalSale.ToMoney()</span>
+                <span class="counter">@Model.TotalSale.ToMoney() تومان</span>
                 کل فروش
             </div>
             @*<div class="tiles-progress">
@@ -197,7 +197,7 @@
                 debugger;
                 $("#ShowListOfFeature").html(`<canvas id="bar"></canvas>`);
                 const barChartDiv = document.getElementById("bar");
-                const data = @Html.Raw(JsonConvert.SerializeObject(Model.DataSet));
+                const data = res;
                 const barChart = new Chart(barChartDiv,
                     {
                         type: "bar",
