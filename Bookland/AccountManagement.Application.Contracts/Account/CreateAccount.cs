@@ -16,6 +16,7 @@ namespace AccountManagement.Application.Contracts.Account
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Password { get; set; }
 
+        [RegularExpression(@"(\+98|0)?9\d{9}", ErrorMessage = "قالب شماره همراه صحیح نمی باشد.")]
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Mobile { get; set; }
 

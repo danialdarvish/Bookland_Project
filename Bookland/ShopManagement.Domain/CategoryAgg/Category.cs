@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using _01_Framework.Domain;
-using ShopManagement.Domain.BookAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 
 namespace ShopManagement.Domain.CategoryAgg

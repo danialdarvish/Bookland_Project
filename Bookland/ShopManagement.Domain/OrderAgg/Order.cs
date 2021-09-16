@@ -38,6 +38,7 @@ namespace ShopManagement.Domain.OrderAgg
             IsPaid = true;
             if (refId > 0)
                 RefId = refId;
+            IsCanceled = false;
         }
 
         public void SetIssueTrackingNo(string number)

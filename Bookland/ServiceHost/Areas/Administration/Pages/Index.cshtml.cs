@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _01_Framework.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceHost.Areas.Administration.Pages
@@ -24,6 +25,7 @@ namespace ServiceHost.Areas.Administration.Pages
             _chartQuery = chartQuery;
         }
 
+        
         public void OnGet(int year)
         {
             if (year == 0)

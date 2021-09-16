@@ -36,7 +36,7 @@ namespace BooklandReporting.Query
 
         public double TotalSales()
         {
-            return _shopContext.Orders.Sum(x => x.PayAmount);
+            return _shopContext.Orders.Where(x=>x.IsPaid).Sum(x => x.PayAmount);
         }
 
         public List<SalesChartHelper> SalesByYear(int year)
@@ -57,12 +57,14 @@ namespace BooklandReporting.Query
             //    }).ToList();
             #endregion
 
-            var orders = _shopContext.Orders.Select(x => new SalesChartHelper
-            {
-                Year = Convert.ToDateTime(x.CreationDate.ToFarsi()).Year,
-                Month = Convert.ToDateTime(x.CreationDate.ToFarsi()).Month,
-                Sale = x.PayAmount
-            }).ToList();
+            var orders = _shopContext.Orders
+                .Where(x => x.IsPaid)
+                .Select(x => new SalesChartHelper
+                {
+                    Year = Convert.ToDateTime(x.CreationDate.ToFarsi()).Year,
+                    Month = Convert.ToDateTime(x.CreationDate.ToFarsi()).Month,
+                    Sale = x.PayAmount
+                }).ToList();
 
             orders = orders.Where(x => x.Year == year).ToList();
 

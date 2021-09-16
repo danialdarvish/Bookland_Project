@@ -58,6 +58,7 @@
                                     <th>شماره پیگیری</th>
                                     <th>شناسه خرید</th>
                                     <th>تاریخ خرید</th>
+                                    <th>آدرس</th>
                                     <th>وضعیت</th>
                                     <th>عملیات</th>
                                 </tr>
@@ -65,46 +66,59 @@
                             <tbody>
                                 @foreach (var item in Model.Orders)
                                 {
-                                    <tr>
-                                        <td>@item.Id</td>
-                                        <td>@item.AccountFullName</td>
-                                        <td>@item.TotalAmount.ToMoney()</td>
-                                        <td>@item.DiscountAmount.ToMoney()</td>
-                                        <td>@item.PayAmount.ToMoney()</td>
-                                        <td>@item.PaymentMethod</td>
-                                        <td>@item.IssueTrackingNo</td>
-                                        <td>@item.RefId</td>
-                                        <td>@item.CreationDate</td>
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.AccountFullName</td>
+                                    <td>@item.TotalAmount.ToMoney()</td>
+                                    <td>@item.DiscountAmount.ToMoney()</td>
+                                    <td>@item.PayAmount.ToMoney()</td>
+                                    <td>@item.PaymentMethod</td>
+                                    <td>@item.IssueTrackingNo</td>
+                                    <td>@item.RefId</td>
+                                    <td>@item.CreationDate</td>
+                                    @if (item.Address.Length > 10)
+                                    {
                                         <td>
-                                            @if (item.IsCanceled)
-                                            {
-                                                <span class="text-danger">کنسل شده</span>
-                                            }
-                                            @if (item.IsPaid)
-                                            {
-                                                <span class="text-success">پرداخت شده</span>
-                                            }
-                                            @if (!item.IsCanceled && !item.IsPaid)
-                                            {
-                                                <span class="text-warning">در انتظار پرداخت</span>
-                                            }
+                                            <div class="myTooltip">
+                                                @item.Address.LimitCharacters(CharacterLimitation.BookLimitation)
+                                                <span class="tooltiptext">@item.Address</span>
+                                            </div>
                                         </td>
-                                        <td class="oneee">
-                                            @if (!item.IsPaid)
-                                            {
-                                                <a class="btn btn-success block pull-right " asp-page-handler="Confirm" asp-route-id="@item.Id">
-                                                    <i class="fa fa-check"></i> تایید
-                                                </a>
-                                                <a class="btn btn-danger pull-right " asp-page-handler="Cancel" asp-route-id="@item.Id">
-                                                    <i class="fa fa-close"></i> لغو
-                                                </a>
-                                            }
-                                            <a class="btn btn-primary pull-right "
-                                               href="#showmodal=@Url.Page("./Index", "Items", new {id = item.Id})">
-                                                <i class="fa fa-card"></i> آیتم ها
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Address</td>
+                                    }
+                                    <td>
+                                        @if (item.IsCanceled)
+                                        {
+                                            <span class="text-danger">کنسل شده</span>
+                                        }
+                                        @if (item.IsPaid)
+                                        {
+                                            <span class="text-success">پرداخت شده</span>
+                                        }
+                                        @if (!item.IsCanceled && !item.IsPaid)
+                                        {
+                                            <span class="text-warning">در انتظار پرداخت</span>
+                                        }
+                                    </td>
+                                    <td class="oneee">
+                                        @if (!item.IsPaid)
+                                        {
+                                            <a class="btn btn-success block pull-right " asp-page-handler="Confirm" asp-route-id="@item.Id">
+                                                <i class="fa fa-check"></i> تایید
                                             </a>
-                                        </td>
-                                    </tr>
+                                            <a class="btn btn-danger pull-right " asp-page-handler="Cancel" asp-route-id="@item.Id">
+                                                <i class="fa fa-close"></i> لغو
+                                            </a>
+                                        }
+                                        <a class="btn btn-primary pull-right "
+                                           href="#showmodal=@Url.Page("./Index", "Items", new {id = item.Id})">
+                                            <i class="fa fa-card"></i> آیتم ها
+                                        </a>
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                         </table>

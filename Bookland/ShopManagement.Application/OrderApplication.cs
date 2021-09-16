@@ -58,8 +58,8 @@ namespace ShopManagement.Application
             if (!_shopInventoryAcl.ReduceFromInventory(order.Items)) return "";
 
             _orderRepository.SaveChanges();
-            //var (name, mobile) = _shopAccountAcl.GetAccountBy(order.AccountId);
-            //_smsService.Send(mobile, SmsMessages.PaymentSucceeded(name, issueTrackingNo));
+            var (name, mobile) = _shopAccountAcl.GetAccountBy(order.AccountId);
+            _smsService.Send(mobile, SmsMessages.PaymentSucceeded(name, issueTrackingNo));
             return issueTrackingNo;
         }
 
