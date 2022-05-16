@@ -22,7 +22,9 @@ using ServiceHost;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemMetadataAttribute("RouteTemplate", "{id}")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6198d96d73c85dd9afb3d0eadc658b2ae3a1494b", @"/Pages/BookCategory.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d027006424b9e12b1709732f146fce9f1d78e6a1", @"/Pages/_ViewImports.cshtml")]
+    #nullable restore
     public class Pages_BookCategory : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-page", "/Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("tg-formtheme tg-formsortshoitems"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,7 +85,7 @@ using ServiceHost;
 #line hidden
 #nullable disable
             WriteLiteral("</h1>\r\n                    <ol class=\"tg-breadcrumb\">\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b6940", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b6986", async() => {
                 WriteLiteral("خانه");
             }
             );
@@ -144,7 +146,7 @@ using ServiceHost;
                                     <div class=""tg-refinesearch"">
                                         <span>مشاهده 1 از 8 از کل 20</span>
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b10229", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b10275", async() => {
                 WriteLiteral(@"
                                             <fieldset>
                                                 <div class=""form-group"">
@@ -152,7 +154,7 @@ using ServiceHost;
                                                     <span class=""tg-select"">
                                                         <select>
                                                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b10899", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b10945", async() => {
                     WriteLiteral("نام");
                 }
                 );
@@ -166,7 +168,7 @@ using ServiceHost;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b11971", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b12017", async() => {
                     WriteLiteral("نام");
                 }
                 );
@@ -180,7 +182,7 @@ using ServiceHost;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b13043", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b13089", async() => {
                     WriteLiteral("نام");
                 }
                 );
@@ -202,7 +204,7 @@ using ServiceHost;
                                                     <span class=""tg-select"">
                                                         <select>
                                                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b14595", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b14641", async() => {
                     WriteLiteral("8");
                 }
                 );
@@ -216,7 +218,7 @@ using ServiceHost;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b15665", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b15711", async() => {
                     WriteLiteral("16");
                 }
                 );
@@ -230,7 +232,7 @@ using ServiceHost;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b16736", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b16782", async() => {
                     WriteLiteral("20");
                 }
                 );
@@ -277,7 +279,7 @@ using ServiceHost;
                                                 <figure class=""tg-featureimg"">
                                                     <div class=""tg-bookimg"">
                                                         <div class=""tg-frontcover"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b19875", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b19921", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -301,7 +303,7 @@ AddHtmlAttributeValue("", 4473, book.Picture, 4473, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</div>\r\n                                                        <div class=\"tg-backcover\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b21550", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b21596", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -343,7 +345,7 @@ AddHtmlAttributeValue("", 4623, book.Picture, 4623, 13, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                                            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b24215", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b24261", async() => {
 #nullable restore
 #line 90 "C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\Pages\BookCategory.cshtml"
                                                                                                                      Write(category.Name);
@@ -391,7 +393,7 @@ AddHtmlAttributeValue("", 4623, book.Picture, 4623, 13, false);
                                                     <div class=""tg-themetagbox""><span class=""tg-themetag"">فروش</span></div>
                                                     <div class=""tg-booktitle"">
                                                         <h3>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b27319", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b27365", async() => {
 #nullable restore
 #line 95 "C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\Pages\BookCategory.cshtml"
                                                                                                            Write(book.Name);
@@ -428,7 +430,7 @@ AddHtmlAttributeValue("", 4623, book.Picture, 4623, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</h3>\r\n                                                    </div>\r\n                                                    <span class=\"tg-bookwriter\">توسط: ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b29951", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b29997", async() => {
 #nullable restore
 #line 97 "C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\Pages\BookCategory.cshtml"
                                                                                                                                              Write(book.AuthorName);
@@ -582,7 +584,7 @@ AddHtmlAttributeValue("", 4623, book.Picture, 4623, 13, false);
                         <aside id=""tg-sidebar"" class=""tg-sidebar"">
                             <div class=""tg-widget tg-widgetsearch"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b37953", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b37999", async() => {
                 WriteLiteral(@"
                                     <div class=""form-group"">
                                         <button type=""submit""><i class=""icon-magnifier""></i></button>
@@ -621,7 +623,7 @@ AddHtmlAttributeValue("", 4623, book.Picture, 4623, 13, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b40427", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6198d96d73c85dd9afb3d0eadc658b2ae3a1494b40473", async() => {
                 WriteLiteral("<span>");
 #nullable restore
 #line 154 "C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ServiceHost\Pages\BookCategory.cshtml"
@@ -694,16 +696,26 @@ AddHtmlAttributeValue("", 4623, book.Picture, 4623, 13, false);
             WriteLiteral("\r\n                        </aside>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</main>\r\n\r\n");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<ServiceHost.Pages.BookCategoryModel> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<ServiceHost.Pages.BookCategoryModel> Html { get; private set; } = default!;
+        #nullable disable
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary<ServiceHost.Pages.BookCategoryModel> ViewData => (global::Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary<ServiceHost.Pages.BookCategoryModel>)PageContext?.ViewData;
         public ServiceHost.Pages.BookCategoryModel Model => ViewData.Model;
     }

@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\bin\Debug\net5.0\ShopManagement.Application.Contracts.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\bin\Debug\net5.0\ref\ShopManagement.Application.Contracts.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\bin\Debug\net5.0\01_Framework.pdb
@@ -13,3 +12,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Applica
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\obj\Debug\net5.0\ref\ShopManagement.Application.Contracts.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application.Contracts\obj\Debug\net5.0\refint\ShopManagement.Application.Contracts.dll

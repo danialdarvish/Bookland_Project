@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\bin\Debug\net5.0\DiscountManagement.Application.Contract.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\bin\Debug\net5.0\DiscountManagement.Application.Contract.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\bin\Debug\net5.0\ref\DiscountManagement.Application.Contract.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\bin\Debug\net5.0\DiscountManagement.Application.Contract.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
@@ -15,3 +14,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.App
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\obj\Debug\net5.0\DiscountManagement.Application.Contract.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\obj\Debug\net5.0\ref\DiscountManagement.Application.Contract.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\obj\Debug\net5.0\DiscountManagement.Application.Contract.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Application.Contract\obj\Debug\net5.0\refint\DiscountManagement.Application.Contract.dll

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using AccountManagement.Domain.AccountAgg;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace ServiceHost.Pages
@@ -14,7 +15,6 @@ namespace ServiceHost.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

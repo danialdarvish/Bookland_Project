@@ -1,0 +1,81 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4c0834db-194e-488a-a28e-fd43ba3cf1c7": {
+      "ProjectGuid": "4c0834db-194e-488a-a28e-fd43ba3cf1c7",
+      "DisplayName": "ShopManagement.Application",
+      "ColorIndex": 0
+    },
+    "dc80bf15-681f-4497-8628-1234f2f8f449": {
+      "ProjectGuid": "dc80bf15-681f-4497-8628-1234f2f8f449",
+      "DisplayName": "ServiceHost",
+      "ColorIndex": 1
+    },
+    "5a36c09c-53de-4473-b695-462b6df35076": {
+      "ProjectGuid": "5a36c09c-53de-4473-b695-462b6df35076",
+      "DisplayName": "InventoryManagement.Domain",
+      "ColorIndex": 2
+    },
+    "3a42a38f-d2f3-4371-93e7-2f42ac484806": {
+      "ProjectGuid": "3a42a38f-d2f3-4371-93e7-2f42ac484806",
+      "DisplayName": "InventoryManagement.Presentation.Api",
+      "ColorIndex": 3
+    },
+    "cf12dcf3-0894-4356-bb5f-a2a3626f3a79": {
+      "ProjectGuid": "cf12dcf3-0894-4356-bb5f-a2a3626f3a79",
+      "DisplayName": "01_BooklandQuery",
+      "ColorIndex": 4
+    },
+    "bef602c0-78aa-4985-b759-da46f9fde61c": {
+      "ProjectGuid": "bef602c0-78aa-4985-b759-da46f9fde61c",
+      "DisplayName": "BooklandReporting",
+      "ColorIndex": 5
+    },
+    "751525ab-63cd-4338-903e-4d9184c18590": {
+      "ProjectGuid": "751525ab-63cd-4338-903e-4d9184c18590",
+      "DisplayName": "InventoryManagement.Application",
+      "ColorIndex": 6
+    },
+    "c916b0ca-715b-4fee-8391-07c80f3700fe": {
+      "ProjectGuid": "c916b0ca-715b-4fee-8391-07c80f3700fe",
+      "DisplayName": "ShopManagement.Configuration",
+      "ColorIndex": 7
+    },
+    "6ceb0ddb-e8ed-45bb-b061-e29b090c02c9": {
+      "ProjectGuid": "6ceb0ddb-e8ed-45bb-b061-e29b090c02c9",
+      "DisplayName": "ShopManagement.Infrastructure.EFCore",
+      "ColorIndex": 8
+    },
+    "a356dbe3-4ad1-46be-a273-b4e21d9a6b36": {
+      "ProjectGuid": "a356dbe3-4ad1-46be-a273-b4e21d9a6b36",
+      "DisplayName": "ShopManagement.Domain",
+      "ColorIndex": 9
+    },
+    "a405d4ae-eb0b-4746-ab78-db3b65f00557": {
+      "ProjectGuid": "a405d4ae-eb0b-4746-ab78-db3b65f00557",
+      "DisplayName": "AccountManagement.Application.Contracts",
+      "ColorIndex": 10
+    },
+    "b5a14440-6958-483f-9e66-997300f40c89": {
+      "ProjectGuid": "b5a14440-6958-483f-9e66-997300f40c89",
+      "DisplayName": "AccountManagement.Application",
+      "ColorIndex": 11
+    },
+    "0fc43d62-dc5b-4ead-a72f-2016d769b6c8": {
+      "ProjectGuid": "0fc43d62-dc5b-4ead-a72f-2016d769b6c8",
+      "DisplayName": "ShopManagement.Infrastructure.Account.Acl",
+      "ColorIndex": 12
+    },
+    "96baf225-0110-473d-8032-4b79ec0bc4a8": {
+      "ProjectGuid": "96baf225-0110-473d-8032-4b79ec0bc4a8",
+      "DisplayName": "ShopManagement.Infrastructure.InventoryAcl",
+      "ColorIndex": 13
+    },
+    "f778d2eb-81c0-45d1-9199-d488fbb4bf83": {
+      "ProjectGuid": "f778d2eb-81c0-45d1-9199-d488fbb4bf83",
+      "DisplayName": "01_Framework",
+      "ColorIndex": 14
+    }
+  },
+  "NextColorIndex": 15
+}

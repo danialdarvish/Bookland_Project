@@ -2,7 +2,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infr
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.runtimeconfig.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.runtimeconfig.dev.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ref\AccountManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
@@ -15,8 +14,9 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infr
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.AssemblyInfoInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.AssemblyInfo.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.csproj.CoreCompileInputs.cache
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.csproj.CopyComplete
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\AccountManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.genruntimeconfig.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.csproj.CopyComplete
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\refint\AccountManagement.Infrastructure.EFCore.dll

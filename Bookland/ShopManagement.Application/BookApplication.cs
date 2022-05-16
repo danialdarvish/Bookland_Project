@@ -1,5 +1,4 @@
-﻿using System;
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _01_Framework.Application;
 using ShopManagement.Application.Contracts.Book;
 using ShopManagement.Domain.BookAgg;
@@ -28,11 +27,11 @@ namespace ShopManagement.Application
             var pictureName = _fileUploader.Upload(command.Picture, "Books");
             var slug = command.Slug.Slugify();
             var publishDate = command.PublishDate.ToGeorgianDateTime();
-            var book = new Book(command.Name, command.Format, command.PageCount, publishDate, 
+            var book = new Book(command.Name, command.Format, command.PageCount, publishDate,
                 command.Publisher, command.Language, command.Isbn, pictureName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription,
                 command.Description, command.AuthorId, command.ShortDescription, command.IsEditorsChoice);
-            
+
             _bookRepository.Create(book);
             _bookRepository.SaveChanges();
 

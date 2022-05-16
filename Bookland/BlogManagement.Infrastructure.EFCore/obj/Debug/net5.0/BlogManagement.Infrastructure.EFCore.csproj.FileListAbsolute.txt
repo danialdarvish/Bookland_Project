@@ -2,7 +2,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrast
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.runtimeconfig.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.runtimeconfig.dev.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\bin\Debug\net5.0\ref\BlogManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
@@ -20,3 +19,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrast
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\BlogManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\obj\Debug\net5.0\BlogManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\obj\Debug\net5.0\BlogManagement.Infrastructure.EFCore.genruntimeconfig.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Infrastructure.EFCore\obj\Debug\net5.0\refint\BlogManagement.Infrastructure.EFCore.dll

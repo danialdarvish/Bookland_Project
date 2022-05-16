@@ -5,7 +5,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.In
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\ref\InventoryManagement.Infrastructure.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\01_BooklandQuery.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\01_Framework.dll
@@ -53,3 +52,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.In
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\ref\InventoryManagement.Infrastructure.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\refint\InventoryManagement.Infrastructure.Configuration.dll

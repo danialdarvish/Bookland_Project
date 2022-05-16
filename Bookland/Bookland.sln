@@ -127,6 +127,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooklandReporting", "BooklandReporting\BooklandReporting.csproj", "{BEF602C0-78AA-4985-B759-DA46F9FDE61C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FBB5EA8C-7618-4E87-A9A6-9879AA37F70E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost.Test", "ServiceHost.Test\ServiceHost.Test.csproj", "{CC1577BD-8187-44CF-BFD7-F3CF1A165ACE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -281,6 +285,10 @@ Global
 		{BEF602C0-78AA-4985-B759-DA46F9FDE61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEF602C0-78AA-4985-B759-DA46F9FDE61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEF602C0-78AA-4985-B759-DA46F9FDE61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1577BD-8187-44CF-BFD7-F3CF1A165ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1577BD-8187-44CF-BFD7-F3CF1A165ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1577BD-8187-44CF-BFD7-F3CF1A165ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1577BD-8187-44CF-BFD7-F3CF1A165ACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -338,6 +346,7 @@ Global
 		{1DF81148-EC51-4641-95B1-ACD16B0400EA} = {0DEA1A14-142A-4301-A7CD-76239E8094F5}
 		{3A42A38F-D2F3-4371-93E7-2F42AC484806} = {1DF81148-EC51-4641-95B1-ACD16B0400EA}
 		{0FC43D62-DC5B-4EAD-A72F-2016D769B6C8} = {BB57EAF8-9D8C-4C17-A662-7CC68EF12EE6}
+		{CC1577BD-8187-44CF-BFD7-F3CF1A165ACE} = {FBB5EA8C-7618-4E87-A9A6-9879AA37F70E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C1B3861-F96F-4FD9-8439-3C0A259ED883}

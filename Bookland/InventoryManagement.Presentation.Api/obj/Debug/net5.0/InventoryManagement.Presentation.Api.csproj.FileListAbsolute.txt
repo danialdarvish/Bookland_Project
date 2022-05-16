@@ -5,7 +5,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Pr
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\obj\Debug\net5.0\InventoryManagement.Presentation.Api.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\bin\Debug\net5.0\InventoryManagement.Presentation.Api.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\bin\Debug\net5.0\InventoryManagement.Presentation.Api.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\bin\Debug\net5.0\ref\InventoryManagement.Presentation.Api.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\bin\Debug\net5.0\InventoryManagement.Presentation.Api.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\bin\Debug\net5.0\01_BooklandQuery.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\bin\Debug\net5.0\01_Framework.dll
@@ -51,3 +50,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Pr
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\obj\Debug\net5.0\InventoryManagement.Presentation.Api.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\obj\Debug\net5.0\ref\InventoryManagement.Presentation.Api.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\obj\Debug\net5.0\InventoryManagement.Presentation.Api.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Presentation.Api\obj\Debug\net5.0\refint\InventoryManagement.Presentation.Api.dll

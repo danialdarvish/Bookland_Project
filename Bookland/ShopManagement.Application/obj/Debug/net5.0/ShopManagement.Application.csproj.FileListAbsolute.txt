@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\bin\Debug\net5.0\ShopManagement.Application.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\bin\Debug\net5.0\ShopManagement.Application.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\bin\Debug\net5.0\ref\ShopManagement.Application.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\bin\Debug\net5.0\ShopManagement.Application.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
@@ -13,7 +12,8 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Applica
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.AssemblyInfoInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.AssemblyInfo.cs
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.csproj.CoreCompileInputs.cache
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.csproj.CopyComplete
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ref\ShopManagement.Application.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.csproj.CopyComplete
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Application\obj\Debug\net5.0\refint\ShopManagement.Application.dll

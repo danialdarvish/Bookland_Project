@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Domain.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Domain.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\bin\Debug\net5.0\ref\ShopManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Domain.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
@@ -15,3 +14,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\obj\Debug\net5.0\ref\ShopManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\ShopManagement.Domain\obj\Debug\net5.0\refint\ShopManagement.Domain.dll

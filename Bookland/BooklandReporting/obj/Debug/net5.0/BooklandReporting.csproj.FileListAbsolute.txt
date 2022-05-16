@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\bin\Debug\net5.0\BooklandReporting.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\bin\Debug\net5.0\BooklandReporting.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\bin\Debug\net5.0\ref\BooklandReporting.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\bin\Debug\net5.0\BooklandReporting.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
@@ -25,3 +24,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\obj\
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\obj\Debug\net5.0\BooklandReporting.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\obj\Debug\net5.0\ref\BooklandReporting.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\obj\Debug\net5.0\BooklandReporting.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BooklandReporting\obj\Debug\net5.0\refint\BooklandReporting.dll

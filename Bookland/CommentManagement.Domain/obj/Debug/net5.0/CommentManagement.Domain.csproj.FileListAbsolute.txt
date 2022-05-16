@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\bin\Debug\net5.0\CommentManagement.Domain.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\bin\Debug\net5.0\CommentManagement.Domain.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\bin\Debug\net5.0\ref\CommentManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\bin\Debug\net5.0\CommentManagement.Domain.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\bin\Debug\net5.0\CommentManagement.Application.Contracts.dll
@@ -15,3 +14,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Doma
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\obj\Debug\net5.0\CommentManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\obj\Debug\net5.0\ref\CommentManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\obj\Debug\net5.0\CommentManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Domain\obj\Debug\net5.0\refint\CommentManagement.Domain.dll

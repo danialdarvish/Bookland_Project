@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Configuration.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Configuration.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\bin\Debug\net5.0\ref\DiscountManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Configuration.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
@@ -33,3 +32,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Con
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\obj\Debug\net5.0\ref\DiscountManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\DiscountManagement.Configuration\obj\Debug\net5.0\refint\DiscountManagement.Configuration.dll

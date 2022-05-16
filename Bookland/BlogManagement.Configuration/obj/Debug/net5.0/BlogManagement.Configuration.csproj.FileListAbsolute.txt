@@ -5,7 +5,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configu
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\obj\Debug\net5.0\BlogManagement.Configuration.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\bin\Debug\net5.0\BlogManagement.Configuration.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\bin\Debug\net5.0\BlogManagement.Configuration.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\bin\Debug\net5.0\ref\BlogManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\bin\Debug\net5.0\BlogManagement.Configuration.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\bin\Debug\net5.0\01_BooklandQuery.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\bin\Debug\net5.0\01_Framework.dll
@@ -53,3 +52,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configu
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\obj\Debug\net5.0\BlogManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\obj\Debug\net5.0\ref\BlogManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\obj\Debug\net5.0\BlogManagement.Configuration.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Configuration\obj\Debug\net5.0\refint\BlogManagement.Configuration.dll

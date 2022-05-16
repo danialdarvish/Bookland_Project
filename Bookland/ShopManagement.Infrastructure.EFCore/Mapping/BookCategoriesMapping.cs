@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopManagement.Domain.BookAgg;
 using ShopManagement.Domain.BookCategoryAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Mapping

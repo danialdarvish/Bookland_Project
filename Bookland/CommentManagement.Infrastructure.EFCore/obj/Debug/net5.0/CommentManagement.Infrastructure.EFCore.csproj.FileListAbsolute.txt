@@ -2,7 +2,6 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infr
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.runtimeconfig.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.runtimeconfig.dev.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\bin\Debug\net5.0\ref\CommentManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\bin\Debug\net5.0\CommentManagement.Application.Contracts.dll
@@ -20,3 +19,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infr
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\CommentManagement.Infrastructure.EFCore.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\obj\Debug\net5.0\CommentManagement.Infrastructure.EFCore.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\obj\Debug\net5.0\CommentManagement.Infrastructure.EFCore.genruntimeconfig.cache
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\CommentManagement.Infrastructure.EFCore\obj\Debug\net5.0\refint\CommentManagement.Infrastructure.EFCore.dll

@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\BlogManagement.Application.Contracts.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\ref\BlogManagement.Application.Contracts.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\BlogManagement.Application.Contracts.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\bin\Debug\net5.0\01_Framework.pdb
@@ -13,3 +12,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Applica
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\ref\BlogManagement.Application.Contracts.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\BlogManagement.Application.Contracts.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\BlogManagement.Application.Contracts\obj\Debug\net5.0\refint\BlogManagement.Application.Contracts.dll

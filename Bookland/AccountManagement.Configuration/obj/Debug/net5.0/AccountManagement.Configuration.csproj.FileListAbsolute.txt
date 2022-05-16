@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\bin\Debug\net5.0\AccountManagement.Configuration.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\bin\Debug\net5.0\AccountManagement.Configuration.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\bin\Debug\net5.0\ref\AccountManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\bin\Debug\net5.0\AccountManagement.Configuration.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
@@ -21,3 +20,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Conf
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\obj\Debug\net5.0\AccountManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\obj\Debug\net5.0\ref\AccountManagement.Configuration.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\obj\Debug\net5.0\AccountManagement.Configuration.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\AccountManagement.Configuration\obj\Debug\net5.0\refint\AccountManagement.Configuration.dll

@@ -1,6 +1,5 @@
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Domain.deps.json
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Domain.dll
-C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\bin\Debug\net5.0\ref\InventoryManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Domain.pdb
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\bin\Debug\net5.0\01_Framework.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Application.Contracts.dll
@@ -17,3 +16,4 @@ C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Do
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\obj\Debug\net5.0\ref\InventoryManagement.Domain.dll
 C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.pdb
+C:\Users\ASUS\source\repos\Bookland_Project\Code\Bookland\InventoryManagement.Domain\obj\Debug\net5.0\refint\InventoryManagement.Domain.dll
